@@ -26,29 +26,34 @@
   </div>
 </div>
 
-<!-- 2. Sticky Header -->
-<header class="site-header" id="siteHeader">
-  <div class="header-inner container">
-    <a href="#hem" class="brand">
-      <img src="images/logo.png" alt="Debre Hail S:t Gabriel logotyp" class="logo">
-      <span class="brand-text">
+<!-- 2. Header: centered identity band + nav bar -->
+<header class="site-header">
+  <div class="brand-band">
+    <div class="brand-band-inner container">
+      <img src="images/logo.png" alt="S:t Georgis" class="logo-side">
+      <a href="#hem" class="brand-center">
         <span class="brand-name" data-i18n="header.name"></span>
         <span class="brand-sub" data-i18n="header.subtitle"></span>
-      </span>
-    </a>
-    <button class="hamburger" id="hamburgerBtn" aria-label="Meny" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-    <nav class="main-nav" id="mainNav">
-      <a href="#hem" class="nav-link" data-nav="hem" data-i18n="nav.hem"></a>
-      <a href="#nyheter" class="nav-link" data-nav="nyheter" data-i18n="nav.nyheter"></a>
-      <a href="#om" class="nav-link" data-nav="om" data-i18n="nav.om"></a>
-      <a href="#gudstjanster" class="nav-link" data-nav="gudstjanster" data-i18n="nav.gudstjanster"></a>
-      <a href="#galleri" class="nav-link" data-nav="galleri" data-i18n="nav.galleri"></a>
-      <a href="#kontakt" class="nav-link" data-nav="kontakt" data-i18n="nav.kontakt"></a>
-      <button class="lang-toggle" id="langToggle" type="button"></button>
-    </nav>
+      </a>
+      <img src="images/logo2.png" alt="S:t Gabriel" class="logo-side">
+    </div>
   </div>
+  <nav class="main-nav-bar">
+    <div class="header-inner container">
+      <button class="hamburger" id="hamburgerBtn" aria-label="Meny" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="main-nav" id="mainNav">
+        <a href="#hem" class="nav-link" data-nav="hem" data-i18n="nav.hem"></a>
+        <a href="nyheter.html" class="nav-link" data-nav="nyheter" data-i18n="nav.nyheter"></a>
+        <a href="#gudstjanster" class="nav-link" data-nav="gudstjanster" data-i18n="nav.gudstjanster"></a>
+        <a href="galleri.html" class="nav-link" data-nav="galleri" data-i18n="nav.galleri"></a>
+        <a href="#om" class="nav-link" data-nav="om" data-i18n="nav.om"></a>
+        <a href="#kontakt" class="nav-link" data-nav="kontakt" data-i18n="nav.kontakt"></a>
+        <button class="lang-toggle" id="langToggle" type="button"></button>
+      </div>
+    </div>
+  </nav>
 </header>
 
 <!-- 3. Hero Slider -->
@@ -70,7 +75,7 @@
         <p class="slide-quote" data-i18n-html="hero.slide2_quote"></p>
         <div class="slide-ctas">
           <a href="#gudstjanster" class="btn btn-gold" data-i18n="hero.slide2_cta1"></a>
-          <a href="#galleri" class="btn btn-outline" data-i18n="hero.slide2_cta2"></a>
+          <a href="galleri.html" class="btn btn-outline" data-i18n="hero.slide2_cta2"></a>
         </div>
       </div>
     </div>
@@ -80,7 +85,7 @@
         <p class="slide-quote" data-i18n-html="hero.slide3_quote"></p>
         <div class="slide-ctas">
           <a href="#om" class="btn btn-gold" data-i18n="hero.slide3_cta1"></a>
-          <a href="#nyheter" class="btn btn-outline" data-i18n="hero.slide3_cta2"></a>
+          <a href="nyheter.html" class="btn btn-outline" data-i18n="hero.slide3_cta2"></a>
         </div>
       </div>
     </div>
@@ -100,7 +105,7 @@
   <div class="tricolor-stripe"></div>
 </section>
 
-<!-- 4. News Section -->
+<!-- 4. News Section (preview) -->
 <section class="news-section" id="nyheter">
   <div class="container">
     <h2 class="section-title" data-i18n="news.section_title"></h2>
@@ -109,50 +114,47 @@
     <div class="news-grid">
       <div class="news-feed">
 
-        <article class="news-item">
+        <article class="news-preview-card">
           <div class="news-icon">📰</div>
           <div class="news-body">
             <span class="news-date" data-i18n="news.article1_date"></span>
             <h3 data-i18n="news.article1_title"></h3>
             <p class="news-excerpt" data-i18n="news.article1_excerpt"></p>
-            <div class="news-full"><p data-i18n="news.article1_full"></p></div>
-            <button class="news-toggle" data-i18n="news.read_more"></button>
+            <a class="news-toggle" href="nyheter.html#article-1" data-i18n="news.read_more"></a>
           </div>
         </article>
 
-        <article class="news-item">
+        <article class="news-preview-card">
           <div class="news-icon">📰</div>
           <div class="news-body">
             <span class="news-date" data-i18n="news.article2_date"></span>
             <h3 data-i18n="news.article2_title"></h3>
             <p class="news-excerpt" data-i18n="news.article2_excerpt"></p>
-            <div class="news-full"><p data-i18n="news.article2_full"></p></div>
-            <button class="news-toggle" data-i18n="news.read_more"></button>
+            <a class="news-toggle" href="nyheter.html#article-2" data-i18n="news.read_more"></a>
           </div>
         </article>
 
-        <article class="news-item">
+        <article class="news-preview-card">
           <div class="news-icon">📰</div>
           <div class="news-body">
             <span class="news-date" data-i18n="news.article3_date"></span>
             <h3 data-i18n="news.article3_title"></h3>
             <p class="news-excerpt" data-i18n="news.article3_excerpt"></p>
-            <div class="news-full"><p data-i18n="news.article3_full"></p></div>
-            <button class="news-toggle" data-i18n="news.read_more"></button>
+            <a class="news-toggle" href="nyheter.html#article-3" data-i18n="news.read_more"></a>
           </div>
         </article>
 
-        <article class="news-item">
+        <article class="news-preview-card">
           <div class="news-icon">📰</div>
           <div class="news-body">
             <span class="news-date" data-i18n="news.article4_date"></span>
             <h3 data-i18n="news.article4_title"></h3>
             <p class="news-excerpt" data-i18n="news.article4_excerpt"></p>
-            <div class="news-full"><p data-i18n="news.article4_full"></p></div>
-            <button class="news-toggle" data-i18n="news.read_more"></button>
+            <a class="news-toggle" href="nyheter.html#article-4" data-i18n="news.read_more"></a>
           </div>
         </article>
 
+        <a href="nyheter.html" class="btn btn-gold see-all-btn" data-i18n="news.see_all_btn"></a>
       </div>
 
       <aside class="news-sidebar">
@@ -195,7 +197,78 @@
   </div>
 </section>
 
-<!-- 5. Counter Strip -->
+<!-- 5. Schedule Section (calendar first) -->
+<section class="schedule-section" id="gudstjanster">
+  <div class="container">
+    <h2 class="section-title" data-i18n="schedule.section_title"></h2>
+
+    <div class="sched-tabs">
+      <button class="sched-tab-btn active" data-sched-tab="hogtider" data-i18n="schedule.tab_hogtider"></button>
+      <button class="sched-tab-btn" data-sched-tab="ordinarie" data-i18n="schedule.tab_ordinarie"></button>
+    </div>
+
+    <div class="sched-panel active" data-sched-panel="hogtider">
+      <div class="eo-calendar" id="eoCalendar">
+        <div class="eo-cal-banner">
+          <h3 data-i18n="calendar.heading"></h3>
+          <p class="eo-cal-today-pill">
+            <span data-i18n="calendar.today_prefix"></span> <span id="eoCalTodayLabel"></span>
+          </p>
+        </div>
+
+        <div class="eo-cal-controls">
+          <button type="button" id="eoCalPrev" class="eo-cal-nav">‹ <span data-i18n="calendar.prev"></span></button>
+          <div class="eo-cal-select-group">
+            <select id="eoCalMonthSelect"></select>
+            <input type="number" id="eoCalYearInput" class="eo-cal-year-input">
+          </div>
+          <button type="button" id="eoCalNext" class="eo-cal-nav"><span data-i18n="calendar.next"></span> ›</button>
+          <button type="button" id="eoCalTodayBtn" class="eo-cal-today-btn">📅 <span data-i18n="calendar.today_btn"></span></button>
+        </div>
+
+        <div class="eo-cal-weekdays" id="eoCalWeekdays"></div>
+        <div class="eo-cal-grid" id="eoCalGrid"></div>
+
+        <div class="eo-cal-legend">
+          <span class="legend-item"><i class="legend-swatch swatch-today"></i><span data-i18n="calendar.legend_today"></span></span>
+          <span class="legend-item"><i class="legend-swatch swatch-sunday"></i><span data-i18n="calendar.legend_sunday"></span></span>
+          <span class="legend-item"><i class="legend-swatch swatch-feast"></i><span data-i18n="calendar.legend_feast"></span></span>
+          <span class="legend-item"><i class="legend-swatch swatch-fasting"></i><span data-i18n="calendar.legend_fasting"></span></span>
+        </div>
+      </div>
+      <p class="location-note" data-i18n="calendar.disclaimer"></p>
+    </div>
+
+    <div class="sched-panel" data-sched-panel="ordinarie">
+      <div class="table-wrap">
+        <table class="sched-table">
+          <thead>
+            <tr>
+              <th data-i18n="schedule.th_dag"></th>
+              <th data-i18n="schedule.th_tid"></th>
+              <th data-i18n="schedule.th_gudstjanst"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-i18n="schedule.row_sun_day"></td>
+              <td data-i18n="schedule.row_sun_time"></td>
+              <td data-i18n="schedule.row_sun_service"></td>
+            </tr>
+            <tr>
+              <td data-i18n="schedule.row_sat_day"></td>
+              <td data-i18n="schedule.row_sat_time"></td>
+              <td data-i18n="schedule.row_sat_service"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="location-note" data-i18n="schedule.location_note"></p>
+    </div>
+  </div>
+</section>
+
+<!-- 6. Counter Strip -->
 <section class="counter-strip">
   <div class="container counters-grid">
     <div class="counter-item">
@@ -217,7 +290,26 @@
   </div>
 </section>
 
-<!-- 6. About Section -->
+<!-- 7. Gallery Section (preview) -->
+<section class="gallery-section" id="galleri">
+  <div class="container">
+    <h2 class="section-title" data-i18n="gallery.section_title"></h2>
+
+    <div class="gallery-grid gallery-grid-preview">
+      <div class="gallery-item tile-1"><span class="tile-emoji">⛪</span><div class="tile-overlay"><span class="tile-title">Söndagens Högmässa</span></div></div>
+      <div class="gallery-item tile-2"><span class="tile-emoji">🕯️</span><div class="tile-overlay"><span class="tile-title">Rökelseoffer</span></div></div>
+      <div class="gallery-item tile-4"><span class="tile-emoji">✝️</span><div class="tile-overlay"><span class="tile-title">Fasika-firande</span></div></div>
+      <div class="gallery-item tile-5"><span class="tile-emoji">💧</span><div class="tile-overlay"><span class="tile-title">Timkat-processionen</span></div></div>
+      <div class="gallery-item tile-8"><span class="tile-emoji">🎶</span><div class="tile-overlay"><span class="tile-title">Kyrkokören sjunger</span></div></div>
+      <div class="gallery-item tile-14"><span class="tile-emoji">☕</span><div class="tile-overlay"><span class="tile-title">Kyrkkaffe</span></div></div>
+    </div>
+    <div class="gallery-preview-cta">
+      <a href="galleri.html" class="btn btn-gold" data-i18n="gallery.see_all_btn"></a>
+    </div>
+  </div>
+</section>
+
+<!-- 8. About Section -->
 <section class="about-section" id="om">
   <div class="container">
     <h2 class="section-title" data-i18n="about.section_title"></h2>
@@ -286,120 +378,6 @@
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- 7. Gallery Section -->
-<section class="gallery-section" id="galleri">
-  <div class="container">
-    <h2 class="section-title" data-i18n="gallery.section_title"></h2>
-
-    <div class="gallery-filters">
-      <button class="filter-btn active" data-filter="all" data-i18n="gallery.filter_all"></button>
-      <button class="filter-btn" data-filter="gudstjanster" data-i18n="gallery.filter_gudstjanster"></button>
-      <button class="filter-btn" data-filter="hogtider" data-i18n="gallery.filter_hogtider"></button>
-      <button class="filter-btn" data-filter="kor" data-i18n="gallery.filter_kor"></button>
-      <button class="filter-btn" data-filter="barn" data-i18n="gallery.filter_barn"></button>
-      <button class="filter-btn" data-filter="gemenskap" data-i18n="gallery.filter_gemenskap"></button>
-    </div>
-
-    <div class="gallery-grid" id="galleryGrid">
-      <div class="gallery-item tile-1" data-cat="gudstjanster" data-title-sv="Söndagens Högmässa" data-title-am="የእሑድ ቅዳሴ"><span class="tile-emoji">⛪</span><div class="tile-overlay"><span class="tile-title"></span></div></div>
-      <div class="gallery-item tile-2" data-cat="gudstjanster" data-title-sv="Rökelseoffer" data-title-am="የዕጣን ስርዓት"><span class="tile-emoji">🕯️</span><div class="tile-overlay"><span class="tile-title"></span></div></div>
-      <div class="gallery-item tile-3" data-cat="gudstjanster" data-title-sv="Diakonernas tjänst" data-title-am="የዲያቆናት አገልግሎት"><span class="tile-emoji">📖</span><div class="tile-overlay"><span class="tile-title"></span></div></div>
-      <div class="gallery-item tile-4" data-cat="hogtider" data-title-sv="Fasika-firande" data-title-am="የፋሲካ በዓል"><span class="tile-emoji">✝️</span><div class="tile-overlay"><span class="tile-title"></span></div></div>
-      <div class="gallery-item tile-5" data-cat="hogtider" data-title-sv="Timkat-processionen" data-title-am="የጥምቀት ሰልፍ"><span class="tile-emoji">💧</span><div class="tile-overlay"><span class="tile-title"></span></div></div>
-      <div class="gallery-item tile-6" data-cat="hogtider" data-title-sv="Genna – Jul" data-title-am="ገና"><span class="tile-emoji">⭐</span><div class="tile-overlay"><span class="tile-title"></span></div></div>
-      <div class="gallery-item tile-7" data-cat="hogtider" data-title-sv="Meskel-firande" data-title-am="የመስቀል በዓል"><span class="tile-emoji">🔥</span><div class="tile-overlay"><span class="tile-title"></span></div></div>
-      <div class="gallery-item tile-8" data-cat="kor" data-title-sv="Kyrkokören sjunger" data-title-am="የቤተክርስቲያን መዘምራን"><span class="tile-emoji">🎶</span><div class="tile-overlay"><span class="tile-title"></span></div></div>
-      <div class="gallery-item tile-9" data-cat="kor" data-title-sv="Unga sångare" data-title-am="ወጣት ዘማሪያን"><span class="tile-emoji">🎤</span><div class="tile-overlay"><span class="tile-title"></span></div></div>
-      <div class="gallery-item tile-10" data-cat="kor" data-title-sv="Övning inför högtid" data-title-am="ለበዓል ዝግጅት ልምምድ"><span class="tile-emoji">🎼</span><div class="tile-overlay"><span class="tile-title"></span></div></div>
-      <div class="gallery-item tile-11" data-cat="barn" data-title-sv="Söndagsskolan" data-title-am="የሰንበት ትምህርት ቤት"><span class="tile-emoji">📚</span><div class="tile-overlay"><span class="tile-title"></span></div></div>
-      <div class="gallery-item tile-12" data-cat="barn" data-title-sv="Barnens välsignelse" data-title-am="የልጆች በረከት"><span class="tile-emoji">🙏</span><div class="tile-overlay"><span class="tile-title"></span></div></div>
-      <div class="gallery-item tile-13" data-cat="barn" data-title-sv="Familjedag" data-title-am="የቤተሰብ ቀን"><span class="tile-emoji">👨‍👩‍👧‍👦</span><div class="tile-overlay"><span class="tile-title"></span></div></div>
-      <div class="gallery-item tile-14" data-cat="gemenskap" data-title-sv="Kyrkkaffe" data-title-am="ከቅዳሴ በኋላ ቡና"><span class="tile-emoji">☕</span><div class="tile-overlay"><span class="tile-title"></span></div></div>
-      <div class="gallery-item tile-15" data-cat="gemenskap" data-title-sv="Volontärernas städdag" data-title-am="የበጎ ፈቃደኞች ጽዳት ቀን"><span class="tile-emoji">🧹</span><div class="tile-overlay"><span class="tile-title"></span></div></div>
-      <div class="gallery-item tile-16" data-cat="gemenskap" data-title-sv="Församlingens gemenskap" data-title-am="የምዕመናን ኅብረት"><span class="tile-emoji">🤝</span><div class="tile-overlay"><span class="tile-title"></span></div></div>
-    </div>
-  </div>
-</section>
-
-<div class="lightbox" id="lightbox">
-  <button class="lightbox-close" id="lightboxClose" aria-label="Stäng">×</button>
-  <button class="lightbox-arrow prev" id="lightboxPrev" aria-label="Föregående">‹</button>
-  <div class="lightbox-content" id="lightboxContent"></div>
-  <button class="lightbox-arrow next" id="lightboxNext" aria-label="Nästa">›</button>
-  <div class="lightbox-counter" id="lightboxCounter"></div>
-</div>
-
-<!-- 8. Schedule Section -->
-<section class="schedule-section" id="gudstjanster">
-  <div class="container">
-    <h2 class="section-title" data-i18n="schedule.section_title"></h2>
-
-    <div class="sched-tabs">
-      <button class="sched-tab-btn active" data-sched-tab="ordinarie" data-i18n="schedule.tab_ordinarie"></button>
-      <button class="sched-tab-btn" data-sched-tab="hogtider" data-i18n="schedule.tab_hogtider"></button>
-    </div>
-
-    <div class="sched-panel active" data-sched-panel="ordinarie">
-      <div class="table-wrap">
-        <table class="sched-table">
-          <thead>
-            <tr>
-              <th data-i18n="schedule.th_dag"></th>
-              <th data-i18n="schedule.th_tid"></th>
-              <th data-i18n="schedule.th_gudstjanst"></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td data-i18n="schedule.row_sun_day"></td>
-              <td data-i18n="schedule.row_sun_time"></td>
-              <td data-i18n="schedule.row_sun_service"></td>
-            </tr>
-            <tr>
-              <td data-i18n="schedule.row_sat_day"></td>
-              <td data-i18n="schedule.row_sat_time"></td>
-              <td data-i18n="schedule.row_sat_service"></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <p class="location-note" data-i18n="schedule.location_note"></p>
-    </div>
-
-    <div class="sched-panel" data-sched-panel="hogtider">
-      <div class="eo-calendar" id="eoCalendar">
-        <div class="eo-cal-banner">
-          <h3 data-i18n="calendar.heading"></h3>
-          <p class="eo-cal-today-pill">
-            <span data-i18n="calendar.today_prefix"></span> <span id="eoCalTodayLabel"></span>
-          </p>
-        </div>
-
-        <div class="eo-cal-controls">
-          <button type="button" id="eoCalPrev" class="eo-cal-nav">‹ <span data-i18n="calendar.prev"></span></button>
-          <div class="eo-cal-select-group">
-            <select id="eoCalMonthSelect"></select>
-            <input type="number" id="eoCalYearInput" class="eo-cal-year-input">
-          </div>
-          <button type="button" id="eoCalNext" class="eo-cal-nav"><span data-i18n="calendar.next"></span> ›</button>
-          <button type="button" id="eoCalTodayBtn" class="eo-cal-today-btn">📅 <span data-i18n="calendar.today_btn"></span></button>
-        </div>
-
-        <div class="eo-cal-weekdays" id="eoCalWeekdays"></div>
-        <div class="eo-cal-grid" id="eoCalGrid"></div>
-
-        <div class="eo-cal-legend">
-          <span class="legend-item"><i class="legend-swatch swatch-today"></i><span data-i18n="calendar.legend_today"></span></span>
-          <span class="legend-item"><i class="legend-swatch swatch-sunday"></i><span data-i18n="calendar.legend_sunday"></span></span>
-          <span class="legend-item"><i class="legend-swatch swatch-feast"></i><span data-i18n="calendar.legend_feast"></span></span>
-          <span class="legend-item"><i class="legend-swatch swatch-fasting"></i><span data-i18n="calendar.legend_fasting"></span></span>
-        </div>
-      </div>
-      <p class="location-note" data-i18n="calendar.disclaimer"></p>
     </div>
   </div>
 </section>

@@ -1,7 +1,7 @@
 {
   "sv": {
     "meta": {
-      "title": "Debre Hail S:t Gabriel – Etiopisk Ortodox Tewahedokyrka"
+      "title": "Debre Hail S:t Gabriel & S:t Georgis – Etiopiska Ortodoxa Tewahedokyrkan"
     },
     "topbar": {
       "address": "Bergsjödalen 44, 415 23 Göteborg",
@@ -17,8 +17,8 @@
       "kontakt": "Kontakt"
     },
     "header": {
-      "name": "Debre Hail S:t Gabriel",
-      "subtitle": "Etiopisk Ortodox Tewahedokyrka"
+      "name": "Debre Hail S:t Gabriel & S:t Georgis",
+      "subtitle": "Etiopiska Ortodoxa Tewahedo kyrkan"
     },
     "hero": {
       "slide1_quote": "Ge tack till Herren, ty han är god. <em>(Psalm 136:1)</em>",
@@ -38,7 +38,6 @@
       "section_title": "Nyheter",
       "section_sub": "Håll dig uppdaterad om vad som händer i vår församling",
       "read_more": "Läs mer ›",
-      "read_less": "Visa mindre ‹",
       "article1_date": "12 juni 2026",
       "article1_title": "Församlingens städdag",
       "article1_excerpt": "Ett stort tack till alla som deltog i vår gemensamma städdag i och runt kyrkan.",
@@ -54,7 +53,9 @@
       "article4_date": "20 mars 2026",
       "article4_title": "Ny kör välkomnas till gudstjänsterna",
       "article4_excerpt": "Vi är glada att presentera vår förnyade kör.",
-      "article4_full": "Kören leder nu sången vid söndagens Högmässa. Är du intresserad av att sjunga med oss? Hör av dig till vår köransvarig."
+      "article4_full": "Kören leder nu sången vid söndagens Högmässa. Är du intresserad av att sjunga med oss? Hör av dig till vår köransvarig.",
+      "see_all_btn": "Se alla nyheter ›",
+      "page_title": "Nyheter – Debre Hail S:t Gabriel & S:t Georgis"
     },
     "sidebar": {
       "social_title": "Följ oss",
@@ -85,7 +86,7 @@
       "uppdrag_title": "Uppdrag",
       "uppdrag_text": "Att bevara och föra vidare den etiopisk-ortodoxa tewahedotron genom gudstjänst, undervisning och gemenskap.",
       "kyrka_title": "Vår kyrka",
-      "kyrka_text": "Debre Hail S:t Gabriel grundades för att ge den etiopisk-ortodoxa gemenskapen i Göteborg en plats att samlas, be och fira tillsammans.",
+      "kyrka_text": "Debre Hail S:t Gabriel & S:t Georgis grundades för att ge den etiopisk-ortodoxa gemenskapen i Göteborg en plats att samlas, be och fira tillsammans.",
       "tab_vision": "Vision",
       "tab_uppdrag": "Uppdrag",
       "tab_varderingar": "Värderingar",
@@ -109,7 +110,9 @@
       "filter_hogtider": "Högtider",
       "filter_kor": "Kör",
       "filter_barn": "Barn & Familj",
-      "filter_gemenskap": "Gemenskap"
+      "filter_gemenskap": "Gemenskap",
+      "see_all_btn": "Se hela galleriet ›",
+      "page_title": "Galleri – Debre Hail S:t Gabriel & S:t Georgis"
     },
     "schedule": {
       "section_title": "Gudstjänster",
@@ -140,7 +143,7 @@
       "privacy_note": "Vi hanterar dina uppgifter varsamt och delar dem aldrig med tredje part."
     },
     "footer": {
-      "copyright": "© 2026 Debre Hail S:t Gabriel Etiopisk Ortodox Tewahedokyrka. Alla rättigheter förbehållna."
+      "copyright": "© 2026 Debre Hail S:t Gabriel & S:t Georgis Etiopiska Ortodoxa Tewahedokyrkan. Alla rättigheter förbehållna."
     },
     "modal": {
       "title": "Lägg till person",
@@ -161,11 +164,14 @@
       "legend_feast": "Helgdag (årlig/månatlig)",
       "legend_fasting": "Fastedag",
       "disclaimer": "Datumen är vägledande och beräknade automatiskt – kontrollera med prästerskapet inför viktiga högtider."
+    },
+    "common": {
+      "back_home": "‹ Till startsidan"
     }
   },
   "am": {
     "meta": {
-      "title": "ደብረ ኃይል ቅዱስ ገብርኤል – የኢትዮጵያ ኦርቶዶክስ ተዋሕዶ ቤተክርስቲያን"
+      "title": "ደብረ ኃይል ቅዱስ ገብርኤል እና ቅዱስ ጊዮርጊስ – የኢትዮጵያ ኦርቶዶክስ ተዋሕዶ ቤተክርስቲያን"
     },
     "topbar": {
       "address": "Bergsjödalen 44, 415 23 Göteborg",
@@ -181,7 +187,7 @@
       "kontakt": "አግኙን"
     },
     "header": {
-      "name": "ደብረ ኃይል ቅዱስ ገብርኤል",
+      "name": "ደብረ ኃይል ቅዱስ ገብርኤል እና ቅዱስ ጊዮርጊስ",
       "subtitle": "የኢትዮጵያ ኦርቶዶክስ ተዋሕዶ ቤተክርስቲያን"
     },
     "hero": {
@@ -202,7 +208,6 @@
       "section_title": "ዜናዎች",
       "section_sub": "በምዕመናኑ ማህበረሰብ ውስጥ ስለሚከናወኑ ነገሮች ወቅታዊ መረጃ ያግኙ",
       "read_more": "ተጨማሪ ያንብቡ ›",
-      "read_less": "ያሳንሱ ‹",
       "article1_date": "ሰኔ 12 2026",
       "article1_title": "የምዕመናን የጽዳት ቀን",
       "article1_excerpt": "በቤተክርስቲያኒቱ ውስጥና ዙሪያ በተካሄደው የጋራ ጽዳት ቀን ለተሳተፉ ሁሉ ታላቅ ምስጋና እናቀርባለን።",
@@ -218,7 +223,9 @@
       "article4_date": "መጋቢት 20 2026",
       "article4_title": "አዲስ መዘምራን ቡድን ለስርዓተ አምልኮ ተጨመረ",
       "article4_excerpt": "የታደሰውን የመዘምራን ቡድናችንን በደስታ እናስተዋውቃለን።",
-      "article4_full": "አሁን በእሑድ ቅዳሴ ወቅት ዝማሬውን እየመሩ ናቸው። ከእኛ ጋር መዘመር ይፈልጋሉ? እባክዎ የመዘምራን ኃላፊያችንን ያግኙ።"
+      "article4_full": "አሁን በእሑድ ቅዳሴ ወቅት ዝማሬውን እየመሩ ናቸው። ከእኛ ጋር መዘመር ይፈልጋሉ? እባክዎ የመዘምራን ኃላፊያችንን ያግኙ።",
+      "see_all_btn": "ሁሉንም ዜናዎች ይመልከቱ ›",
+      "page_title": "ዜናዎች – ደብረ ኃይል ቅዱስ ገብርኤል እና ቅዱስ ጊዮርጊስ"
     },
     "sidebar": {
       "social_title": "ይከተሉን",
@@ -249,7 +256,7 @@
       "uppdrag_title": "ተልእኮ",
       "uppdrag_text": "የኢትዮጵያ ኦርቶዶክስ ተዋሕዶ እምነትን በስርዓተ አምልኮ፣ በትምህርትና በኅብረት መጠበቅና ለቀጣዩ ትውልድ ማስተላለፍ።",
       "kyrka_title": "ቤተክርስቲያናችን",
-      "kyrka_text": "ደብረ ኃይል ቅዱስ ገብርኤል የተመሠረተችው በጎተቦርግ የሚኖሩ የኢትዮጵያ ኦርቶዶክስ ተዋሕዶ ምዕመናን የሚሰበሰቡበት፣ የሚጸልዩበትና በጋራ የሚያከብሩበት ቦታ ለመስጠት ነው።",
+      "kyrka_text": "ደብረ ኃይል ቅዱስ ገብርኤል እና ቅዱስ ጊዮርጊስ የተመሠረተችው በጎተቦርግ የሚኖሩ የኢትዮጵያ ኦርቶዶክስ ተዋሕዶ ምዕመናን የሚሰበሰቡበት፣ የሚጸልዩበትና በጋራ የሚያከብሩበት ቦታ ለመስጠት ነው።",
       "tab_vision": "ራዕይ",
       "tab_uppdrag": "ተልእኮ",
       "tab_varderingar": "እሴቶች",
@@ -273,7 +280,9 @@
       "filter_hogtider": "በዓላት",
       "filter_kor": "መዘምራን",
       "filter_barn": "ልጆችና ቤተሰብ",
-      "filter_gemenskap": "ኅብረት"
+      "filter_gemenskap": "ኅብረት",
+      "see_all_btn": "ሙሉውን ማዕከለ ስዕላት ይመልከቱ ›",
+      "page_title": "ማዕከለ ስዕላት – ደብረ ኃይል ቅዱስ ገብርኤል እና ቅዱስ ጊዮርጊስ"
     },
     "schedule": {
       "section_title": "ስርዓተ አምልኮ",
@@ -304,7 +313,7 @@
       "privacy_note": "መረጃዎን በጥንቃቄ እንይዛለን እና ለሶስተኛ ወገን በፍጹም አናጋራም።"
     },
     "footer": {
-      "copyright": "© 2026 ደብረ ኃይል ቅዱስ ገብርኤል የኢትዮጵያ ኦርቶዶክስ ተዋሕዶ ቤተክርስቲያን። ሁሉም መብቶች የተጠበቁ ናቸው።"
+      "copyright": "© 2026 ደብረ ኃይል ቅዱስ ገብርኤል እና ቅዱስ ጊዮርጊስ የኢትዮጵያ ኦርቶዶክስ ተዋሕዶ ቤተክርስቲያን። ሁሉም መብቶች የተጠበቁ ናቸው።"
     },
     "modal": {
       "title": "ሰው ጨምር",
@@ -325,6 +334,9 @@
       "legend_feast": "በዓል (ዓመታዊ/ወርሃዊ)",
       "legend_fasting": "የጾም ቀን",
       "disclaimer": "ቀኖቹ በራስ-ሰር የተሰሉ አመላካቾች ናቸው – ለዋና ዋና በዓላት ከካህኑ ጋር ያረጋግጡ።"
+    },
+    "common": {
+      "back_home": "‹ ወደ መነሻ ገጽ"
     }
   }
 }

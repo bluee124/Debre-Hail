@@ -28,7 +28,6 @@ body {
   color: #2a2320;
   font-family: var(--font-body);
   line-height: 1.6;
-  padding-top: 96px; /* topbar + sticky header height */
 }
 
 body.lang-am {
@@ -66,6 +65,28 @@ button { font-family: inherit; cursor: pointer; }
   margin: 0 auto 2.5em;
 }
 
+/* Standalone page header (nyheter.html, galleri.html) */
+.page-header {
+  background: var(--gold-bg);
+  border-bottom: 1px solid var(--border);
+  padding: 3rem 0 2.5rem;
+  text-align: center;
+}
+.page-header h1 {
+  font-size: 2.4rem;
+  margin-bottom: 0.3em;
+}
+.back-home-link {
+  display: inline-block;
+  margin-top: 0.5em;
+  color: var(--crimson);
+  font-weight: 600;
+}
+.back-home-link:hover { text-decoration: underline; }
+.page-content { padding: 3.5rem 0; }
+.news-full-list { max-width: 780px; margin: 0 auto; }
+.news-full-list .news-preview-card { scroll-margin-top: 20px; }
+
 .btn {
   display: inline-block;
   padding: 0.7em 1.6em;
@@ -93,11 +114,6 @@ button { font-family: inherit; cursor: pointer; }
   background: var(--crimson-dk);
   color: #f0e6d8;
   font-size: 0.85rem;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 210;
 }
 .topbar-inner {
   display: flex;
@@ -132,49 +148,55 @@ button { font-family: inherit; cursor: pointer; }
 }
 
 /* ==========================================================================
-   2. Sticky Header
+   2. Header: centered identity band + nav bar (scrolls with the page)
    ========================================================================== */
-.site-header {
+.brand-band {
+  background: var(--cream);
+  border-bottom: 1px solid var(--border);
+  padding: 20px 0;
+}
+.brand-band-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+}
+.logo-side {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #fff;
+  border: 3px solid var(--gold);
+  flex-shrink: 0;
+}
+.brand-center { text-align: center; display: flex; flex-direction: column; }
+.brand-name {
+  font-family: var(--font-head);
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: var(--crimson);
+  line-height: 1.2;
+}
+body.lang-am .brand-name { font-size: 1.5rem; }
+.brand-sub {
+  font-size: 1rem;
+  color: var(--crimson-lt);
+  margin-top: 4px;
+}
+
+.main-nav-bar {
   background: var(--crimson);
   border-bottom: 3px solid var(--gold);
-  position: fixed;
-  top: 34px;
-  left: 0;
-  right: 0;
-  z-index: 200;
+  position: relative;
+  z-index: 50;
 }
 .header-inner {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   padding-top: 10px;
   padding-bottom: 10px;
-}
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  color: #fff;
-}
-.logo {
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
-  object-fit: cover;
-  background: #fff;
-  border: 2px solid var(--gold);
-}
-.brand-text { display: flex; flex-direction: column; line-height: 1.2; }
-.brand-name {
-  font-family: var(--font-head);
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: #fff;
-}
-body.lang-am .brand-name { font-size: 1.15rem; }
-.brand-sub {
-  font-size: 0.78rem;
-  color: var(--gold-lt);
 }
 
 .hamburger {
@@ -195,7 +217,9 @@ body.lang-am .brand-name { font-size: 1.15rem; }
 .main-nav {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 4px;
+  flex-wrap: wrap;
 }
 .nav-link {
   color: #f0e6d8;
@@ -221,6 +245,14 @@ body.lang-am .brand-name { font-size: 1.15rem; }
 }
 .lang-toggle:hover { background: rgba(255,255,255,0.22); }
 
+@media (max-width: 640px) {
+  .logo-side { width: 64px; height: 64px; }
+  .brand-band-inner { gap: 14px; }
+  .brand-name { font-size: 1.3rem; }
+  body.lang-am .brand-name { font-size: 1.1rem; }
+  .brand-sub { font-size: 0.85rem; }
+}
+
 /* ==========================================================================
    3. Hero Slider
    ========================================================================== */
@@ -230,7 +262,6 @@ body.lang-am .brand-name { font-size: 1.15rem; }
   min-height: 480px;
   max-height: 780px;
   overflow: hidden;
-  margin-top: -96px;
 }
 .slider { position: relative; width: 100%; height: 100%; }
 .slide {
@@ -312,7 +343,7 @@ body.lang-am .brand-name { font-size: 1.15rem; }
 
 .info-card {
   position: absolute;
-  top: 116px;
+  top: 24px;
   right: 24px;
   z-index: 3;
   background: rgba(20,0,0,0.55);
@@ -352,7 +383,7 @@ body.lang-am .brand-name { font-size: 1.15rem; }
   align-items: start;
 }
 
-.news-item {
+.news-preview-card {
   display: flex;
   gap: 16px;
   background: #fff;
@@ -377,22 +408,14 @@ body.lang-am .brand-name { font-size: 1.15rem; }
 .news-date { color: var(--gold); font-weight: 700; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.04em; }
 .news-body h3 { margin: 0.2em 0 0.4em; font-size: 1.25rem; }
 .news-excerpt { margin: 0 0 0.6em; color: #55483f; }
-.news-full {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.4s ease;
-  color: #55483f;
-}
-.news-item.open .news-full { max-height: 400px; }
-.news-full p { margin: 0.6em 0 0; }
+.news-full p { margin: 0.6em 0 0; color: #55483f; }
 .news-toggle {
-  background: none;
-  border: none;
+  display: inline-block;
   color: var(--crimson);
   font-weight: 700;
-  padding: 0.4em 0 0;
 }
 .news-toggle:hover { text-decoration: underline; }
+.see-all-btn { display: block; text-align: center; margin: 0 auto; width: fit-content; }
 
 .sidebar-card {
   background: var(--gold-bg);
@@ -617,6 +640,24 @@ body.lang-am .brand-name { font-size: 1.15rem; }
 
 @media (max-width: 700px) {
   .gallery-grid { columns: 2 160px; }
+}
+
+.gallery-grid-preview {
+  columns: initial;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.gallery-grid-preview .gallery-item {
+  height: 200px;
+  cursor: default;
+  margin-bottom: 0;
+}
+.gallery-grid-preview .gallery-item:hover .tile-overlay { opacity: 1; }
+.gallery-preview-cta { text-align: center; margin-top: 2rem; }
+
+@media (max-width: 700px) {
+  .gallery-grid-preview { grid-template-columns: repeat(2, 1fr); }
 }
 
 /* Lightbox */
@@ -958,9 +999,9 @@ body.lang-am .brand-name { font-size: 1.15rem; }
    Responsive header / mobile nav
    ========================================================================== */
 @media (max-width: 900px) {
-  body { padding-top: 82px; }
   .topbar { display: none; }
   .hamburger { display: flex; }
+  .header-inner { justify-content: space-between; }
   .main-nav {
     position: absolute;
     top: 100%;
@@ -969,14 +1010,17 @@ body.lang-am .brand-name { font-size: 1.15rem; }
     background: var(--crimson-dk);
     flex-direction: column;
     align-items: stretch;
-    padding: 10px 20px 20px;
-    gap: 8px;
+    padding: 0 20px;
+    gap: 0;
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.35s ease;
+    transition: max-height 0.35s ease, padding 0.35s ease;
   }
-  .main-nav.open { max-height: 500px; }
+  .main-nav.open {
+    max-height: 500px;
+    padding: 10px 20px 20px;
+    gap: 8px;
+  }
   .nav-link { text-align: center; }
   .lang-toggle { margin: 10px auto 0; }
-  .site-header { top: 0; }
 }

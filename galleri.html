@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title data-i18n="gallery.page_title">Galleri</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Source+Sans+3:wght@400;500;600;700&family=Noto+Sans+Ethiopic:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- 1. Topbar -->
+<div class="topbar">
+  <div class="topbar-inner container">
+    <div class="topbar-left">
+      <span class="topbar-item">📍 <span data-i18n="topbar.address"></span></span>
+      <span class="topbar-item">✉ <a href="mailto:info@debrehail.se" data-i18n="topbar.email"></a></span>
+      <span class="topbar-item">☎ <a href="tel:+46700000000" data-i18n="topbar.phone"></a></span>
+    </div>
+    <div class="topbar-right">
+      <a class="btn-social instagram" href="https://instagram.com/ÄNDRA_TILL_ER_PROFIL" target="_blank" rel="noopener">Instagram</a>
+      <a class="btn-social tiktok" href="https://tiktok.com/@ÄNDRA_TILL_ER_PROFIL" target="_blank" rel="noopener">TikTok</a>
+    </div>
+  </div>
+</div>
+
+<!-- 2. Header: centered identity band + nav bar -->
+<header class="site-header">
+  <div class="brand-band">
+    <div class="brand-band-inner container">
+      <img src="images/logo.png" alt="S:t Georgis" class="logo-side">
+      <a href="index.html#hem" class="brand-center">
+        <span class="brand-name" data-i18n="header.name"></span>
+        <span class="brand-sub" data-i18n="header.subtitle"></span>
+      </a>
+      <img src="images/logo2.png" alt="S:t Gabriel" class="logo-side">
+    </div>
+  </div>
+  <nav class="main-nav-bar">
+    <div class="header-inner container">
+      <button class="hamburger" id="hamburgerBtn" aria-label="Meny" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="main-nav" id="mainNav">
+        <a href="index.html#hem" class="nav-link" data-nav="hem" data-i18n="nav.hem"></a>
+        <a href="nyheter.html" class="nav-link" data-nav="nyheter" data-i18n="nav.nyheter"></a>
+        <a href="index.html#gudstjanster" class="nav-link" data-nav="gudstjanster" data-i18n="nav.gudstjanster"></a>
+        <a href="galleri.html" class="nav-link active" data-nav="galleri" data-i18n="nav.galleri"></a>
+        <a href="index.html#om" class="nav-link" data-nav="om" data-i18n="nav.om"></a>
+        <a href="index.html#kontakt" class="nav-link" data-nav="kontakt" data-i18n="nav.kontakt"></a>
+        <button class="lang-toggle" id="langToggle" type="button"></button>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<!-- Page header -->
+<section class="page-header">
+  <div class="container">
+    <h1 data-i18n="gallery.section_title"></h1>
+    <a href="index.html" class="back-home-link" data-i18n="common.back_home"></a>
+  </div>
+</section>
+
+<!-- Full gallery -->
+<section class="page-content">
+  <div class="container">
+    <div class="gallery-filters">
+      <button class="filter-btn active" data-filter="all" data-i18n="gallery.filter_all"></button>
+      <button class="filter-btn" data-filter="gudstjanster" data-i18n="gallery.filter_gudstjanster"></button>
+      <button class="filter-btn" data-filter="hogtider" data-i18n="gallery.filter_hogtider"></button>
+      <button class="filter-btn" data-filter="kor" data-i18n="gallery.filter_kor"></button>
+      <button class="filter-btn" data-filter="barn" data-i18n="gallery.filter_barn"></button>
+      <button class="filter-btn" data-filter="gemenskap" data-i18n="gallery.filter_gemenskap"></button>
+    </div>
+
+    <div class="gallery-grid" id="galleryGrid">
+      <div class="gallery-item tile-1" data-cat="gudstjanster" data-title-sv="Söndagens Högmässa" data-title-am="የእሑድ ቅዳሴ"><span class="tile-emoji">⛪</span><div class="tile-overlay"><span class="tile-title"></span></div></div>
+      <div class="gallery-item tile-2" data-cat="gudstjanster" data-title-sv="Rökelseoffer" data-title-am="የዕጣን ስርዓት"><span class="tile-emoji">🕯️</span><div class="tile-overlay"><span class="tile-title"></span></div></div>
+      <div class="gallery-item tile-3" data-cat="gudstjanster" data-title-sv="Diakonernas tjänst" data-title-am="የዲያቆናት አገልግሎት"><span class="tile-emoji">📖</span><div class="tile-overlay"><span class="tile-title"></span></div></div>
+      <div class="gallery-item tile-4" data-cat="hogtider" data-title-sv="Fasika-firande" data-title-am="የፋሲካ በዓል"><span class="tile-emoji">✝️</span><div class="tile-overlay"><span class="tile-title"></span></div></div>
+      <div class="gallery-item tile-5" data-cat="hogtider" data-title-sv="Timkat-processionen" data-title-am="የጥምቀት ሰልፍ"><span class="tile-emoji">💧</span><div class="tile-overlay"><span class="tile-title"></span></div></div>
+      <div class="gallery-item tile-6" data-cat="hogtider" data-title-sv="Genna – Jul" data-title-am="ገና"><span class="tile-emoji">⭐</span><div class="tile-overlay"><span class="tile-title"></span></div></div>
+      <div class="gallery-item tile-7" data-cat="hogtider" data-title-sv="Meskel-firande" data-title-am="የመስቀል በዓል"><span class="tile-emoji">🔥</span><div class="tile-overlay"><span class="tile-title"></span></div></div>
+      <div class="gallery-item tile-8" data-cat="kor" data-title-sv="Kyrkokören sjunger" data-title-am="የቤተክርስቲያን መዘምራን"><span class="tile-emoji">🎶</span><div class="tile-overlay"><span class="tile-title"></span></div></div>
+      <div class="gallery-item tile-9" data-cat="kor" data-title-sv="Unga sångare" data-title-am="ወጣት ዘማሪያን"><span class="tile-emoji">🎤</span><div class="tile-overlay"><span class="tile-title"></span></div></div>
+      <div class="gallery-item tile-10" data-cat="kor" data-title-sv="Övning inför högtid" data-title-am="ለበዓል ዝግጅት ልምምድ"><span class="tile-emoji">🎼</span><div class="tile-overlay"><span class="tile-title"></span></div></div>
+      <div class="gallery-item tile-11" data-cat="barn" data-title-sv="Söndagsskolan" data-title-am="የሰንበት ትምህርት ቤት"><span class="tile-emoji">📚</span><div class="tile-overlay"><span class="tile-title"></span></div></div>
+      <div class="gallery-item tile-12" data-cat="barn" data-title-sv="Barnens välsignelse" data-title-am="የልጆች በረከት"><span class="tile-emoji">🙏</span><div class="tile-overlay"><span class="tile-title"></span></div></div>
+      <div class="gallery-item tile-13" data-cat="barn" data-title-sv="Familjedag" data-title-am="የቤተሰብ ቀን"><span class="tile-emoji">👨‍👩‍👧‍👦</span><div class="tile-overlay"><span class="tile-title"></span></div></div>
+      <div class="gallery-item tile-14" data-cat="gemenskap" data-title-sv="Kyrkkaffe" data-title-am="ከቅዳሴ በኋላ ቡና"><span class="tile-emoji">☕</span><div class="tile-overlay"><span class="tile-title"></span></div></div>
+      <div class="gallery-item tile-15" data-cat="gemenskap" data-title-sv="Volontärernas städdag" data-title-am="የበጎ ፈቃደኞች ጽዳት ቀን"><span class="tile-emoji">🧹</span><div class="tile-overlay"><span class="tile-title"></span></div></div>
+      <div class="gallery-item tile-16" data-cat="gemenskap" data-title-sv="Församlingens gemenskap" data-title-am="የምዕመናን ኅብረት"><span class="tile-emoji">🤝</span><div class="tile-overlay"><span class="tile-title"></span></div></div>
+    </div>
+  </div>
+</section>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Stäng">×</button>
+  <button class="lightbox-arrow prev" id="lightboxPrev" aria-label="Föregående">‹</button>
+  <div class="lightbox-content" id="lightboxContent"></div>
+  <button class="lightbox-arrow next" id="lightboxNext" aria-label="Nästa">›</button>
+  <div class="lightbox-counter" id="lightboxCounter"></div>
+</div>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <p data-i18n="footer.copyright"></p>
+    <div class="footer-social">
+      <a class="btn-social instagram" href="https://instagram.com/ÄNDRA_TILL_ER_PROFIL" target="_blank" rel="noopener">Instagram</a>
+      <a class="btn-social tiktok" href="https://tiktok.com/@ÄNDRA_TILL_ER_PROFIL" target="_blank" rel="noopener">TikTok</a>
+    </div>
+  </div>
+</footer>
+
+<button id="scrollTopBtn" class="scroll-top-btn" aria-label="Till toppen">↑</button>
+
+<script src="i18n.js"></script>
+<script src="main.js"></script>
+</body>
+</html>

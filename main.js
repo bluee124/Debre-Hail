@@ -8,7 +8,6 @@ function initAll() {
   initLangToggle();
   initSlider();
   initMobileNav();
-  initNewsExpand();
   initAccordion();
   initAboutTabs();
   initSchedTabs();
@@ -76,20 +75,6 @@ function initMobileNav() {
     link.addEventListener('click', () => {
       nav.classList.remove('open');
       hamburger.setAttribute('aria-expanded', 'false');
-    });
-  });
-}
-
-/* ---------- News expand/collapse ---------- */
-function initNewsExpand() {
-  document.querySelectorAll('.news-item').forEach((item) => {
-    const btn = item.querySelector('.news-toggle');
-    if (!btn) return;
-    btn.addEventListener('click', () => {
-      const open = item.classList.toggle('open');
-      const key = open ? 'news.read_less' : 'news.read_more';
-      btn.setAttribute('data-i18n', key);
-      btn.textContent = window.t(key);
     });
   });
 }
