@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title data-i18n="news.page_title">Nyheter</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Source+Sans+3:wght@400;500;600;700&family=Noto+Sans+Ethiopic:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- 1. Topbar -->
+<div class="topbar">
+  <div class="topbar-inner container">
+    <div class="topbar-left">
+      <span class="topbar-item">📍 <span data-i18n="topbar.address"></span></span>
+      <span class="topbar-item">✉ <a href="mailto:info@debrehail.se" data-i18n="topbar.email"></a></span>
+      <span class="topbar-item">☎ <a href="tel:+46700000000" data-i18n="topbar.phone"></a></span>
+    </div>
+    <div class="topbar-right">
+      <a class="btn-social instagram" href="https://instagram.com/ÄNDRA_TILL_ER_PROFIL" target="_blank" rel="noopener">Instagram</a>
+      <a class="btn-social tiktok" href="https://tiktok.com/@ÄNDRA_TILL_ER_PROFIL" target="_blank" rel="noopener">TikTok</a>
+    </div>
+  </div>
+</div>
+
+<!-- 2. Header: centered identity band + nav bar -->
+<header class="site-header">
+  <div class="brand-band">
+    <div class="brand-band-inner container">
+      <img src="images/logo.png" alt="S:t Georgis" class="logo-side">
+      <a href="index.html#hem" class="brand-center">
+        <span class="brand-name" data-i18n="header.name"></span>
+        <span class="brand-sub" data-i18n="header.subtitle"></span>
+      </a>
+      <img src="images/logo2.png" alt="S:t Gabriel" class="logo-side">
+    </div>
+  </div>
+  <nav class="main-nav-bar">
+    <div class="header-inner container">
+      <button class="hamburger" id="hamburgerBtn" aria-label="Meny" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="main-nav" id="mainNav">
+        <a href="index.html#hem" class="nav-link" data-nav="hem" data-i18n="nav.hem"></a>
+        <a href="nyheter.html" class="nav-link active" data-nav="nyheter" data-i18n="nav.nyheter"></a>
+        <a href="index.html#gudstjanster" class="nav-link" data-nav="gudstjanster" data-i18n="nav.gudstjanster"></a>
+        <a href="galleri.html" class="nav-link" data-nav="galleri" data-i18n="nav.galleri"></a>
+        <a href="index.html#om" class="nav-link" data-nav="om" data-i18n="nav.om"></a>
+        <a href="index.html#kontakt" class="nav-link" data-nav="kontakt" data-i18n="nav.kontakt"></a>
+        <button class="lang-toggle" id="langToggle" type="button"></button>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<!-- Page header -->
+<section class="page-header">
+  <div class="container">
+    <h1 data-i18n="news.section_title"></h1>
+    <p class="section-sub" data-i18n="news.section_sub"></p>
+    <a href="index.html" class="back-home-link" data-i18n="common.back_home"></a>
+  </div>
+</section>
+
+<!-- Full news list -->
+<section class="page-content">
+  <div class="container news-full-list">
+
+    <article class="news-preview-card" id="article-1">
+      <div class="news-icon">📰</div>
+      <div class="news-body">
+        <span class="news-date" data-i18n="news.article1_date"></span>
+        <h3 data-i18n="news.article1_title"></h3>
+        <p class="news-excerpt" data-i18n="news.article1_excerpt"></p>
+        <div class="news-full"><p data-i18n="news.article1_full"></p></div>
+      </div>
+    </article>
+
+    <article class="news-preview-card" id="article-2">
+      <div class="news-icon">📰</div>
+      <div class="news-body">
+        <span class="news-date" data-i18n="news.article2_date"></span>
+        <h3 data-i18n="news.article2_title"></h3>
+        <p class="news-excerpt" data-i18n="news.article2_excerpt"></p>
+        <div class="news-full"><p data-i18n="news.article2_full"></p></div>
+      </div>
+    </article>
+
+    <article class="news-preview-card" id="article-3">
+      <div class="news-icon">📰</div>
+      <div class="news-body">
+        <span class="news-date" data-i18n="news.article3_date"></span>
+        <h3 data-i18n="news.article3_title"></h3>
+        <p class="news-excerpt" data-i18n="news.article3_excerpt"></p>
+        <div class="news-full"><p data-i18n="news.article3_full"></p></div>
+      </div>
+    </article>
+
+    <article class="news-preview-card" id="article-4">
+      <div class="news-icon">📰</div>
+      <div class="news-body">
+        <span class="news-date" data-i18n="news.article4_date"></span>
+        <h3 data-i18n="news.article4_title"></h3>
+        <p class="news-excerpt" data-i18n="news.article4_excerpt"></p>
+        <div class="news-full"><p data-i18n="news.article4_full"></p></div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <p data-i18n="footer.copyright"></p>
+    <div class="footer-social">
+      <a class="btn-social instagram" href="https://instagram.com/ÄNDRA_TILL_ER_PROFIL" target="_blank" rel="noopener">Instagram</a>
+      <a class="btn-social tiktok" href="https://tiktok.com/@ÄNDRA_TILL_ER_PROFIL" target="_blank" rel="noopener">TikTok</a>
+    </div>
+  </div>
+</footer>
+
+<button id="scrollTopBtn" class="scroll-top-btn" aria-label="Till toppen">↑</button>
+
+<script src="i18n.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
