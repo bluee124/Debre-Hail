@@ -4,20 +4,121 @@
 
 document.addEventListener('i18n:ready', initAll);
 
-function initAll() {
+async function initAll() {
   initLangToggle();
   initSlider();
   initMobileNav();
   initAccordion();
   initAboutTabs();
   initSchedTabs();
-  initGallery();
+  initContactTabs();
   initCounters();
-  initContactForm();
+  initForms();
   initScrollTop();
   initActiveNav();
   initLeadershipModal();
+  initDonationPage();
+
+  await Promise.all([loadGalleryData(), loadNewsData()]);
+  initGallery();
 }
+
+function escapeHtml(str) {
+  const div = document.createElement('div');
+  div.textContent = str == null ? '' : str;
+  return div.innerHTML;
+}
+
+/* ---------- Gallery data (content/gallery.json) ---------- */
+function renderGalleryTile(item) {
+  const hasImage = Boolean(item.image);
+  const style = hasImage
+    ? ` style="background-image:url('${item.image}');background-size:cover;background-position:center;"`
+    : '';
+  const cls = hasImage ? '' : ` ${item.gradient || ''}`;
+  const emoji = hasImage ? '' : `<span class="tile-emoji">${item.emoji || ''}</span>`;
+  const title = window.currentLang === 'am' ? item.title_am : item.title_sv;
+
+  return `<div class="gallery-item${cls}" data-cat="${item.category}" data-title-sv="${escapeHtml(item.title_sv)}" data-title-am="${escapeHtml(item.title_am)}"${style}>${emoji}<div class="tile-overlay"><span class="tile-title">${escapeHtml(title)}</span></div></div>`;
+}
+
+async function loadGalleryData() {
+  const fullGrid = document.getElementById('galleryGrid');
+  const previewGrid = document.querySelector('.gallery-grid-preview');
+  if (!fullGrid && !previewGrid) return;
+
+  try {
+    const { items } = await fetch('content/gallery.json').then((res) => res.json());
+    if (fullGrid) fullGrid.innerHTML = items.map(renderGalleryTile).join('');
+    if (previewGrid) previewGrid.innerHTML = items.slice(0, 6).map(renderGalleryTile).join('');
+  } catch (err) {
+    console.error('Kunde inte ladda content/gallery.json', err);
+  }
+}
+
+/* ---------- News data (content/news.json) ---------- */
+function renderNewsPreviewCard(item) {
+  const date = window.currentLang === 'am' ? item.date_am : item.date_sv;
+  const title = window.currentLang === 'am' ? item.title_am : item.title_sv;
+  const excerpt = window.currentLang === 'am' ? item.excerpt_am : item.excerpt_sv;
+  return `
+    <article class="news-preview-card">
+      <div class="news-icon">📰</div>
+      <div class="news-body">
+        <span class="news-date">${escapeHtml(date)}</span>
+        <h3>${escapeHtml(title)}</h3>
+        <p class="news-excerpt">${escapeHtml(excerpt)}</p>
+        <a class="news-toggle" href="nyheter.html#${item.id}" data-i18n="news.read_more">${window.t('news.read_more')}</a>
+      </div>
+    </article>`;
+}
+
+function renderNewsFullCard(item) {
+  const date = window.currentLang === 'am' ? item.date_am : item.date_sv;
+  const title = window.currentLang === 'am' ? item.title_am : item.title_sv;
+  const excerpt = window.currentLang === 'am' ? item.excerpt_am : item.excerpt_sv;
+  const body = window.currentLang === 'am' ? item.body_am : item.body_sv;
+  return `
+    <article class="news-preview-card" id="${item.id}">
+      <div class="news-icon">📰</div>
+      <div class="news-body">
+        <span class="news-date">${escapeHtml(date)}</span>
+        <h3>${escapeHtml(title)}</h3>
+        <p class="news-excerpt">${escapeHtml(excerpt)}</p>
+        <div class="news-full"><p>${escapeHtml(body)}</p></div>
+      </div>
+    </article>`;
+}
+
+async function loadNewsData() {
+  const previewList = document.getElementById('newsFeedList');
+  const fullList = document.getElementById('newsFullList');
+  if (!previewList && !fullList) return;
+
+  try {
+    const { items } = await fetch('content/news.json').then((res) => res.json());
+    if (previewList) previewList.innerHTML = items.slice(0, 4).map(renderNewsPreviewCard).join('');
+    if (fullList) {
+      fullList.innerHTML = items.map(renderNewsFullCard).join('');
+      // The browser tries to scroll to the #article-N anchor before this async
+      // render finishes, so the target doesn't exist yet — do it manually.
+      if (window.location.hash) {
+        const target = document.querySelector(window.location.hash);
+        if (target) target.scrollIntoView();
+      }
+    }
+  } catch (err) {
+    console.error('Kunde inte ladda content/news.json', err);
+  }
+}
+
+/* Re-render language-baked content (gallery/news) on toggle, since their
+   text is written directly into the generated HTML rather than via data-i18n. */
+document.addEventListener('dh:langchange', async () => {
+  await loadGalleryData();
+  initGallery();
+  await loadNewsData();
+});
 
 function initLangToggle() {
   const btn = document.getElementById('langToggle');
@@ -111,6 +212,20 @@ function initSchedTabs() {
       document.querySelectorAll('.sched-panel').forEach((p) => p.classList.remove('active'));
       btn.classList.add('active');
       const panel = document.querySelector(`.sched-panel[data-sched-panel="${btn.dataset.schedTab}"]`);
+      if (panel) panel.classList.add('active');
+    });
+  });
+}
+
+/* ---------- Kontakt tabs (Allmänt / Bönebegäran / Sakrament) ---------- */
+function initContactTabs() {
+  const buttons = document.querySelectorAll('.contact-tab-btn');
+  buttons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      buttons.forEach((b) => b.classList.remove('active'));
+      document.querySelectorAll('.contact-tab-panel').forEach((p) => p.classList.remove('active'));
+      btn.classList.add('active');
+      const panel = document.querySelector(`.contact-tab-panel[data-contact-panel="${btn.dataset.contactTab}"]`);
       if (panel) panel.classList.add('active');
     });
   });
@@ -210,28 +325,54 @@ function initCounters() {
   counters.forEach((c) => observer.observe(c));
 }
 
-/* ---------- Contact form (simulated submit) ---------- */
-function initContactForm() {
-  const form = document.getElementById('contactForm');
-  const msg = document.getElementById('formMsg');
-  if (!form) return;
+/* ---------- Forms (Formspree submit) ----------
+   Every form on the site (contact, membership, prayer/sacrament requests,
+   event RSVP) shares this one handler: client-side validation, then a real
+   POST to Formspree via fetch so the page never reloads. Mark a form with
+   data-simple-form and give it a `.form-msg` element to use it. */
+function initSimpleForm(form) {
+  const msg = form.querySelector('.form-msg');
+  if (!msg) return;
 
-  form.addEventListener('submit', (e) => {
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
-    const name = document.getElementById('contactName').value.trim();
-    const email = document.getElementById('contactEmail').value.trim();
-    const message = document.getElementById('contactMessage').value.trim();
-    const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
-    if (!name || !emailOk || !message) {
+    let valid = true;
+    form.querySelectorAll('[required]').forEach((input) => {
+      if (input.type === 'checkbox') {
+        if (!input.checked) valid = false;
+      } else if (input.type === 'email') {
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(input.value.trim())) valid = false;
+      } else if (!input.value.trim()) {
+        valid = false;
+      }
+    });
+
+    if (!valid) {
       msg.textContent = window.t('contact.error_msg');
       msg.className = 'form-msg error';
       return;
     }
-    msg.textContent = window.t('contact.success_msg');
-    msg.className = 'form-msg success';
-    form.reset();
+
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { Accept: 'application/json' },
+      });
+      if (!response.ok) throw new Error('Formspree responded with an error');
+      msg.textContent = window.t('contact.success_msg');
+      msg.className = 'form-msg success';
+      form.reset();
+    } catch (err) {
+      msg.textContent = window.t('contact.error_msg');
+      msg.className = 'form-msg error';
+    }
   });
+}
+
+function initForms() {
+  document.querySelectorAll('form[data-simple-form]').forEach(initSimpleForm);
 }
 
 /* ---------- Scroll to top ---------- */
@@ -313,4 +454,46 @@ function initLeadershipModal() {
     tierEl.insertBefore(card, addBtn);
     close();
   });
+}
+
+/* ---------- Donation page (donera.html): Swish deep-links + QR ----------
+   Single constant below is the only thing that needs editing once the
+   church's real Swish number is known — every link/QR derives from it. */
+const SWISH_NUMBER = 'ÄNDRA_TILL_ERT_SWISHNUMMER';
+
+function swishLink(amount) {
+  const params = new URLSearchParams({ sw: SWISH_NUMBER, cur: 'SEK', msg: 'Gåva' });
+  if (amount) params.set('amt', amount);
+  return `https://app.swish.nu/1/p/sw/?${params.toString()}`;
+}
+
+function initDonationPage() {
+  const qr = document.getElementById('swishQr');
+  const payBtn = document.getElementById('swishPayBtn');
+  const customAmount = document.getElementById('donateCustomAmount');
+  const amountButtons = document.querySelectorAll('.donate-amount-btn');
+  if (!qr || !payBtn) return;
+
+  qr.src = `https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=${encodeURIComponent(swishLink())}`;
+
+  function updatePayLink() {
+    const amount = customAmount.value.trim();
+    payBtn.href = swishLink(amount || null);
+  }
+
+  amountButtons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      amountButtons.forEach((b) => b.classList.remove('active'));
+      btn.classList.add('active');
+      customAmount.value = btn.dataset.amount;
+      updatePayLink();
+    });
+  });
+
+  customAmount.addEventListener('input', () => {
+    amountButtons.forEach((b) => b.classList.remove('active'));
+    updatePayLink();
+  });
+
+  updatePayLink();
 }

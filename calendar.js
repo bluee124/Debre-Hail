@@ -143,6 +143,54 @@
   let viewYear = todayEthY;
   let viewMonth = todayEthM;
 
+  /* ---------- Events (content/events.json), shared with the Evenemang tab ---------- */
+  let eventsList = [];
+  let eventsByJdn = {};
+
+  async function loadEvents() {
+    try {
+      const { items } = await fetch('content/events.json').then((res) => res.json());
+      eventsList = items;
+      eventsByJdn = {};
+      items.forEach((ev) => {
+        const [y, m, d] = ev.date.split('-').map(Number);
+        eventsByJdn[gregorianToJdn(y, m, d)] = ev;
+      });
+    } catch (err) {
+      console.error('Kunde inte ladda content/events.json', err);
+    }
+  }
+
+  function renderEventsTab() {
+    const list = document.getElementById('eventsUpcomingList');
+    const select = document.getElementById('rsvpEventSelect');
+    if (!list) return;
+    const L = lang();
+
+    const upcoming = eventsList
+      .filter((ev) => {
+        const [y, m, d] = ev.date.split('-').map(Number);
+        return gregorianToJdn(y, m, d) >= todayJdn;
+      })
+      .sort((a, b) => a.date.localeCompare(b.date));
+
+    if (!upcoming.length) {
+      list.innerHTML = `<p class="events-empty">${window.t('events.empty')}</p>`;
+    } else {
+      list.innerHTML = upcoming.map((ev) => `
+        <div class="event-card">
+          <div class="event-date">${ev.date}</div>
+          <h4>${escapeHtml(ev[`title_${L}`])}</h4>
+          <p>${escapeHtml(ev[`desc_${L}`] || '')}</p>
+          <button type="button" class="btn btn-gold event-rsvp-btn" data-event-id="${ev.id}">${window.t('events.rsvp_btn')}</button>
+        </div>`).join('');
+    }
+
+    if (select) {
+      select.innerHTML = upcoming.map((ev) => `<option value="${ev.id}">${escapeHtml(ev[`title_${L}`])} — ${ev.date}</option>`).join('');
+    }
+  }
+
   /* ---------- Rendering ---------- */
   function lang() {
     return window.currentLang === 'am' ? 'am' : 'sv';
@@ -219,17 +267,19 @@
       const wd = weekdayOf(jdn);
       const info = dayInfo(jdn, viewMonth, d, moveable, apostlesFastEnd);
       const isToday = jdn === todayJdn;
+      const hasEvent = Boolean(eventsByJdn[jdn]);
 
       const classes = ['eo-cell'];
       if (wd === 0) classes.push('is-sunday');
       if (info.feast) classes.push('is-feast');
       else if (info.fasting) classes.push('is-fasting');
       if (isToday) classes.push('is-today');
+      if (hasEvent) classes.push('has-event');
 
       const label = info.feast ? `<span class="eo-cell-label">${info.feast[L]}</span>` : '';
 
       html += `
-        <div class="${classes.join(' ')}">
+        <div class="${classes.join(' ')}" data-jdn="${jdn}">
           <span class="eo-cell-day">${d}</span>
           <span class="eo-cell-greg">${gd}/${gm}</span>
           ${label}
@@ -246,7 +296,74 @@
     render();
   }
 
-  function init() {
+  /* ---------- Day-detail modal (tap any cell, key on mobile where the
+     inline feast label is hidden for space) ---------- */
+  function showDayModal(jdn) {
+    const modal = document.getElementById('eoDayModal');
+    if (!modal) return;
+    const L = lang();
+    const [ethY, ethM, ethD] = jdnToEthiopic(jdn);
+    const [gy, gm, gd] = jdnToGregorian(jdn);
+    const moveable = moveableEventsForEthYear(ethY);
+    const apostlesFastEnd = ethiopicToJdn(ethY, 11, 4);
+    const info = dayInfo(jdn, ethM, ethD, moveable, apostlesFastEnd);
+    const event = eventsByJdn[jdn];
+
+    document.getElementById('eoDayModalTitle').textContent = `${MONTHS[L][ethM - 1]} ${ethD}, ${ethY}`;
+    document.getElementById('eoDayModalGreg').textContent = `${gd}/${gm}/${gy}`;
+
+    const feastEl = document.getElementById('eoDayModalFeast');
+    if (info.feast) {
+      feastEl.textContent = info.feast[L];
+      feastEl.style.display = '';
+    } else if (info.fasting) {
+      feastEl.textContent = window.t('calendar.legend_fasting');
+      feastEl.style.display = '';
+    } else {
+      feastEl.textContent = '';
+      feastEl.style.display = 'none';
+    }
+
+    const eventEl = document.getElementById('eoDayModalEvent');
+    if (event) {
+      eventEl.textContent = `${event[`title_${L}`]}${event[`desc_${L}`] ? ' — ' + event[`desc_${L}`] : ''}`;
+      eventEl.style.display = '';
+    } else {
+      eventEl.textContent = '';
+      eventEl.style.display = 'none';
+    }
+
+    modal.classList.add('open');
+  }
+
+  function initDayModal() {
+    const modal = document.getElementById('eoDayModal');
+    const closeBtn = document.getElementById('eoDayModalClose');
+    const grid = document.getElementById('eoCalGrid');
+    if (!modal || !grid) return;
+
+    grid.addEventListener('click', (e) => {
+      const cell = e.target.closest('.eo-cell');
+      if (!cell || cell.classList.contains('eo-cell-empty')) return;
+      showDayModal(parseInt(cell.dataset.jdn, 10));
+    });
+    closeBtn.addEventListener('click', () => modal.classList.remove('open'));
+    modal.addEventListener('click', (e) => { if (e.target === modal) modal.classList.remove('open'); });
+  }
+
+  function initEventsTab() {
+    const list = document.getElementById('eventsUpcomingList');
+    if (!list) return;
+    list.addEventListener('click', (e) => {
+      const btn = e.target.closest('.event-rsvp-btn');
+      if (!btn) return;
+      const select = document.getElementById('rsvpEventSelect');
+      if (select) select.value = btn.dataset.eventId;
+      document.getElementById('rsvpForm').scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+  }
+
+  async function init() {
     const prevBtn = document.getElementById('eoCalPrev');
     const nextBtn = document.getElementById('eoCalNext');
     const todayBtn = document.getElementById('eoCalTodayBtn');
@@ -270,9 +387,17 @@
       if (y) { viewYear = y; render(); }
     });
 
+    initDayModal();
+    initEventsTab();
+
+    await loadEvents();
     render();
+    renderEventsTab();
   }
 
   document.addEventListener('i18n:ready', init);
-  document.addEventListener('dh:langchange', render);
+  document.addEventListener('dh:langchange', () => {
+    render();
+    renderEventsTab();
+  });
 })();

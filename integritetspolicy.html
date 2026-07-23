@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title data-i18n="gallery.page_title">Galleri</title>
+<title data-i18n="privacy.page_title">Integritetspolicy</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Source+Sans+3:wght@400;500;600;700&family=Noto+Sans+Ethiopic:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -26,7 +26,7 @@
   </div>
 </div>
 
-<!-- 2. Header: centered identity band + nav bar -->
+<!-- 2. Header -->
 <header class="site-header">
   <div class="brand-band">
     <div class="brand-band-inner container">
@@ -47,7 +47,7 @@
         <a href="index.html#hem" class="nav-link" data-nav="hem" data-i18n="nav.hem"></a>
         <a href="nyheter.html" class="nav-link" data-nav="nyheter" data-i18n="nav.nyheter"></a>
         <a href="index.html#gudstjanster" class="nav-link" data-nav="gudstjanster" data-i18n="nav.gudstjanster"></a>
-        <a href="galleri.html" class="nav-link active" data-nav="galleri" data-i18n="nav.galleri"></a>
+        <a href="galleri.html" class="nav-link" data-nav="galleri" data-i18n="nav.galleri"></a>
         <a href="bli-medlem.html" class="nav-link" data-nav="medlem" data-i18n="nav.medlem"></a>
         <a href="index.html#om" class="nav-link" data-nav="om" data-i18n="nav.om"></a>
         <a href="index.html#kontakt" class="nav-link" data-nav="kontakt" data-i18n="nav.kontakt"></a>
@@ -61,34 +61,35 @@
 <!-- Page header -->
 <section class="page-header">
   <div class="container">
-    <h1 data-i18n="gallery.section_title"></h1>
+    <h1 data-i18n="privacy.heading"></h1>
     <a href="index.html" class="back-home-link" data-i18n="common.back_home"></a>
   </div>
 </section>
 
-<!-- Full gallery -->
+<!-- Content -->
 <section class="page-content">
-  <div class="container">
-    <div class="gallery-filters">
-      <button class="filter-btn active" data-filter="all" data-i18n="gallery.filter_all"></button>
-      <button class="filter-btn" data-filter="gudstjanster" data-i18n="gallery.filter_gudstjanster"></button>
-      <button class="filter-btn" data-filter="hogtider" data-i18n="gallery.filter_hogtider"></button>
-      <button class="filter-btn" data-filter="kor" data-i18n="gallery.filter_kor"></button>
-      <button class="filter-btn" data-filter="barn" data-i18n="gallery.filter_barn"></button>
-      <button class="filter-btn" data-filter="gemenskap" data-i18n="gallery.filter_gemenskap"></button>
-    </div>
+  <div class="container legal-content">
+    <p data-i18n="privacy.intro"></p>
 
-    <div class="gallery-grid" id="galleryGrid"><!-- rendered from content/gallery.json by main.js --></div>
+    <h3 data-i18n="privacy.collect_title"></h3>
+    <p data-i18n="privacy.collect_text"></p>
+
+    <h3 data-i18n="privacy.why_title"></h3>
+    <p data-i18n="privacy.why_text"></p>
+
+    <h3 data-i18n="privacy.handling_title"></h3>
+    <p data-i18n="privacy.handling_text"></p>
+
+    <h3 data-i18n="privacy.retention_title"></h3>
+    <p data-i18n="privacy.retention_text"></p>
+
+    <h3 data-i18n="privacy.rights_title"></h3>
+    <p data-i18n="privacy.rights_text"></p>
+
+    <h3 data-i18n="privacy.contact_title"></h3>
+    <p>✉ <span data-i18n="topbar.email"></span></p>
   </div>
 </section>
-
-<div class="lightbox" id="lightbox">
-  <button class="lightbox-close" id="lightboxClose" aria-label="Stäng">×</button>
-  <button class="lightbox-arrow prev" id="lightboxPrev" aria-label="Föregående">‹</button>
-  <div class="lightbox-content" id="lightboxContent"></div>
-  <button class="lightbox-arrow next" id="lightboxNext" aria-label="Nästa">›</button>
-  <div class="lightbox-counter" id="lightboxCounter"></div>
-</div>
 
 <!-- Footer -->
 <footer class="site-footer">

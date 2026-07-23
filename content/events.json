@@ -1,0 +1,20 @@
+{
+  "items": [
+    {
+      "id": "event-1",
+      "date": "2026-08-15",
+      "title_sv": "Höststädning av kyrkan",
+      "title_am": "የቤተክርስቲያን የመኸር ጽዳት",
+      "desc_sv": "Vi samlas för att göra fint inför hösten. Alla händer behövs!",
+      "desc_am": "ለመኸሩ ወቅት ቤተክርስቲያናችንን ለማሳመር እንሰበሰባለን። ሁሉም እጅ ያስፈልጋል!"
+    },
+    {
+      "id": "event-2",
+      "date": "2026-09-06",
+      "title_sv": "Söndagsskolans startdag",
+      "title_am": "የሰንበት ትምህርት ቤት መጀመሪያ ቀን",
+      "desc_sv": "Söndagsskolan för barn och unga drar igång efter Högmässan.",
+      "desc_am": "ለልጆችና ወጣቶች የሰንበት ትምህርት ቤት ከቅዳሴ በኋላ ይጀምራል።"
+    }
+  ]
+}

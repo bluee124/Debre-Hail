@@ -3,6 +3,7 @@
 
 (function () {
   let translations = null;
+  let hasAppliedOnce = false;
   window.currentLang = localStorage.getItem('dh-lang') || 'sv';
 
   function getPath(obj, path) {
@@ -46,7 +47,14 @@
 
     updateLangToggleLabel();
     localStorage.setItem('dh-lang', lang);
-    document.dispatchEvent(new CustomEvent('dh:langchange', { detail: { lang } }));
+
+    // Only notify listeners (calendar re-render, gallery/news re-render) on an
+    // actual language change — not on the initial automatic apply, which
+    // would otherwise race with i18n:ready's own first render.
+    if (hasAppliedOnce) {
+      document.dispatchEvent(new CustomEvent('dh:langchange', { detail: { lang } }));
+    }
+    hasAppliedOnce = true;
   }
 
   window.applyLang = applyLang;

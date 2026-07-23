@@ -48,8 +48,10 @@
         <a href="nyheter.html" class="nav-link" data-nav="nyheter" data-i18n="nav.nyheter"></a>
         <a href="#gudstjanster" class="nav-link" data-nav="gudstjanster" data-i18n="nav.gudstjanster"></a>
         <a href="galleri.html" class="nav-link" data-nav="galleri" data-i18n="nav.galleri"></a>
+        <a href="bli-medlem.html" class="nav-link" data-nav="medlem" data-i18n="nav.medlem"></a>
         <a href="#om" class="nav-link" data-nav="om" data-i18n="nav.om"></a>
         <a href="#kontakt" class="nav-link" data-nav="kontakt" data-i18n="nav.kontakt"></a>
+        <a href="donera.html" class="nav-link donate-btn" data-nav="donera" data-i18n="nav.donera"></a>
         <button class="lang-toggle" id="langToggle" type="button"></button>
       </div>
     </div>
@@ -113,47 +115,7 @@
 
     <div class="news-grid">
       <div class="news-feed">
-
-        <article class="news-preview-card">
-          <div class="news-icon">📰</div>
-          <div class="news-body">
-            <span class="news-date" data-i18n="news.article1_date"></span>
-            <h3 data-i18n="news.article1_title"></h3>
-            <p class="news-excerpt" data-i18n="news.article1_excerpt"></p>
-            <a class="news-toggle" href="nyheter.html#article-1" data-i18n="news.read_more"></a>
-          </div>
-        </article>
-
-        <article class="news-preview-card">
-          <div class="news-icon">📰</div>
-          <div class="news-body">
-            <span class="news-date" data-i18n="news.article2_date"></span>
-            <h3 data-i18n="news.article2_title"></h3>
-            <p class="news-excerpt" data-i18n="news.article2_excerpt"></p>
-            <a class="news-toggle" href="nyheter.html#article-2" data-i18n="news.read_more"></a>
-          </div>
-        </article>
-
-        <article class="news-preview-card">
-          <div class="news-icon">📰</div>
-          <div class="news-body">
-            <span class="news-date" data-i18n="news.article3_date"></span>
-            <h3 data-i18n="news.article3_title"></h3>
-            <p class="news-excerpt" data-i18n="news.article3_excerpt"></p>
-            <a class="news-toggle" href="nyheter.html#article-3" data-i18n="news.read_more"></a>
-          </div>
-        </article>
-
-        <article class="news-preview-card">
-          <div class="news-icon">📰</div>
-          <div class="news-body">
-            <span class="news-date" data-i18n="news.article4_date"></span>
-            <h3 data-i18n="news.article4_title"></h3>
-            <p class="news-excerpt" data-i18n="news.article4_excerpt"></p>
-            <a class="news-toggle" href="nyheter.html#article-4" data-i18n="news.read_more"></a>
-          </div>
-        </article>
-
+        <div id="newsFeedList"><!-- rendered from content/news.json by main.js --></div>
         <a href="nyheter.html" class="btn btn-gold see-all-btn" data-i18n="news.see_all_btn"></a>
       </div>
 
@@ -205,6 +167,7 @@
     <div class="sched-tabs">
       <button class="sched-tab-btn active" data-sched-tab="hogtider" data-i18n="schedule.tab_hogtider"></button>
       <button class="sched-tab-btn" data-sched-tab="ordinarie" data-i18n="schedule.tab_ordinarie"></button>
+      <button class="sched-tab-btn" data-sched-tab="evenemang" data-i18n="schedule.tab_evenemang"></button>
     </div>
 
     <div class="sched-panel active" data-sched-panel="hogtider">
@@ -265,6 +228,33 @@
       </div>
       <p class="location-note" data-i18n="schedule.location_note"></p>
     </div>
+
+    <div class="sched-panel" data-sched-panel="evenemang">
+      <div id="eventsUpcomingList" class="events-list"><!-- rendered from content/events.json by calendar.js --></div>
+
+      <div class="rsvp-form-wrap">
+        <h3 data-i18n="events.rsvp_title"></h3>
+        <form id="rsvpForm" data-simple-form action="https://formspree.io/f/ÄNDRA_TILL_ER_FORMSPREE_ID" method="POST" novalidate>
+          <input type="hidden" name="_subject" value="Ny anmälan till evenemang">
+          <label for="rsvpEventSelect" data-i18n="events.rsvp_which"></label>
+          <select id="rsvpEventSelect" name="event" required></select>
+
+          <label for="rsvpName" data-i18n="events.rsvp_name"></label>
+          <input type="text" id="rsvpName" name="name" required>
+
+          <label for="rsvpCount" data-i18n="events.rsvp_count"></label>
+          <input type="number" id="rsvpCount" name="antal" min="1" value="1" required>
+
+          <div class="consent-row">
+            <input type="checkbox" id="rsvpConsent" name="consent" required>
+            <label for="rsvpConsent"><span data-i18n="privacy.consent_label"></span> <a href="integritetspolicy.html" data-i18n="privacy.heading"></a></label>
+          </div>
+
+          <button type="submit" class="btn btn-gold" data-i18n="events.rsvp_submit"></button>
+          <p class="form-msg"></p>
+        </form>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -295,14 +285,7 @@
   <div class="container">
     <h2 class="section-title" data-i18n="gallery.section_title"></h2>
 
-    <div class="gallery-grid gallery-grid-preview">
-      <div class="gallery-item tile-1"><span class="tile-emoji">⛪</span><div class="tile-overlay"><span class="tile-title">Söndagens Högmässa</span></div></div>
-      <div class="gallery-item tile-2"><span class="tile-emoji">🕯️</span><div class="tile-overlay"><span class="tile-title">Rökelseoffer</span></div></div>
-      <div class="gallery-item tile-4"><span class="tile-emoji">✝️</span><div class="tile-overlay"><span class="tile-title">Fasika-firande</span></div></div>
-      <div class="gallery-item tile-5"><span class="tile-emoji">💧</span><div class="tile-overlay"><span class="tile-title">Timkat-processionen</span></div></div>
-      <div class="gallery-item tile-8"><span class="tile-emoji">🎶</span><div class="tile-overlay"><span class="tile-title">Kyrkokören sjunger</span></div></div>
-      <div class="gallery-item tile-14"><span class="tile-emoji">☕</span><div class="tile-overlay"><span class="tile-title">Kyrkkaffe</span></div></div>
-    </div>
+    <div class="gallery-grid gallery-grid-preview"><!-- rendered from content/gallery.json by main.js --></div>
     <div class="gallery-preview-cta">
       <a href="galleri.html" class="btn btn-gold" data-i18n="gallery.see_all_btn"></a>
     </div>
@@ -400,21 +383,94 @@
     </div>
 
     <div class="contact-form-wrap">
-      <h3 data-i18n="contact.form_title"></h3>
-      <form id="contactForm" novalidate>
-        <label for="contactName" data-i18n="contact.label_name"></label>
-        <input type="text" id="contactName" name="name" required>
+      <div class="contact-tabs">
+        <button class="contact-tab-btn active" data-contact-tab="allman" data-i18n="contact.tab_allman"></button>
+        <button class="contact-tab-btn" data-contact-tab="bon" data-i18n="contact.tab_bon"></button>
+        <button class="contact-tab-btn" data-contact-tab="sakrament" data-i18n="contact.tab_sakrament"></button>
+      </div>
 
-        <label for="contactEmail" data-i18n="contact.label_email"></label>
-        <input type="email" id="contactEmail" name="email" required>
+      <div class="contact-tab-panel active" data-contact-panel="allman">
+        <h3 data-i18n="contact.form_title"></h3>
+        <form id="contactForm" data-simple-form action="https://formspree.io/f/ÄNDRA_TILL_ER_FORMSPREE_ID" method="POST" novalidate>
+          <input type="hidden" name="_subject" value="Nytt meddelande – Kontaktformulär">
+          <label for="contactName" data-i18n="contact.label_name"></label>
+          <input type="text" id="contactName" name="name" required>
 
-        <label for="contactMessage" data-i18n="contact.label_message"></label>
-        <textarea id="contactMessage" name="message" rows="5" required></textarea>
+          <label for="contactEmail" data-i18n="contact.label_email"></label>
+          <input type="email" id="contactEmail" name="email" required>
 
-        <button type="submit" class="btn btn-gold" data-i18n="contact.submit_btn"></button>
-        <p class="form-msg" id="formMsg" role="status"></p>
-      </form>
-      <p class="privacy-note" data-i18n="contact.privacy_note"></p>
+          <label for="contactMessage" data-i18n="contact.label_message"></label>
+          <textarea id="contactMessage" name="message" rows="5" required></textarea>
+
+          <div class="consent-row">
+            <input type="checkbox" id="contactConsent" name="consent" required>
+            <label for="contactConsent"><span data-i18n="privacy.consent_label"></span> <a href="integritetspolicy.html" data-i18n="privacy.heading"></a></label>
+          </div>
+
+          <button type="submit" class="btn btn-gold" data-i18n="contact.submit_btn"></button>
+          <p class="form-msg" id="formMsg" role="status"></p>
+        </form>
+        <p class="privacy-note" data-i18n="contact.privacy_note"></p>
+      </div>
+
+      <div class="contact-tab-panel" data-contact-panel="bon">
+        <h3 data-i18n="prayer.form_title"></h3>
+        <form id="prayerForm" data-simple-form action="https://formspree.io/f/ÄNDRA_TILL_ER_FORMSPREE_ID" method="POST" novalidate>
+          <input type="hidden" name="_subject" value="Ny bönebegäran">
+          <label for="prayerName" data-i18n="prayer.label_name"></label>
+          <input type="text" id="prayerName" name="name">
+
+          <label for="prayerEmail" data-i18n="prayer.label_email"></label>
+          <input type="email" id="prayerEmail" name="email">
+
+          <label for="prayerText" data-i18n="prayer.label_prayer"></label>
+          <textarea id="prayerText" name="prayer" rows="5" required></textarea>
+
+          <div class="consent-row">
+            <input type="checkbox" id="prayerConsent" name="consent" required>
+            <label for="prayerConsent"><span data-i18n="privacy.consent_label"></span> <a href="integritetspolicy.html" data-i18n="privacy.heading"></a></label>
+          </div>
+
+          <button type="submit" class="btn btn-gold" data-i18n="prayer.submit_btn"></button>
+          <p class="form-msg"></p>
+        </form>
+      </div>
+
+      <div class="contact-tab-panel" data-contact-panel="sakrament">
+        <h3 data-i18n="sacrament.form_title"></h3>
+        <form id="sacramentForm" data-simple-form action="https://formspree.io/f/ÄNDRA_TILL_ER_FORMSPREE_ID" method="POST" novalidate>
+          <input type="hidden" name="_subject" value="Ny sakramentsförfrågan">
+          <label for="sacramentType" data-i18n="sacrament.label_type"></label>
+          <select id="sacramentType" name="type" required>
+            <option value="dop" data-i18n="sacrament.opt_dop"></option>
+            <option value="vigsel" data-i18n="sacrament.opt_vigsel"></option>
+            <option value="begravning" data-i18n="sacrament.opt_begravning"></option>
+          </select>
+
+          <label for="sacramentName" data-i18n="sacrament.label_name"></label>
+          <input type="text" id="sacramentName" name="name" required>
+
+          <label for="sacramentEmail" data-i18n="sacrament.label_email"></label>
+          <input type="email" id="sacramentEmail" name="email" required>
+
+          <label for="sacramentPhone" data-i18n="sacrament.label_phone"></label>
+          <input type="tel" id="sacramentPhone" name="phone" required>
+
+          <label for="sacramentDate" data-i18n="sacrament.label_date"></label>
+          <input type="text" id="sacramentDate" name="date">
+
+          <label for="sacramentMessage" data-i18n="sacrament.label_message"></label>
+          <textarea id="sacramentMessage" name="message" rows="4"></textarea>
+
+          <div class="consent-row">
+            <input type="checkbox" id="sacramentConsent" name="consent" required>
+            <label for="sacramentConsent"><span data-i18n="privacy.consent_label"></span> <a href="integritetspolicy.html" data-i18n="privacy.heading"></a></label>
+          </div>
+
+          <button type="submit" class="btn btn-gold" data-i18n="sacrament.submit_btn"></button>
+          <p class="form-msg"></p>
+        </form>
+      </div>
     </div>
   </div>
 </section>
@@ -453,6 +509,20 @@
     <div class="modal-actions">
       <button type="button" id="modalCancelBtn" data-i18n="modal.cancel_btn"></button>
       <button type="button" id="modalSaveBtn" data-i18n="modal.save_btn"></button>
+    </div>
+  </div>
+</div>
+
+<!-- Calendar day-detail modal (tap a day, especially useful on mobile where
+     the feast label is hidden inline) -->
+<div class="modal-overlay" id="eoDayModal">
+  <div class="modal-box">
+    <h3 id="eoDayModalTitle"></h3>
+    <p id="eoDayModalGreg" class="eo-day-modal-greg"></p>
+    <p id="eoDayModalFeast" class="eo-day-modal-feast"></p>
+    <p id="eoDayModalEvent" class="eo-day-modal-event"></p>
+    <div class="modal-actions">
+      <button type="button" id="eoDayModalClose" data-i18n="calendar.close_btn"></button>
     </div>
   </div>
 </div>

@@ -1,0 +1,83 @@
+backend:
+  name: github
+  repo: bluee124/Debre-Hail
+  branch: main
+  # base_url and auth_endpoint point at your OAuth proxy — see admin/README.md
+  # for what to deploy before this backend can authenticate anyone.
+  base_url: https://REPLACE_WITH_YOUR_OAUTH_PROXY_URL
+  auth_endpoint: auth
+
+media_folder: "images/gallery"
+public_folder: "images/gallery"
+
+locale: "sv"
+
+collections:
+  - name: "news"
+    label: "Nyheter"
+    files:
+      - name: "news"
+        label: "Nyhetsartiklar"
+        file: "content/news.json"
+        fields:
+          - name: "items"
+            label: "Artiklar"
+            widget: "list"
+            summary: "{{title_sv}} — {{date_sv}}"
+            fields:
+              - { name: "id", label: "ID (unikt, t.ex. article-5)", widget: "string" }
+              - { name: "date_sv", label: "Datum (svenska)", widget: "string" }
+              - { name: "date_am", label: "Datum (amhariska)", widget: "string" }
+              - { name: "title_sv", label: "Titel (svenska)", widget: "string" }
+              - { name: "title_am", label: "Titel (amhariska)", widget: "string" }
+              - { name: "excerpt_sv", label: "Sammanfattning (svenska)", widget: "text" }
+              - { name: "excerpt_am", label: "Sammanfattning (amhariska)", widget: "text" }
+              - { name: "body_sv", label: "Fullständig text (svenska)", widget: "text" }
+              - { name: "body_am", label: "Fullständig text (amhariska)", widget: "text" }
+
+  - name: "gallery"
+    label: "Galleri"
+    files:
+      - name: "gallery"
+        label: "Bilder"
+        file: "content/gallery.json"
+        fields:
+          - name: "items"
+            label: "Bilder"
+            widget: "list"
+            summary: "{{title_sv}}"
+            fields:
+              - { name: "id", label: "ID (unikt, t.ex. tile-17)", widget: "string" }
+              - name: "category"
+                label: "Kategori"
+                widget: "select"
+                options:
+                  - { label: "Gudstjänster", value: "gudstjanster" }
+                  - { label: "Högtider", value: "hogtider" }
+                  - { label: "Kör", value: "kor" }
+                  - { label: "Barn & Familj", value: "barn" }
+                  - { label: "Gemenskap", value: "gemenskap" }
+              - { name: "title_sv", label: "Titel (svenska)", widget: "string" }
+              - { name: "title_am", label: "Titel (amhariska)", widget: "string" }
+              - { name: "image", label: "Bild (ladda upp här)", widget: "image", required: false }
+              - { name: "emoji", label: "Emoji (används bara om ingen bild laddats upp)", widget: "string", required: false }
+              - { name: "gradient", label: "Färgstil (används bara om ingen bild, t.ex. tile-1)", widget: "string", required: false }
+
+  - name: "events"
+    label: "Evenemang"
+    files:
+      - name: "events"
+        label: "Kommande evenemang"
+        file: "content/events.json"
+        fields:
+          - name: "items"
+            label: "Evenemang"
+            widget: "list"
+            summary: "{{title_sv}} — {{date}}"
+            fields:
+              - { name: "id", label: "ID (unikt, t.ex. event-3)", widget: "string" }
+              - { name: "date", label: "Datum", widget: "date", date_format: "YYYY-MM-DD", time_format: false }
+              - { name: "title_sv", label: "Titel (svenska)", widget: "string" }
+              - { name: "title_am", label: "Titel (amhariska)", widget: "string" }
+              - { name: "desc_sv", label: "Beskrivning (svenska)", widget: "text" }
+              - { name: "desc_am", label: "Beskrivning (amhariska)", widget: "text" }

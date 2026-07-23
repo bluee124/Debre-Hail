@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title data-i18n="gallery.page_title">Galleri</title>
+<title data-i18n="donate.page_title">Ge en gåva</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Source+Sans+3:wght@400;500;600;700&family=Noto+Sans+Ethiopic:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -26,7 +26,7 @@
   </div>
 </div>
 
-<!-- 2. Header: centered identity band + nav bar -->
+<!-- 2. Header -->
 <header class="site-header">
   <div class="brand-band">
     <div class="brand-band-inner container">
@@ -47,11 +47,11 @@
         <a href="index.html#hem" class="nav-link" data-nav="hem" data-i18n="nav.hem"></a>
         <a href="nyheter.html" class="nav-link" data-nav="nyheter" data-i18n="nav.nyheter"></a>
         <a href="index.html#gudstjanster" class="nav-link" data-nav="gudstjanster" data-i18n="nav.gudstjanster"></a>
-        <a href="galleri.html" class="nav-link active" data-nav="galleri" data-i18n="nav.galleri"></a>
+        <a href="galleri.html" class="nav-link" data-nav="galleri" data-i18n="nav.galleri"></a>
         <a href="bli-medlem.html" class="nav-link" data-nav="medlem" data-i18n="nav.medlem"></a>
         <a href="index.html#om" class="nav-link" data-nav="om" data-i18n="nav.om"></a>
         <a href="index.html#kontakt" class="nav-link" data-nav="kontakt" data-i18n="nav.kontakt"></a>
-        <a href="donera.html" class="nav-link donate-btn" data-nav="donera" data-i18n="nav.donera"></a>
+        <a href="donera.html" class="nav-link donate-btn active" data-nav="donera" data-i18n="nav.donera"></a>
         <button class="lang-toggle" id="langToggle" type="button"></button>
       </div>
     </div>
@@ -61,34 +61,43 @@
 <!-- Page header -->
 <section class="page-header">
   <div class="container">
-    <h1 data-i18n="gallery.section_title"></h1>
+    <h1 data-i18n="donate.heading"></h1>
+    <p class="section-sub" data-i18n="donate.intro"></p>
     <a href="index.html" class="back-home-link" data-i18n="common.back_home"></a>
   </div>
 </section>
 
-<!-- Full gallery -->
+<!-- Donation -->
 <section class="page-content">
   <div class="container">
-    <div class="gallery-filters">
-      <button class="filter-btn active" data-filter="all" data-i18n="gallery.filter_all"></button>
-      <button class="filter-btn" data-filter="gudstjanster" data-i18n="gallery.filter_gudstjanster"></button>
-      <button class="filter-btn" data-filter="hogtider" data-i18n="gallery.filter_hogtider"></button>
-      <button class="filter-btn" data-filter="kor" data-i18n="gallery.filter_kor"></button>
-      <button class="filter-btn" data-filter="barn" data-i18n="gallery.filter_barn"></button>
-      <button class="filter-btn" data-filter="gemenskap" data-i18n="gallery.filter_gemenskap"></button>
-    </div>
+    <div class="donate-card">
+      <p class="donate-verse" data-i18n="donate.verse"></p>
 
-    <div class="gallery-grid" id="galleryGrid"><!-- rendered from content/gallery.json by main.js --></div>
+      <div class="donate-swish-number">
+        <span data-i18n="donate.swish_label"></span>
+        <strong id="swishNumberLabel">ÄNDRA_TILL_ERT_SWISHNUMMER</strong>
+      </div>
+
+      <p class="donate-amount-label" data-i18n="donate.amount_label"></p>
+      <div class="donate-amounts">
+        <button type="button" class="donate-amount-btn" data-amount="50">50 kr</button>
+        <button type="button" class="donate-amount-btn" data-amount="100">100 kr</button>
+        <button type="button" class="donate-amount-btn" data-amount="200">200 kr</button>
+        <button type="button" class="donate-amount-btn" data-amount="500">500 kr</button>
+      </div>
+
+      <label for="donateCustomAmount" data-i18n="donate.custom_amount_label"></label>
+      <input type="number" id="donateCustomAmount" min="1" placeholder="150">
+
+      <a href="#" id="swishPayBtn" class="btn btn-gold donate-pay-btn" target="_blank" rel="noopener" data-i18n="donate.pay_btn"></a>
+
+      <div class="donate-qr">
+        <img id="swishQr" alt="Swish QR-kod" width="220" height="220">
+        <p data-i18n="donate.qr_note"></p>
+      </div>
+    </div>
   </div>
 </section>
-
-<div class="lightbox" id="lightbox">
-  <button class="lightbox-close" id="lightboxClose" aria-label="Stäng">×</button>
-  <button class="lightbox-arrow prev" id="lightboxPrev" aria-label="Föregående">‹</button>
-  <div class="lightbox-content" id="lightboxContent"></div>
-  <button class="lightbox-arrow next" id="lightboxNext" aria-label="Nästa">›</button>
-  <div class="lightbox-counter" id="lightboxCounter"></div>
-</div>
 
 <!-- Footer -->
 <footer class="site-footer">

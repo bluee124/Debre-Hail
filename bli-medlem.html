@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title data-i18n="gallery.page_title">Galleri</title>
+<title data-i18n="membership.page_title">Bli medlem</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Source+Sans+3:wght@400;500;600;700&family=Noto+Sans+Ethiopic:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -26,7 +26,7 @@
   </div>
 </div>
 
-<!-- 2. Header: centered identity band + nav bar -->
+<!-- 2. Header -->
 <header class="site-header">
   <div class="brand-band">
     <div class="brand-band-inner container">
@@ -47,8 +47,8 @@
         <a href="index.html#hem" class="nav-link" data-nav="hem" data-i18n="nav.hem"></a>
         <a href="nyheter.html" class="nav-link" data-nav="nyheter" data-i18n="nav.nyheter"></a>
         <a href="index.html#gudstjanster" class="nav-link" data-nav="gudstjanster" data-i18n="nav.gudstjanster"></a>
-        <a href="galleri.html" class="nav-link active" data-nav="galleri" data-i18n="nav.galleri"></a>
-        <a href="bli-medlem.html" class="nav-link" data-nav="medlem" data-i18n="nav.medlem"></a>
+        <a href="galleri.html" class="nav-link" data-nav="galleri" data-i18n="nav.galleri"></a>
+        <a href="bli-medlem.html" class="nav-link active" data-nav="medlem" data-i18n="nav.medlem"></a>
         <a href="index.html#om" class="nav-link" data-nav="om" data-i18n="nav.om"></a>
         <a href="index.html#kontakt" class="nav-link" data-nav="kontakt" data-i18n="nav.kontakt"></a>
         <a href="donera.html" class="nav-link donate-btn" data-nav="donera" data-i18n="nav.donera"></a>
@@ -61,34 +61,45 @@
 <!-- Page header -->
 <section class="page-header">
   <div class="container">
-    <h1 data-i18n="gallery.section_title"></h1>
+    <h1 data-i18n="membership.heading"></h1>
+    <p class="section-sub" data-i18n="membership.intro"></p>
     <a href="index.html" class="back-home-link" data-i18n="common.back_home"></a>
   </div>
 </section>
 
-<!-- Full gallery -->
+<!-- Membership form -->
 <section class="page-content">
   <div class="container">
-    <div class="gallery-filters">
-      <button class="filter-btn active" data-filter="all" data-i18n="gallery.filter_all"></button>
-      <button class="filter-btn" data-filter="gudstjanster" data-i18n="gallery.filter_gudstjanster"></button>
-      <button class="filter-btn" data-filter="hogtider" data-i18n="gallery.filter_hogtider"></button>
-      <button class="filter-btn" data-filter="kor" data-i18n="gallery.filter_kor"></button>
-      <button class="filter-btn" data-filter="barn" data-i18n="gallery.filter_barn"></button>
-      <button class="filter-btn" data-filter="gemenskap" data-i18n="gallery.filter_gemenskap"></button>
-    </div>
+    <div class="contact-form-wrap membership-form-wrap">
+      <form id="membershipForm" data-simple-form action="https://formspree.io/f/ÄNDRA_TILL_ER_FORMSPREE_ID" method="POST" novalidate>
+        <input type="hidden" name="_subject" value="Ny medlemsansökan">
 
-    <div class="gallery-grid" id="galleryGrid"><!-- rendered from content/gallery.json by main.js --></div>
+        <label for="memberName" data-i18n="membership.label_name"></label>
+        <input type="text" id="memberName" name="name" required>
+
+        <label for="memberEmail" data-i18n="membership.label_email"></label>
+        <input type="email" id="memberEmail" name="email" required>
+
+        <label for="memberPhone" data-i18n="membership.label_phone"></label>
+        <input type="tel" id="memberPhone" name="phone" required>
+
+        <label for="memberAddress" data-i18n="membership.label_address"></label>
+        <input type="text" id="memberAddress" name="address">
+
+        <label for="memberInvolvement" data-i18n="membership.label_involvement"></label>
+        <textarea id="memberInvolvement" name="involvement" rows="4"></textarea>
+
+        <div class="consent-row">
+          <input type="checkbox" id="memberConsent" name="consent" required>
+          <label for="memberConsent"><span data-i18n="privacy.consent_label"></span> <a href="integritetspolicy.html" data-i18n="privacy.heading"></a></label>
+        </div>
+
+        <button type="submit" class="btn btn-gold" data-i18n="membership.submit_btn"></button>
+        <p class="form-msg" role="status"></p>
+      </form>
+    </div>
   </div>
 </section>
-
-<div class="lightbox" id="lightbox">
-  <button class="lightbox-close" id="lightboxClose" aria-label="Stäng">×</button>
-  <button class="lightbox-arrow prev" id="lightboxPrev" aria-label="Föregående">‹</button>
-  <div class="lightbox-content" id="lightboxContent"></div>
-  <button class="lightbox-arrow next" id="lightboxNext" aria-label="Nästa">›</button>
-  <div class="lightbox-counter" id="lightboxCounter"></div>
-</div>
 
 <!-- Footer -->
 <footer class="site-footer">

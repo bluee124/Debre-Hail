@@ -1,0 +1,148 @@
+{
+  "items": [
+    {
+      "id": "tile-1",
+      "category": "gudstjanster",
+      "title_sv": "Söndagens Högmässa",
+      "title_am": "የእሑድ ቅዳሴ",
+      "image": null,
+      "emoji": "⛪",
+      "gradient": "tile-1"
+    },
+    {
+      "id": "tile-2",
+      "category": "gudstjanster",
+      "title_sv": "Rökelseoffer",
+      "title_am": "የዕጣን ስርዓት",
+      "image": null,
+      "emoji": "🕯️",
+      "gradient": "tile-2"
+    },
+    {
+      "id": "tile-3",
+      "category": "gudstjanster",
+      "title_sv": "Diakonernas tjänst",
+      "title_am": "የዲያቆናት አገልግሎት",
+      "image": null,
+      "emoji": "📖",
+      "gradient": "tile-3"
+    },
+    {
+      "id": "tile-4",
+      "category": "hogtider",
+      "title_sv": "Fasika-firande",
+      "title_am": "የፋሲካ በዓል",
+      "image": null,
+      "emoji": "✝️",
+      "gradient": "tile-4"
+    },
+    {
+      "id": "tile-5",
+      "category": "hogtider",
+      "title_sv": "Timkat-processionen",
+      "title_am": "የጥምቀት ሰልፍ",
+      "image": null,
+      "emoji": "💧",
+      "gradient": "tile-5"
+    },
+    {
+      "id": "tile-6",
+      "category": "hogtider",
+      "title_sv": "Genna – Jul",
+      "title_am": "ገና",
+      "image": null,
+      "emoji": "⭐",
+      "gradient": "tile-6"
+    },
+    {
+      "id": "tile-7",
+      "category": "hogtider",
+      "title_sv": "Meskel-firande",
+      "title_am": "የመስቀል በዓል",
+      "image": null,
+      "emoji": "🔥",
+      "gradient": "tile-7"
+    },
+    {
+      "id": "tile-8",
+      "category": "kor",
+      "title_sv": "Kyrkokören sjunger",
+      "title_am": "የቤተክርስቲያን መዘምራን",
+      "image": null,
+      "emoji": "🎶",
+      "gradient": "tile-8"
+    },
+    {
+      "id": "tile-9",
+      "category": "kor",
+      "title_sv": "Unga sångare",
+      "title_am": "ወጣት ዘማሪያን",
+      "image": null,
+      "emoji": "🎤",
+      "gradient": "tile-9"
+    },
+    {
+      "id": "tile-10",
+      "category": "kor",
+      "title_sv": "Övning inför högtid",
+      "title_am": "ለበዓል ዝግጅት ልምምድ",
+      "image": null,
+      "emoji": "🎼",
+      "gradient": "tile-10"
+    },
+    {
+      "id": "tile-11",
+      "category": "barn",
+      "title_sv": "Söndagsskolan",
+      "title_am": "የሰንበት ትምህርት ቤት",
+      "image": null,
+      "emoji": "📚",
+      "gradient": "tile-11"
+    },
+    {
+      "id": "tile-12",
+      "category": "barn",
+      "title_sv": "Barnens välsignelse",
+      "title_am": "የልጆች በረከት",
+      "image": null,
+      "emoji": "🙏",
+      "gradient": "tile-12"
+    },
+    {
+      "id": "tile-13",
+      "category": "barn",
+      "title_sv": "Familjedag",
+      "title_am": "የቤተሰብ ቀን",
+      "image": null,
+      "emoji": "👨‍👩‍👧‍👦",
+      "gradient": "tile-13"
+    },
+    {
+      "id": "tile-14",
+      "category": "gemenskap",
+      "title_sv": "Kyrkkaffe",
+      "title_am": "ከቅዳሴ በኋላ ቡና",
+      "image": null,
+      "emoji": "☕",
+      "gradient": "tile-14"
+    },
+    {
+      "id": "tile-15",
+      "category": "gemenskap",
+      "title_sv": "Volontärernas städdag",
+      "title_am": "የበጎ ፈቃደኞች ጽዳት ቀን",
+      "image": null,
+      "emoji": "🧹",
+      "gradient": "tile-15"
+    },
+    {
+      "id": "tile-16",
+      "category": "gemenskap",
+      "title_sv": "Församlingens gemenskap",
+      "title_am": "የምዕመናን ኅብረት",
+      "image": null,
+      "emoji": "🤝",
+      "gradient": "tile-16"
+    }
+  ]
+}
