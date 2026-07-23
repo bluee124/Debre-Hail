@@ -1,15 +1,15 @@
 /* Leadership hierarchy (ledarskap.html): renders two grouped trees — Präster
    and Kyrkoförvaltning — from content/leadership.json, using a photo per
    person (falling back to a placeholder avatar) instead of an emoji icon.
-   The "add person" modal here is a client-side-only preview (like the
-   original), not persisted — real additions should go through the Decap CMS
-   "leadership" collection at /admin. */
+   Read-only: visitors cannot add or edit anyone here. New people (beside an
+   existing one on the same tier, or beneath as a new tier) are added by
+   editing content/leadership.json through the Decap CMS at /admin. */
 
 (function () {
   let items = [];
 
-  // Management gets one extra, initially-empty tier below its data (a
-  // "volunteers welcome" row), matching the original 3-tier design.
+  // Management shows one extra, always-empty tier below its data — an
+  // informational "volunteers welcome" row, not an add point.
   const GROUP_CONFIG = {
     priest: { extraEmptyTier: false },
     management: { extraEmptyTier: true }
@@ -44,18 +44,12 @@
     tiers.forEach((tier, idx) => {
       if (idx > 0) html += '<div class="tree-line"></div>';
       const tierPeople = people.filter((p) => p.tier === tier);
-      html += `<div class="tier" data-group="${group}" data-tier="${tier}">`;
-      html += tierPeople.map((p) => personCardHtml(p, idx === 0)).join('');
-      html += `<button type="button" class="add-person-btn" data-group="${group}" data-tier="${tier}">${window.t('about.add_person_btn')}</button>`;
-      html += '</div>';
+      html += `<div class="tier">${tierPeople.map((p) => personCardHtml(p, idx === 0)).join('')}</div>`;
     });
 
     if (emptyTier) {
       html += '<div class="tree-line"></div>';
-      html += `<div class="tier" data-group="${group}" data-tier="${emptyTier}">`;
-      html += `<p class="tier-empty">${window.t('leadership.empty')}</p>`;
-      html += `<button type="button" class="add-person-btn" data-group="${group}" data-tier="${emptyTier}">${window.t('about.add_person_btn')}</button>`;
-      html += '</div>';
+      html += `<div class="tier"><p class="tier-empty">${window.t('leadership.empty')}</p></div>`;
     }
 
     container.innerHTML = html;
@@ -72,64 +66,6 @@
     }
   }
 
-  function initModal() {
-    const modal = document.getElementById('leadershipModal');
-    const nameInput = document.getElementById('modalNameInput');
-    const roleInput = document.getElementById('modalRoleInput');
-    const imageInput = document.getElementById('modalImageInput');
-    const saveBtn = document.getElementById('modalSaveBtn');
-    const cancelBtn = document.getElementById('modalCancelBtn');
-    if (!modal) return;
-
-    let targetGroup = null;
-    let targetTier = null;
-
-    function close() {
-      modal.classList.remove('open');
-      nameInput.value = '';
-      roleInput.value = '';
-      imageInput.value = '';
-    }
-
-    document.addEventListener('click', (e) => {
-      const btn = e.target.closest('.add-person-btn');
-      if (!btn) return;
-      targetGroup = btn.dataset.group;
-      targetTier = btn.dataset.tier;
-      modal.classList.add('open');
-      nameInput.focus();
-    });
-
-    cancelBtn.addEventListener('click', close);
-    modal.addEventListener('click', (e) => { if (e.target === modal) close(); });
-
-    saveBtn.addEventListener('click', () => {
-      const name = nameInput.value.trim();
-      const role = roleInput.value.trim();
-      if (!name || !role || !targetGroup) return;
-
-      const tierEl = document.querySelector(`.tier[data-group="${targetGroup}"][data-tier="${targetTier}"]`);
-      if (!tierEl) return;
-      const addBtn = tierEl.querySelector('.add-person-btn');
-      const emptyMsg = tierEl.querySelector('.tier-empty');
-      if (emptyMsg) emptyMsg.remove();
-
-      const src = imageInput.value.trim() || 'images/avatar-placeholder.svg';
-      const card = document.createElement('div');
-      card.className = 'person-card';
-      card.innerHTML = `
-        <img class="person-photo" src="${src}" alt="${name}">
-        <span class="person-role">${role}</span>
-        <span class="person-name">${name}</span>
-      `;
-      tierEl.insertBefore(card, addBtn);
-      close();
-    });
-  }
-
-  document.addEventListener('i18n:ready', async () => {
-    initModal();
-    await load();
-  });
+  document.addEventListener('i18n:ready', load);
   document.addEventListener('dh:langchange', load);
 })();

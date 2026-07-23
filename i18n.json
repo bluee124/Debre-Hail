@@ -79,8 +79,7 @@
       "tab_ledningen": "Ledningen",
       "tab_vision_content": "Vår vision är att vara ett levande andligt hem för etiopisk-ortodoxa troende i Göteborg och omnejd – en plats där tro, kultur och språk bevaras och förs vidare till kommande generationer.",
       "tab_uppdrag_content": "Vårt uppdrag är att fira den heliga liturgin, undervisa i den ortodoxa tron, och skapa gemenskap och omsorg om varandra, i enlighet med den etiopisk-ortodoxa Tewahedokyrkans läror och traditioner.",
-      "tab_varderingar_content": "Vi värdesätter tro, ödmjukhet, gästfrihet och gemenskap. Vi strävar efter att välkomna alla, bevara vårt arv och tjäna både församlingen och samhället i stort.",
-      "add_person_btn": "+ Lägg till person"
+      "tab_varderingar_content": "Vi värdesätter tro, ödmjukhet, gästfrihet och gemenskap. Vi strävar efter att välkomna alla, bevara vårt arv och tjäna både församlingen och samhället i stort."
     },
     "gallery": {
       "section_title": "Galleri",
@@ -127,14 +126,6 @@
     },
     "footer": {
       "copyright": "© 2026 Debre Hail S:t Gabriel & S:t Georgis Etiopiska Ortodoxa Tewahedokyrkan. Alla rättigheter förbehållna."
-    },
-    "modal": {
-      "title": "Lägg till person",
-      "label_name": "Namn",
-      "label_role": "Roll",
-      "label_icon": "Ikon",
-      "save_btn": "Spara",
-      "cancel_btn": "Avbryt"
     },
     "calendar": {
       "heading": "Etiopisk-ortodox kalender",
@@ -226,7 +217,6 @@
       "heading_priests": "Präster",
       "heading_management": "Kyrkoförvaltning",
       "empty": "Volontärer välkomnas",
-      "modal_image_label": "Bildlänk (valfritt)",
       "back_to_about": "‹ Till Om oss"
     }
   },
@@ -310,8 +300,7 @@
       "tab_ledningen": "አመራር",
       "tab_vision_content": "ራዕያችን በጎተቦርግና በአካባቢው ለሚኖሩ የኢትዮጵያ ኦርቶዶክስ ተዋሕዶ ምዕመናን ሕያው መንፈሳዊ ቤት መሆን ነው – እምነት፣ ባህልና ቋንቋ የሚጠበቁበትና ለሚቀጥሉት ትውልዶች የሚተላለፉበት ቦታ።",
       "tab_uppdrag_content": "ተልእኳችን ቅዱስ ቅዳሴን ማክበር፣ ኦርቶዶክሳዊ እምነትን ማስተማርና እርስ በርስ የመተሳሰብና የኅብረት ሕይወት መገንባት ነው፤ ይህም በኢትዮጵያ ኦርቶዶክስ ተዋሕዶ ቤተክርስቲያን ትምህርትና ትውፊት መሠረት ነው።",
-      "tab_varderingar_content": "እምነትን፣ ትሕትናን፣ እንግዳ ተቀባይነትንና ኅብረትን እናከብራለን። ሁሉንም ሰው ለመቀበል፣ ትውፊታችንን ለመጠበቅና ለምዕመናኑና ለማህበረሰቡ በሙሉ ለማገልገል እንተጋለን።",
-      "add_person_btn": "+ ሰው ጨምር"
+      "tab_varderingar_content": "እምነትን፣ ትሕትናን፣ እንግዳ ተቀባይነትንና ኅብረትን እናከብራለን። ሁሉንም ሰው ለመቀበል፣ ትውፊታችንን ለመጠበቅና ለምዕመናኑና ለማህበረሰቡ በሙሉ ለማገልገል እንተጋለን።"
     },
     "gallery": {
       "section_title": "ማዕከለ ስዕላት",
@@ -358,14 +347,6 @@
     },
     "footer": {
       "copyright": "© 2026 ደብረ ኃይል ቅዱስ ገብርኤል እና ቅዱስ ጊዮርጊስ የኢትዮጵያ ኦርቶዶክስ ተዋሕዶ ቤተክርስቲያን። ሁሉም መብቶች የተጠበቁ ናቸው።"
-    },
-    "modal": {
-      "title": "ሰው ጨምር",
-      "label_name": "ስም",
-      "label_role": "ሚና",
-      "label_icon": "ምልክት",
-      "save_btn": "አስቀምጥ",
-      "cancel_btn": "ሰርዝ"
     },
     "calendar": {
       "heading": "የኢትዮጵያ ኦርቶዶክስ ቀን መቁጠሪያ",
@@ -457,7 +438,6 @@
       "heading_priests": "ካህናት",
       "heading_management": "የቤተክርስቲያን አስተዳደር",
       "empty": "በጎ ፈቃደኞች ይጋበዛሉ",
-      "modal_image_label": "የምስል አድራሻ (አማራጭ)",
       "back_to_about": "‹ ወደ ስለ እኛ"
     }
   }

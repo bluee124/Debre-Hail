@@ -65,6 +65,14 @@ collections:
 
   - name: "leadership"
     label: "Ledarskap"
+    description: >
+      Varje person är ett eget kort i listan nedan. Använd knappen "..." på
+      ett befintligt kort och välj "Duplicate" för att snabbt lägga till
+      någon BREDVID den personen (samma Grupp och samma Nivå) — ändra bara
+      namn, roll och foto på kopian. För att lägga till någon UNDER en
+      person i hierarkin, sätt istället Nivå ett steg högre (t.ex. 2 om
+      personen ovanför har Nivå 1). Ordningen i listan styr vänster-till-
+      höger-placeringen inom samma nivå — dra kort för att ändra ordning.
     files:
       - name: "leadership"
         label: "Ledare"
@@ -79,10 +87,17 @@ collections:
               - name: "group"
                 label: "Grupp"
                 widget: "select"
+                hint: "Vilken av de två träden personen tillhör."
                 options:
                   - { label: "Präster", value: "priest" }
                   - { label: "Kyrkoförvaltning", value: "management" }
-              - { name: "tier", label: "Nivå i hierarkin (1 = högst upp)", widget: "number", value_type: "int", min: 1, default: 1 }
+              - name: "tier"
+                label: "Nivå i hierarkin"
+                widget: "number"
+                value_type: "int"
+                min: 1
+                default: 1
+                hint: "1 = högst upp. Samma nivå som en annan person = de visas BREDVID varandra. Ett högre nummer (t.ex. nivåns +1) = personen visas UNDER, som en egen rad i trädet."
               - { name: "name", label: "Namn", widget: "string" }
               - { name: "role_sv", label: "Roll (svenska)", widget: "string" }
               - { name: "role_am", label: "Roll (amhariska)", widget: "string" }

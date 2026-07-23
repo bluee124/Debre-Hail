@@ -649,15 +649,6 @@ body.lang-am .brand-name { font-size: 1.5rem; }
 .person-role { display: block; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--gold-lt); }
 .person-name { display: block; font-weight: 700; margin-top: 0.2em; }
 .tier-empty { color: #d8c8b8; font-style: italic; width: 100%; }
-.add-person-btn {
-  background: none;
-  border: 2px dashed var(--gold-lt);
-  color: var(--gold-lt);
-  border-radius: 10px;
-  padding: 16px 20px;
-  min-width: 160px;
-}
-.add-person-btn:hover { background: rgba(255,255,255,0.08); }
 
 /* ledarskap.html: reuses .leadership-tree/.person-card etc. above, which
    assume the crimson background this section provides. */
