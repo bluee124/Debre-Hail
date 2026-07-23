@@ -317,7 +317,7 @@
         <button class="tab-btn active" data-tab="vision" data-i18n="about.tab_vision"></button>
         <button class="tab-btn" data-tab="uppdrag" data-i18n="about.tab_uppdrag"></button>
         <button class="tab-btn" data-tab="varderingar" data-i18n="about.tab_varderingar"></button>
-        <button class="tab-btn" data-tab="ledningen" data-i18n="about.tab_ledningen"></button>
+        <a href="ledarskap.html" class="tab-btn leadership-link" data-i18n="about.tab_ledningen"></a>
       </div>
 
       <div class="tab-panels">
@@ -329,36 +329,6 @@
         </div>
         <div class="tab-panel" data-panel="varderingar">
           <p data-i18n="about.tab_varderingar_content"></p>
-        </div>
-        <div class="tab-panel" data-panel="ledningen">
-          <div class="leadership-tree" id="leadershipTree">
-            <div class="tier tier1">
-              <div class="person-card gold-border">
-                <span class="person-icon">✝️</span>
-                <span class="person-role" data-i18n="about.prast_role"></span>
-                <span class="person-name" data-i18n="about.prast_name"></span>
-              </div>
-            </div>
-            <div class="tree-line"></div>
-            <div class="tier tier2" id="tier2">
-              <div class="person-card">
-                <span class="person-icon">🔑</span>
-                <span class="person-role" data-i18n="about.kyrkvaktmastare_role"></span>
-                <span class="person-name" data-i18n="about.kyrkvaktmastare_name"></span>
-              </div>
-              <div class="person-card">
-                <span class="person-icon">🎵</span>
-                <span class="person-role" data-i18n="about.koransvarig_role"></span>
-                <span class="person-name" data-i18n="about.koransvarig_name"></span>
-              </div>
-              <button class="add-person-btn" data-i18n="about.add_person_btn" onclick="openModal(2)"></button>
-            </div>
-            <div class="tree-line"></div>
-            <div class="tier tier3" id="tier3">
-              <p class="tier-empty" data-i18n="about.tier3_empty"></p>
-              <button class="add-person-btn" data-i18n="about.add_person_btn" onclick="openModal(3)"></button>
-            </div>
-          </div>
         </div>
       </div>
     </div>
@@ -488,30 +458,6 @@
 
 <!-- 11. Scroll to top -->
 <button id="scrollTopBtn" class="scroll-top-btn" aria-label="Till toppen">↑</button>
-
-<!-- Leadership "add person" modal -->
-<div class="modal-overlay" id="leadershipModal">
-  <div class="modal-box">
-    <h3 data-i18n="modal.title"></h3>
-    <label for="modalNameInput" data-i18n="modal.label_name"></label>
-    <input type="text" id="modalNameInput">
-    <label for="modalRoleInput" data-i18n="modal.label_role"></label>
-    <input type="text" id="modalRoleInput">
-    <label for="modalIconSelect" data-i18n="modal.label_icon"></label>
-    <select id="modalIconSelect">
-      <option value="🙏">🙏</option>
-      <option value="✝️">✝️</option>
-      <option value="🎵">🎵</option>
-      <option value="📖">📖</option>
-      <option value="🕯️">🕯️</option>
-      <option value="👤">👤</option>
-    </select>
-    <div class="modal-actions">
-      <button type="button" id="modalCancelBtn" data-i18n="modal.cancel_btn"></button>
-      <button type="button" id="modalSaveBtn" data-i18n="modal.save_btn"></button>
-    </div>
-  </div>
-</div>
 
 <!-- Calendar day-detail modal (tap a day, especially useful on mobile where
      the feast label is hidden inline) -->

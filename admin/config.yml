@@ -63,6 +63,36 @@ collections:
               - { name: "emoji", label: "Emoji (används bara om ingen bild laddats upp)", widget: "string", required: false }
               - { name: "gradient", label: "Färgstil (används bara om ingen bild, t.ex. tile-1)", widget: "string", required: false }
 
+  - name: "leadership"
+    label: "Ledarskap"
+    files:
+      - name: "leadership"
+        label: "Ledare"
+        file: "content/leadership.json"
+        fields:
+          - name: "items"
+            label: "Personer"
+            widget: "list"
+            summary: "{{name}} ({{group}}, nivå {{tier}})"
+            fields:
+              - { name: "id", label: "ID (unikt, t.ex. leader-4)", widget: "string" }
+              - name: "group"
+                label: "Grupp"
+                widget: "select"
+                options:
+                  - { label: "Präster", value: "priest" }
+                  - { label: "Kyrkoförvaltning", value: "management" }
+              - { name: "tier", label: "Nivå i hierarkin (1 = högst upp)", widget: "number", value_type: "int", min: 1, default: 1 }
+              - { name: "name", label: "Namn", widget: "string" }
+              - { name: "role_sv", label: "Roll (svenska)", widget: "string" }
+              - { name: "role_am", label: "Roll (amhariska)", widget: "string" }
+              - name: "image"
+                label: "Foto"
+                widget: "image"
+                required: false
+                media_folder: "/images/leadership"
+                public_folder: "/images/leadership"
+
   - name: "events"
     label: "Evenemang"
     files:

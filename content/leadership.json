@@ -1,0 +1,7 @@
+{
+  "items": [
+    { "id": "leader-1", "group": "priest", "tier": 1, "name": "Melake Haiyl Tadesse", "role_sv": "Präst", "role_am": "ካህን", "image": null },
+    { "id": "leader-2", "group": "management", "tier": 1, "name": "Gossa Worku", "role_sv": "Kyrkvaktmästare", "role_am": "የቤተክርስቲያን ጠባቂ", "image": null },
+    { "id": "leader-3", "group": "management", "tier": 1, "name": "Gabriella Abebe", "role_sv": "Köransvarig", "role_am": "የመዘምራን ኃላፊ", "image": null }
+  ]
+}

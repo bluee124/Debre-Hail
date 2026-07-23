@@ -16,7 +16,6 @@ async function initAll() {
   initForms();
   initScrollTop();
   initActiveNav();
-  initLeadershipModal();
   initDonationPage();
 
   await Promise.all([loadGalleryData(), loadNewsData()]);
@@ -407,53 +406,6 @@ function initActiveNav() {
   }, { rootMargin: '-40% 0px -55% 0px', threshold: 0 });
 
   sections.forEach((section) => observer.observe(section));
-}
-
-/* ---------- Leadership "add person" modal ---------- */
-function initLeadershipModal() {
-  const modal = document.getElementById('leadershipModal');
-  const nameInput = document.getElementById('modalNameInput');
-  const roleInput = document.getElementById('modalRoleInput');
-  const iconSelect = document.getElementById('modalIconSelect');
-  const saveBtn = document.getElementById('modalSaveBtn');
-  const cancelBtn = document.getElementById('modalCancelBtn');
-  if (!modal) return;
-
-  let targetTier = 2;
-
-  function close() {
-    modal.classList.remove('open');
-    nameInput.value = '';
-    roleInput.value = '';
-    iconSelect.selectedIndex = 0;
-  }
-
-  window.openModal = function (tier) {
-    targetTier = tier;
-    modal.classList.add('open');
-    nameInput.focus();
-  };
-
-  cancelBtn.addEventListener('click', close);
-  modal.addEventListener('click', (e) => { if (e.target === modal) close(); });
-
-  saveBtn.addEventListener('click', () => {
-    const name = nameInput.value.trim();
-    const role = roleInput.value.trim();
-    if (!name || !role) return;
-
-    const tierEl = document.getElementById(`tier${targetTier}`);
-    const addBtn = tierEl.querySelector('.add-person-btn');
-    const card = document.createElement('div');
-    card.className = 'person-card';
-    card.innerHTML = `
-      <span class="person-icon">${iconSelect.value}</span>
-      <span class="person-role">${role}</span>
-      <span class="person-name">${name}</span>
-    `;
-    tierEl.insertBefore(card, addBtn);
-    close();
-  });
 }
 
 /* ---------- Donation page (donera.html): Swish deep-links + QR ----------

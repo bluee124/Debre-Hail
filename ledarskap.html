@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title data-i18n="leadership.page_title">Ledarskap</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Source+Sans+3:wght@400;500;600;700&family=Noto+Sans+Ethiopic:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- 1. Topbar -->
+<div class="topbar">
+  <div class="topbar-inner container">
+    <div class="topbar-left">
+      <span class="topbar-item">📍 <span data-i18n="topbar.address"></span></span>
+      <span class="topbar-item">✉ <a href="mailto:info@debrehail.se" data-i18n="topbar.email"></a></span>
+      <span class="topbar-item">☎ <a href="tel:+46700000000" data-i18n="topbar.phone"></a></span>
+    </div>
+    <div class="topbar-right">
+      <a class="btn-social instagram" href="https://instagram.com/ÄNDRA_TILL_ER_PROFIL" target="_blank" rel="noopener">Instagram</a>
+      <a class="btn-social tiktok" href="https://tiktok.com/@ÄNDRA_TILL_ER_PROFIL" target="_blank" rel="noopener">TikTok</a>
+    </div>
+  </div>
+</div>
+
+<!-- 2. Header: centered identity band + nav bar -->
+<header class="site-header">
+  <div class="brand-band">
+    <div class="brand-band-inner container">
+      <img src="images/logo.png" alt="S:t Georgis" class="logo-side">
+      <a href="index.html#hem" class="brand-center">
+        <span class="brand-name" data-i18n="header.name"></span>
+        <span class="brand-sub" data-i18n="header.subtitle"></span>
+      </a>
+      <img src="images/logo2.png" alt="S:t Gabriel" class="logo-side">
+    </div>
+  </div>
+  <nav class="main-nav-bar">
+    <div class="header-inner container">
+      <button class="hamburger" id="hamburgerBtn" aria-label="Meny" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="main-nav" id="mainNav">
+        <a href="index.html#hem" class="nav-link" data-nav="hem" data-i18n="nav.hem"></a>
+        <a href="nyheter.html" class="nav-link" data-nav="nyheter" data-i18n="nav.nyheter"></a>
+        <a href="index.html#gudstjanster" class="nav-link" data-nav="gudstjanster" data-i18n="nav.gudstjanster"></a>
+        <a href="galleri.html" class="nav-link" data-nav="galleri" data-i18n="nav.galleri"></a>
+        <a href="bli-medlem.html" class="nav-link" data-nav="medlem" data-i18n="nav.medlem"></a>
+        <a href="index.html#om" class="nav-link active" data-nav="om" data-i18n="nav.om"></a>
+        <a href="index.html#kontakt" class="nav-link" data-nav="kontakt" data-i18n="nav.kontakt"></a>
+        <a href="donera.html" class="nav-link donate-btn" data-nav="donera" data-i18n="nav.donera"></a>
+        <button class="lang-toggle" id="langToggle" type="button"></button>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<!-- Page header -->
+<section class="page-header">
+  <div class="container">
+    <h1 data-i18n="leadership.heading"></h1>
+    <a href="index.html#om" class="back-home-link" data-i18n="leadership.back_to_about"></a>
+  </div>
+</section>
+
+<!-- Leadership groups (crimson band, matching the tree styling built for Om oss) -->
+<section class="leadership-page-section">
+  <div class="container">
+
+    <h3 class="leadership-group-title" data-i18n="leadership.heading_priests"></h3>
+    <div class="leadership-tree" id="priestTree"><!-- rendered from content/leadership.json by leadership.js --></div>
+
+    <h3 class="leadership-group-title" data-i18n="leadership.heading_management"></h3>
+    <div class="leadership-tree" id="managementTree"><!-- rendered from content/leadership.json by leadership.js --></div>
+
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <p data-i18n="footer.copyright"></p>
+    <div class="footer-social">
+      <a class="btn-social instagram" href="https://instagram.com/ÄNDRA_TILL_ER_PROFIL" target="_blank" rel="noopener">Instagram</a>
+      <a class="btn-social tiktok" href="https://tiktok.com/@ÄNDRA_TILL_ER_PROFIL" target="_blank" rel="noopener">TikTok</a>
+    </div>
+  </div>
+</footer>
+
+<button id="scrollTopBtn" class="scroll-top-btn" aria-label="Till toppen">↑</button>
+
+<!-- Add-person modal (client-side only, mirrors the Decap CMS "leadership"
+     collection for quick previews — real edits should go through /admin) -->
+<div class="modal-overlay" id="leadershipModal">
+  <div class="modal-box">
+    <h3 data-i18n="modal.title"></h3>
+    <label for="modalNameInput" data-i18n="modal.label_name"></label>
+    <input type="text" id="modalNameInput">
+    <label for="modalRoleInput" data-i18n="modal.label_role"></label>
+    <input type="text" id="modalRoleInput">
+    <label for="modalImageInput" data-i18n="leadership.modal_image_label"></label>
+    <input type="text" id="modalImageInput" placeholder="images/leadership/namn.jpg">
+    <div class="modal-actions">
+      <button type="button" id="modalCancelBtn" data-i18n="modal.cancel_btn"></button>
+      <button type="button" id="modalSaveBtn" data-i18n="modal.save_btn"></button>
+    </div>
+  </div>
+</div>
+
+<script src="i18n.js"></script>
+<script src="main.js"></script>
+<script src="leadership.js"></script>
+</body>
+</html>

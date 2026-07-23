@@ -80,13 +80,6 @@
       "tab_vision_content": "Vår vision är att vara ett levande andligt hem för etiopisk-ortodoxa troende i Göteborg och omnejd – en plats där tro, kultur och språk bevaras och förs vidare till kommande generationer.",
       "tab_uppdrag_content": "Vårt uppdrag är att fira den heliga liturgin, undervisa i den ortodoxa tron, och skapa gemenskap och omsorg om varandra, i enlighet med den etiopisk-ortodoxa Tewahedokyrkans läror och traditioner.",
       "tab_varderingar_content": "Vi värdesätter tro, ödmjukhet, gästfrihet och gemenskap. Vi strävar efter att välkomna alla, bevara vårt arv och tjäna både församlingen och samhället i stort.",
-      "prast_role": "Präst",
-      "prast_name": "Melake Haiyl Tadesse",
-      "kyrkvaktmastare_role": "Kyrkvaktmästare",
-      "kyrkvaktmastare_name": "Gossa Worku",
-      "koransvarig_role": "Köransvarig",
-      "koransvarig_name": "Gabriella Abebe",
-      "tier3_empty": "Volontärer välkomnas",
       "add_person_btn": "+ Lägg till person"
     },
     "gallery": {
@@ -226,6 +219,15 @@
       "label_date": "Önskat datum (ungefärligt)",
       "label_message": "Meddelande (frivilligt)",
       "submit_btn": "Skicka förfrågan"
+    },
+    "leadership": {
+      "page_title": "Ledarskap – Debre Hail S:t Gabriel & S:t Georgis",
+      "heading": "Ledarskap",
+      "heading_priests": "Präster",
+      "heading_management": "Kyrkoförvaltning",
+      "empty": "Volontärer välkomnas",
+      "modal_image_label": "Bildlänk (valfritt)",
+      "back_to_about": "‹ Till Om oss"
     }
   },
   "am": {
@@ -309,13 +311,6 @@
       "tab_vision_content": "ራዕያችን በጎተቦርግና በአካባቢው ለሚኖሩ የኢትዮጵያ ኦርቶዶክስ ተዋሕዶ ምዕመናን ሕያው መንፈሳዊ ቤት መሆን ነው – እምነት፣ ባህልና ቋንቋ የሚጠበቁበትና ለሚቀጥሉት ትውልዶች የሚተላለፉበት ቦታ።",
       "tab_uppdrag_content": "ተልእኳችን ቅዱስ ቅዳሴን ማክበር፣ ኦርቶዶክሳዊ እምነትን ማስተማርና እርስ በርስ የመተሳሰብና የኅብረት ሕይወት መገንባት ነው፤ ይህም በኢትዮጵያ ኦርቶዶክስ ተዋሕዶ ቤተክርስቲያን ትምህርትና ትውፊት መሠረት ነው።",
       "tab_varderingar_content": "እምነትን፣ ትሕትናን፣ እንግዳ ተቀባይነትንና ኅብረትን እናከብራለን። ሁሉንም ሰው ለመቀበል፣ ትውፊታችንን ለመጠበቅና ለምዕመናኑና ለማህበረሰቡ በሙሉ ለማገልገል እንተጋለን።",
-      "prast_role": "ካህን",
-      "prast_name": "መልአከ ኃይል ታደሠ",
-      "kyrkvaktmastare_role": "የቤተክርስቲያን ጠባቂ",
-      "kyrkvaktmastare_name": "ጎሳ ወርቁ",
-      "koransvarig_role": "የመዘምራን ኃላፊ",
-      "koransvarig_name": "ገብርኤላ አበበ",
-      "tier3_empty": "በጎ ፈቃደኞች ይጋበዛሉ",
       "add_person_btn": "+ ሰው ጨምር"
     },
     "gallery": {
@@ -455,6 +450,15 @@
       "label_date": "የተፈለገ ቀን (ግምት)",
       "label_message": "መልእክት (አማራጭ)",
       "submit_btn": "ጥያቄ ላክ"
+    },
+    "leadership": {
+      "page_title": "አመራር – ደብረ ኃይል ቅዱስ ገብርኤል እና ቅዱስ ጊዮርጊስ",
+      "heading": "አመራር",
+      "heading_priests": "ካህናት",
+      "heading_management": "የቤተክርስቲያን አስተዳደር",
+      "empty": "በጎ ፈቃደኞች ይጋበዛሉ",
+      "modal_image_label": "የምስል አድራሻ (አማራጭ)",
+      "back_to_about": "‹ ወደ ስለ እኛ"
     }
   }
 }

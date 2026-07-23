@@ -636,6 +636,16 @@ body.lang-am .brand-name { font-size: 1.5rem; }
 }
 .person-card.gold-border { border: 2px solid var(--gold); }
 .person-icon { display: block; font-size: 1.6rem; margin-bottom: 0.3em; }
+.person-photo {
+  display: block;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 0.5em;
+  border: 2px solid var(--gold-lt);
+  background: #fff;
+}
 .person-role { display: block; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--gold-lt); }
 .person-name { display: block; font-weight: 700; margin-top: 0.2em; }
 .tier-empty { color: #d8c8b8; font-style: italic; width: 100%; }
@@ -648,6 +658,20 @@ body.lang-am .brand-name { font-size: 1.5rem; }
   min-width: 160px;
 }
 .add-person-btn:hover { background: rgba(255,255,255,0.08); }
+
+/* ledarskap.html: reuses .leadership-tree/.person-card etc. above, which
+   assume the crimson background this section provides. */
+.leadership-page-section {
+  background: var(--crimson);
+  color: #fdf8ee;
+  padding: 4rem 0 5rem;
+}
+.leadership-group-title {
+  color: var(--gold-lt);
+  text-align: center;
+  margin: 0 0 1.5rem;
+}
+.leadership-group-title:not(:first-child) { margin-top: 3.5rem; }
 
 @media (max-width: 760px) {
   .about-intro { grid-template-columns: 1fr; }
