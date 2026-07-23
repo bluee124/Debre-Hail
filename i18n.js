@@ -46,6 +46,7 @@
 
     updateLangToggleLabel();
     localStorage.setItem('dh-lang', lang);
+    document.dispatchEvent(new CustomEvent('dh:langchange', { detail: { lang } }));
   }
 
   window.applyLang = applyLang;

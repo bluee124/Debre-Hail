@@ -717,6 +717,118 @@ body.lang-am .brand-name { font-size: 1.15rem; }
 .sched-table tbody tr:hover { background: var(--gold-bg); }
 .location-note { text-align: center; margin-top: 1.2rem; color: #6b5f55; font-style: italic; }
 
+/* Ethiopian Orthodox calendar widget */
+.eo-calendar {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  max-width: 820px;
+  margin: 0 auto;
+}
+.eo-cal-banner {
+  background: linear-gradient(120deg, var(--gold) 0%, var(--crimson) 100%);
+  color: #fff;
+  padding: 20px 24px;
+  text-align: center;
+}
+.eo-cal-banner h3 { color: #fff; margin-bottom: 0.3em; }
+.eo-cal-today-pill {
+  display: inline-block;
+  background: rgba(0,0,0,0.25);
+  border-radius: 30px;
+  padding: 4px 16px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.eo-cal-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border);
+}
+.eo-cal-nav, .eo-cal-today-btn {
+  background: var(--gold-bg);
+  border: 1px solid var(--border);
+  color: var(--crimson-dk);
+  padding: 0.5em 1.1em;
+  border-radius: 30px;
+  font-weight: 600;
+}
+.eo-cal-nav:hover, .eo-cal-today-btn:hover { background: var(--crimson); color: #fff; border-color: var(--crimson); }
+.eo-cal-select-group { display: flex; gap: 8px; }
+.eo-cal-select-group select, .eo-cal-year-input {
+  padding: 0.5em 0.8em;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  font-family: inherit;
+}
+.eo-cal-year-input { width: 90px; }
+
+.eo-cal-weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  background: var(--crimson);
+}
+.eo-wd {
+  color: #fff;
+  text-align: center;
+  padding: 8px 4px;
+  font-weight: 700;
+  font-size: 0.82rem;
+}
+
+.eo-cal-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+.eo-cell {
+  min-height: 78px;
+  border: 1px solid var(--border);
+  border-left: 3px solid transparent;
+  padding: 6px 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.eo-cell-empty { background: #faf8f3; }
+.eo-cell-day { font-weight: 700; color: var(--crimson-dk); }
+.eo-cell-greg { font-size: 0.72rem; color: #9a9088; }
+.eo-cell-label { font-size: 0.68rem; font-weight: 700; color: var(--crimson); line-height: 1.2; }
+
+.eo-cell.is-sunday { background: #fdf3f3; }
+.eo-cell.is-fasting { border-left-color: #8a4fbf; }
+.eo-cell.is-feast { border-left-color: #c81e1e; }
+.eo-cell.is-today { background: var(--gold-lt); }
+.eo-cell.is-today .eo-cell-day { color: var(--crimson-dk); }
+
+.eo-cal-legend {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 16px 20px;
+  font-size: 0.82rem;
+  color: #6b5f55;
+}
+.legend-item { display: flex; align-items: center; gap: 6px; }
+.legend-swatch { width: 14px; height: 14px; border-radius: 3px; display: inline-block; }
+.swatch-today { background: var(--gold-lt); }
+.swatch-sunday { background: #fdf3f3; border: 1px solid var(--border); }
+.swatch-feast { background: #c81e1e; }
+.swatch-fasting { background: #8a4fbf; }
+
+@media (max-width: 700px) {
+  .eo-cell { min-height: 60px; padding: 4px 5px; }
+  .eo-cell-label { display: none; }
+  .eo-wd { font-size: 0.7rem; }
+}
+
 /* ==========================================================================
    9. Contact Section
    ========================================================================== */

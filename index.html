@@ -74,12 +74,23 @@
         </div>
       </div>
     </div>
+    <div class="slide" style="background-image:url('images/hero3.png')">
+      <div class="overlay"></div>
+      <div class="slide-content">
+        <p class="slide-quote" data-i18n-html="hero.slide3_quote"></p>
+        <div class="slide-ctas">
+          <a href="#om" class="btn btn-gold" data-i18n="hero.slide3_cta1"></a>
+          <a href="#nyheter" class="btn btn-outline" data-i18n="hero.slide3_cta2"></a>
+        </div>
+      </div>
+    </div>
   </div>
   <button class="slide-arrow prev" id="prevSlide" aria-label="Föregående bild">‹</button>
   <button class="slide-arrow next" id="nextSlide" aria-label="Nästa bild">›</button>
   <div class="slide-dots" id="slideDots">
     <button class="dot active" data-slide="0" aria-label="Bild 1"></button>
     <button class="dot" data-slide="1" aria-label="Bild 2"></button>
+    <button class="dot" data-slide="2" aria-label="Bild 3"></button>
   </div>
   <div class="info-card">
     <h4 data-i18n="hero.info_title"></h4>
@@ -360,45 +371,35 @@
     </div>
 
     <div class="sched-panel" data-sched-panel="hogtider">
-      <div class="table-wrap">
-        <table class="sched-table">
-          <thead>
-            <tr>
-              <th data-i18n="schedule.th_datum"></th>
-              <th data-i18n="schedule.th_geez"></th>
-              <th data-i18n="schedule.th_helgdag"></th>
-              <th data-i18n="schedule.th_beskrivning"></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td data-i18n="schedule.row_advent_datum"></td>
-              <td data-i18n="schedule.row_advent_geez"></td>
-              <td data-i18n="schedule.row_advent_helgdag"></td>
-              <td data-i18n="schedule.row_advent_besk"></td>
-            </tr>
-            <tr>
-              <td data-i18n="schedule.row_genna_datum"></td>
-              <td data-i18n="schedule.row_genna_geez"></td>
-              <td data-i18n="schedule.row_genna_helgdag"></td>
-              <td data-i18n="schedule.row_genna_besk"></td>
-            </tr>
-            <tr>
-              <td data-i18n="schedule.row_timkat_datum"></td>
-              <td data-i18n="schedule.row_timkat_geez"></td>
-              <td data-i18n="schedule.row_timkat_helgdag"></td>
-              <td data-i18n="schedule.row_timkat_besk"></td>
-            </tr>
-            <tr>
-              <td data-i18n="schedule.row_fasika_datum"></td>
-              <td data-i18n="schedule.row_fasika_geez"></td>
-              <td data-i18n="schedule.row_fasika_helgdag"></td>
-              <td data-i18n="schedule.row_fasika_besk"></td>
-            </tr>
-          </tbody>
-        </table>
+      <div class="eo-calendar" id="eoCalendar">
+        <div class="eo-cal-banner">
+          <h3 data-i18n="calendar.heading"></h3>
+          <p class="eo-cal-today-pill">
+            <span data-i18n="calendar.today_prefix"></span> <span id="eoCalTodayLabel"></span>
+          </p>
+        </div>
+
+        <div class="eo-cal-controls">
+          <button type="button" id="eoCalPrev" class="eo-cal-nav">‹ <span data-i18n="calendar.prev"></span></button>
+          <div class="eo-cal-select-group">
+            <select id="eoCalMonthSelect"></select>
+            <input type="number" id="eoCalYearInput" class="eo-cal-year-input">
+          </div>
+          <button type="button" id="eoCalNext" class="eo-cal-nav"><span data-i18n="calendar.next"></span> ›</button>
+          <button type="button" id="eoCalTodayBtn" class="eo-cal-today-btn">📅 <span data-i18n="calendar.today_btn"></span></button>
+        </div>
+
+        <div class="eo-cal-weekdays" id="eoCalWeekdays"></div>
+        <div class="eo-cal-grid" id="eoCalGrid"></div>
+
+        <div class="eo-cal-legend">
+          <span class="legend-item"><i class="legend-swatch swatch-today"></i><span data-i18n="calendar.legend_today"></span></span>
+          <span class="legend-item"><i class="legend-swatch swatch-sunday"></i><span data-i18n="calendar.legend_sunday"></span></span>
+          <span class="legend-item"><i class="legend-swatch swatch-feast"></i><span data-i18n="calendar.legend_feast"></span></span>
+          <span class="legend-item"><i class="legend-swatch swatch-fasting"></i><span data-i18n="calendar.legend_fasting"></span></span>
+        </div>
       </div>
-      <p class="location-note" data-i18n="schedule.note_fasika"></p>
+      <p class="location-note" data-i18n="calendar.disclaimer"></p>
     </div>
   </div>
 </section>
@@ -480,5 +481,6 @@
 
 <script src="i18n.js"></script>
 <script src="main.js"></script>
+<script src="calendar.js"></script>
 </body>
 </html>

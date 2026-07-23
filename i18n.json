@@ -29,7 +29,10 @@
       "slide2_cta2": "Galleri",
       "info_title": "Gudstjänsttider",
       "info_line1": "Söndag 10:00 – Högmässa",
-      "info_line2": "Lördag 18:00 – Vesper"
+      "info_line2": "Lördag 18:00 – Vesper",
+      "slide3_quote": "Sjung en ny sång till Herren, sjung Herrens lov, hela jorden! <em>(Psalm 96:1)</em>",
+      "slide3_cta1": "Om oss",
+      "slide3_cta2": "Nyheter"
     },
     "news": {
       "section_title": "Nyheter",
@@ -121,28 +124,7 @@
       "row_sat_day": "Lördag",
       "row_sat_time": "18:00",
       "row_sat_service": "Vesper",
-      "location_note": "Alla gudstjänster hålls på Bergsjödalen 44, Göteborg.",
-      "th_datum": "Datum",
-      "th_geez": "Ge'ez-månad",
-      "th_helgdag": "Högtid",
-      "th_beskrivning": "Beskrivning",
-      "row_advent_datum": "1 december",
-      "row_advent_geez": "Hedar/Tahsas",
-      "row_advent_helgdag": "Advent (Fastan inleds)",
-      "row_advent_besk": "Fastan inför Kristi födelse inleds.",
-      "row_genna_datum": "25 december",
-      "row_genna_geez": "Tahsas 29",
-      "row_genna_helgdag": "Genna – Jul",
-      "row_genna_besk": "Firande av Kristi födelse.",
-      "row_timkat_datum": "19 januari",
-      "row_timkat_geez": "Ter 11",
-      "row_timkat_helgdag": "Timkat",
-      "row_timkat_besk": "Firande av Kristi dop i Jordanfloden.",
-      "row_fasika_datum": "Rörligt datum",
-      "row_fasika_geez": "–",
-      "row_fasika_helgdag": "Fasika – Påsk",
-      "row_fasika_besk": "Se anslag i kyrkan för årets datum.",
-      "note_fasika": "Fasika (Påsk) firas enligt den etiopisk-ortodoxa kalendern och infaller på olika datum varje år – se separata anslag samt vår Instagram/TikTok för aktuellt datum."
+      "location_note": "Alla gudstjänster hålls på Bergsjödalen 44, Göteborg."
     },
     "contact": {
       "section_title": "Kontakt",
@@ -167,6 +149,18 @@
       "label_icon": "Ikon",
       "save_btn": "Spara",
       "cancel_btn": "Avbryt"
+    },
+    "calendar": {
+      "heading": "Etiopisk-ortodox kalender",
+      "today_prefix": "Idag:",
+      "prev": "Föregående",
+      "next": "Nästa",
+      "today_btn": "Idag",
+      "legend_today": "Idag",
+      "legend_sunday": "Söndag",
+      "legend_feast": "Helgdag (årlig/månatlig)",
+      "legend_fasting": "Fastedag",
+      "disclaimer": "Datumen är vägledande och beräknade automatiskt – kontrollera med prästerskapet inför viktiga högtider."
     }
   },
   "am": {
@@ -199,7 +193,10 @@
       "slide2_cta2": "ማዕከለ ስዕላት",
       "info_title": "የአምልኮ ሰዓታት",
       "info_line1": "እሑድ 10:00 – ቅዳሴ",
-      "info_line2": "ቅዳሜ 18:00 – ሠርክ ጸሎት"
+      "info_line2": "ቅዳሜ 18:00 – ሠርክ ጸሎት",
+      "slide3_quote": "ለእግዚአብሔር አዲስ መዝሙር ዘምሩ፤ ምድር ሁሉ ለእግዚአብሔር ዘምሩ። <em>(መዝሙር 96:1)</em>",
+      "slide3_cta1": "ስለ እኛ",
+      "slide3_cta2": "ዜናዎች"
     },
     "news": {
       "section_title": "ዜናዎች",
@@ -291,28 +288,7 @@
       "row_sat_day": "ቅዳሜ",
       "row_sat_time": "18:00",
       "row_sat_service": "ሠርክ ጸሎት",
-      "location_note": "ሁሉም ስርዓተ አምልኮዎች የሚካሄዱት በ Bergsjödalen 44, ጎተቦርግ ነው።",
-      "th_datum": "ቀን",
-      "th_geez": "የግዕዝ ወር",
-      "th_helgdag": "በዓል",
-      "th_beskrivning": "መግለጫ",
-      "row_advent_datum": "ታኅሳስ 1",
-      "row_advent_geez": "ኅዳር/ታኅሳስ",
-      "row_advent_helgdag": "ጾመ ልደት (አድቬንት)",
-      "row_advent_besk": "የክርስቶስ ልደት በዓል ጾም ይጀምራል።",
-      "row_genna_datum": "ታኅሳስ 29",
-      "row_genna_geez": "ታኅሳስ 29",
-      "row_genna_helgdag": "ገና",
-      "row_genna_besk": "የክርስቶስ ልደት በዓል።",
-      "row_timkat_datum": "ጥር 11",
-      "row_timkat_geez": "ጥር 11",
-      "row_timkat_helgdag": "ጥምቀት",
-      "row_timkat_besk": "ጌታችን በዮርዳኖስ ወንዝ የተጠመቀበት በዓል።",
-      "row_fasika_datum": "ተለዋዋጭ ቀን",
-      "row_fasika_geez": "–",
-      "row_fasika_helgdag": "ፋሲካ",
-      "row_fasika_besk": "ትክክለኛውን ቀን በቤተክርስቲያኒቱ ማስታወቂያ ይመልከቱ።",
-      "note_fasika": "ፋሲካ (ትንሣኤ) እንደ ኢትዮጵያ ኦርቶዶክስ ተዋሕዶ ቀመር በየዓመቱ በተለያየ ቀን ይከበራል – ትክክለኛውን ቀን በቤተክርስቲያናችን ማስታወቂያ እና በኢንስታግራም/ቲክቶክ ገጻችን ይመልከቱ።"
+      "location_note": "ሁሉም ስርዓተ አምልኮዎች የሚካሄዱት በ Bergsjödalen 44, ጎተቦርግ ነው።"
     },
     "contact": {
       "section_title": "አግኙን",
@@ -337,6 +313,18 @@
       "label_icon": "ምልክት",
       "save_btn": "አስቀምጥ",
       "cancel_btn": "ሰርዝ"
+    },
+    "calendar": {
+      "heading": "የኢትዮጵያ ኦርቶዶክስ ቀን መቁጠሪያ",
+      "today_prefix": "ዛሬ፦",
+      "prev": "የቀደመው",
+      "next": "ቀጣዩ",
+      "today_btn": "ዛሬ",
+      "legend_today": "ዛሬ",
+      "legend_sunday": "እሑድ",
+      "legend_feast": "በዓል (ዓመታዊ/ወርሃዊ)",
+      "legend_fasting": "የጾም ቀን",
+      "disclaimer": "ቀኖቹ በራስ-ሰር የተሰሉ አመላካቾች ናቸው – ለዋና ዋና በዓላት ከካህኑ ጋር ያረጋግጡ።"
     }
   }
 }
