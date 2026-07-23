@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title data-i18n="meta.title">Debre Hail S:t Gabriel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Source+Sans+3:wght@400;500;600;700&family=Noto+Sans+Ethiopic:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- 1. Topbar -->
+<div class="topbar">
+  <div class="topbar-inner container">
+    <div class="topbar-left">
+      <span class="topbar-item">📍 <span data-i18n="topbar.address"></span></span>
+      <span class="topbar-item">✉ <a href="mailto:info@debrehail.se" data-i18n="topbar.email"></a></span>
+      <span class="topbar-item">☎ <a href="tel:+46700000000" data-i18n="topbar.phone"></a></span>
+    </div>
+    <div class="topbar-right">
+      <a class="btn-social instagram" href="https://instagram.com/ÄNDRA_TILL_ER_PROFIL" target="_blank" rel="noopener">Instagram</a>
+      <a class="btn-social tiktok" href="https://tiktok.com/@ÄNDRA_TILL_ER_PROFIL" target="_blank" rel="noopener">TikTok</a>
+    </div>
+  </div>
+</div>
+
+<!-- 2. Sticky Header -->
+<header class="site-header" id="siteHeader">
+  <div class="header-inner container">
+    <a href="#hem" class="brand">
+      <img src="images/logo.png" alt="Debre Hail S:t Gabriel logotyp" class="logo">
+      <span class="brand-text">
+        <span class="brand-name" data-i18n="header.name"></span>
+        <span class="brand-sub" data-i18n="header.subtitle"></span>
+      </span>
+    </a>
+    <button class="hamburger" id="hamburgerBtn" aria-label="Meny" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="main-nav" id="mainNav">
+      <a href="#hem" class="nav-link" data-nav="hem" data-i18n="nav.hem"></a>
+      <a href="#nyheter" class="nav-link" data-nav="nyheter" data-i18n="nav.nyheter"></a>
+      <a href="#om" class="nav-link" data-nav="om" data-i18n="nav.om"></a>
+      <a href="#gudstjanster" class="nav-link" data-nav="gudstjanster" data-i18n="nav.gudstjanster"></a>
+      <a href="#galleri" class="nav-link" data-nav="galleri" data-i18n="nav.galleri"></a>
+      <a href="#kontakt" class="nav-link" data-nav="kontakt" data-i18n="nav.kontakt"></a>
+      <button class="lang-toggle" id="langToggle" type="button"></button>
+    </nav>
+  </div>
+</header>
+
+<!-- 3. Hero Slider -->
+<section class="hero" id="hem">
+  <div class="slider" id="slider">
+    <div class="slide active" style="background-image:url('images/hero1.png')">
+      <div class="overlay"></div>
+      <div class="slide-content">
+        <p class="slide-quote" data-i18n-html="hero.slide1_quote"></p>
+        <div class="slide-ctas">
+          <a href="#om" class="btn btn-gold" data-i18n="hero.slide1_cta1"></a>
+          <a href="#kontakt" class="btn btn-outline" data-i18n="hero.slide1_cta2"></a>
+        </div>
+      </div>
+    </div>
+    <div class="slide" style="background-image:url('images/hero2.png')">
+      <div class="overlay"></div>
+      <div class="slide-content">
+        <p class="slide-quote" data-i18n-html="hero.slide2_quote"></p>
+        <div class="slide-ctas">
+          <a href="#gudstjanster" class="btn btn-gold" data-i18n="hero.slide2_cta1"></a>
+          <a href="#galleri" class="btn btn-outline" data-i18n="hero.slide2_cta2"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button class="slide-arrow prev" id="prevSlide" aria-label="Föregående bild">‹</button>
+  <button class="slide-arrow next" id="nextSlide" aria-label="Nästa bild">›</button>
+  <div class="slide-dots" id="slideDots">
+    <button class="dot active" data-slide="0" aria-label="Bild 1"></button>
+    <button class="dot" data-slide="1" aria-label="Bild 2"></button>
+  </div>
+  <div class="info-card">
+    <h4 data-i18n="hero.info_title"></h4>
+    <p data-i18n="hero.info_line1"></p>
+    <p data-i18n="hero.info_line2"></p>
+  </div>
+  <div class="tricolor-stripe"></div>
+</section>
+
+<!-- 4. News Section -->
+<section class="news-section" id="nyheter">
+  <div class="container">
+    <h2 class="section-title" data-i18n="news.section_title"></h2>
+    <p class="section-sub" data-i18n="news.section_sub"></p>
+
+    <div class="news-grid">
+      <div class="news-feed">
+
+        <article class="news-item">
+          <div class="news-icon">📰</div>
+          <div class="news-body">
+            <span class="news-date" data-i18n="news.article1_date"></span>
+            <h3 data-i18n="news.article1_title"></h3>
+            <p class="news-excerpt" data-i18n="news.article1_excerpt"></p>
+            <div class="news-full"><p data-i18n="news.article1_full"></p></div>
+            <button class="news-toggle" data-i18n="news.read_more"></button>
+          </div>
+        </article>
+
+        <article class="news-item">
+          <div class="news-icon">📰</div>
+          <div class="news-body">
+            <span class="news-date" data-i18n="news.article2_date"></span>
+            <h3 data-i18n="news.article2_title"></h3>
+            <p class="news-excerpt" data-i18n="news.article2_excerpt"></p>
+            <div class="news-full"><p data-i18n="news.article2_full"></p></div>
+            <button class="news-toggle" data-i18n="news.read_more"></button>
+          </div>
+        </article>
+
+        <article class="news-item">
+          <div class="news-icon">📰</div>
+          <div class="news-body">
+            <span class="news-date" data-i18n="news.article3_date"></span>
+            <h3 data-i18n="news.article3_title"></h3>
+            <p class="news-excerpt" data-i18n="news.article3_excerpt"></p>
+            <div class="news-full"><p data-i18n="news.article3_full"></p></div>
+            <button class="news-toggle" data-i18n="news.read_more"></button>
+          </div>
+        </article>
+
+        <article class="news-item">
+          <div class="news-icon">📰</div>
+          <div class="news-body">
+            <span class="news-date" data-i18n="news.article4_date"></span>
+            <h3 data-i18n="news.article4_title"></h3>
+            <p class="news-excerpt" data-i18n="news.article4_excerpt"></p>
+            <div class="news-full"><p data-i18n="news.article4_full"></p></div>
+            <button class="news-toggle" data-i18n="news.read_more"></button>
+          </div>
+        </article>
+
+      </div>
+
+      <aside class="news-sidebar">
+        <div class="sidebar-card">
+          <h4 data-i18n="sidebar.social_title"></h4>
+          <a class="btn-social instagram block" href="https://instagram.com/ÄNDRA_TILL_ER_PROFIL" target="_blank" rel="noopener" data-i18n="sidebar.instagram"></a>
+          <a class="btn-social tiktok block" href="https://tiktok.com/@ÄNDRA_TILL_ER_PROFIL" target="_blank" rel="noopener" data-i18n="sidebar.tiktok"></a>
+        </div>
+
+        <div class="sidebar-card">
+          <h4 data-i18n="sidebar.sched_title"></h4>
+          <p data-i18n="sidebar.sched_sun"></p>
+          <p data-i18n="sidebar.sched_sat"></p>
+        </div>
+
+        <div class="sidebar-card faq-card">
+          <h4 data-i18n="sidebar.faq_title"></h4>
+          <div class="faq-item">
+            <button class="faq-q" data-i18n="sidebar.faq_q1"></button>
+            <div class="faq-a"><p data-i18n="sidebar.faq_a1"></p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" data-i18n="sidebar.faq_q2"></button>
+            <div class="faq-a"><p data-i18n="sidebar.faq_a2"></p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" data-i18n="sidebar.faq_q3"></button>
+            <div class="faq-a"><p data-i18n="sidebar.faq_a3"></p></div>
+          </div>
+        </div>
+
+        <div class="sidebar-card">
+          <h4 data-i18n="sidebar.contact_title"></h4>
+          <p>📍 <span data-i18n="topbar.address"></span></p>
+          <p>✉ <span data-i18n="topbar.email"></span></p>
+          <p>☎ <span data-i18n="topbar.phone"></span></p>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- 5. Counter Strip -->
+<section class="counter-strip">
+  <div class="container counters-grid">
+    <div class="counter-item">
+      <span class="counter-num" data-target="1965">0</span>
+      <span class="counter-label" data-i18n="counters.grundad_label"></span>
+    </div>
+    <div class="counter-item">
+      <span class="counter-num" data-target="500">0</span>
+      <span class="counter-label" data-i18n="counters.medlemmar_label"></span>
+    </div>
+    <div class="counter-item">
+      <span class="counter-num" data-target="52">0</span>
+      <span class="counter-label" data-i18n="counters.gudstjanster_label"></span>
+    </div>
+    <div class="counter-item">
+      <span class="counter-num" data-target="3">0</span>
+      <span class="counter-label" data-i18n="counters.tjanster_label"></span>
+    </div>
+  </div>
+</section>
+
+<!-- 6. About Section -->
+<section class="about-section" id="om">
+  <div class="container">
+    <h2 class="section-title" data-i18n="about.section_title"></h2>
+
+    <div class="about-intro">
+      <div class="intro-col">
+        <h3 data-i18n="about.vision_title"></h3>
+        <p data-i18n="about.vision_text"></p>
+      </div>
+      <div class="intro-col">
+        <h3 data-i18n="about.uppdrag_title"></h3>
+        <p data-i18n="about.uppdrag_text"></p>
+      </div>
+      <div class="intro-col">
+        <h3 data-i18n="about.kyrka_title"></h3>
+        <p data-i18n="about.kyrka_text"></p>
+      </div>
+    </div>
+
+    <div class="about-tabs">
+      <div class="tab-buttons">
+        <button class="tab-btn active" data-tab="vision" data-i18n="about.tab_vision"></button>
+        <button class="tab-btn" data-tab="uppdrag" data-i18n="about.tab_uppdrag"></button>
+        <button class="tab-btn" data-tab="varderingar" data-i18n="about.tab_varderingar"></button>
+        <button class="tab-btn" data-tab="ledningen" data-i18n="about.tab_ledningen"></button>
+      </div>
+
+      <div class="tab-panels">
+        <div class="tab-panel active" data-panel="vision">
+          <p data-i18n="about.tab_vision_content"></p>
+        </div>
+        <div class="tab-panel" data-panel="uppdrag">
+          <p data-i18n="about.tab_uppdrag_content"></p>
+        </div>
+        <div class="tab-panel" data-panel="varderingar">
+          <p data-i18n="about.tab_varderingar_content"></p>
+        </div>
+        <div class="tab-panel" data-panel="ledningen">
+          <div class="leadership-tree" id="leadershipTree">
+            <div class="tier tier1">
+              <div class="person-card gold-border">
+                <span class="person-icon">✝️</span>
+                <span class="person-role" data-i18n="about.prast_role"></span>
+                <span class="person-name" data-i18n="about.prast_name"></span>
+              </div>
+            </div>
+            <div class="tree-line"></div>
+            <div class="tier tier2" id="tier2">
+              <div class="person-card">
+                <span class="person-icon">🔑</span>
+                <span class="person-role" data-i18n="about.kyrkvaktmastare_role"></span>
+                <span class="person-name" data-i18n="about.kyrkvaktmastare_name"></span>
+              </div>
+              <div class="person-card">
+                <span class="person-icon">🎵</span>
+                <span class="person-role" data-i18n="about.koransvarig_role"></span>
+                <span class="person-name" data-i18n="about.koransvarig_name"></span>
+              </div>
+              <button class="add-person-btn" data-i18n="about.add_person_btn" onclick="openModal(2)"></button>
+            </div>
+            <div class="tree-line"></div>
+            <div class="tier tier3" id="tier3">
+              <p class="tier-empty" data-i18n="about.tier3_empty"></p>
+              <button class="add-person-btn" data-i18n="about.add_person_btn" onclick="openModal(3)"></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 7. Gallery Section -->
+<section class="gallery-section" id="galleri">
+  <div class="container">
+    <h2 class="section-title" data-i18n="gallery.section_title"></h2>
+
+    <div class="gallery-filters">
+      <button class="filter-btn active" data-filter="all" data-i18n="gallery.filter_all"></button>
+      <button class="filter-btn" data-filter="gudstjanster" data-i18n="gallery.filter_gudstjanster"></button>
+      <button class="filter-btn" data-filter="hogtider" data-i18n="gallery.filter_hogtider"></button>
+      <button class="filter-btn" data-filter="kor" data-i18n="gallery.filter_kor"></button>
+      <button class="filter-btn" data-filter="barn" data-i18n="gallery.filter_barn"></button>
+      <button class="filter-btn" data-filter="gemenskap" data-i18n="gallery.filter_gemenskap"></button>
+    </div>
+
+    <div class="gallery-grid" id="galleryGrid">
+      <div class="gallery-item tile-1" data-cat="gudstjanster" data-title-sv="Söndagens Högmässa" data-title-am="የእሑድ ቅዳሴ"><span class="tile-emoji">⛪</span><div class="tile-overlay"><span class="tile-title"></span></div></div>
+      <div class="gallery-item tile-2" data-cat="gudstjanster" data-title-sv="Rökelseoffer" data-title-am="የዕጣን ስርዓት"><span class="tile-emoji">🕯️</span><div class="tile-overlay"><span class="tile-title"></span></div></div>
+      <div class="gallery-item tile-3" data-cat="gudstjanster" data-title-sv="Diakonernas tjänst" data-title-am="የዲያቆናት አገልግሎት"><span class="tile-emoji">📖</span><div class="tile-overlay"><span class="tile-title"></span></div></div>
+      <div class="gallery-item tile-4" data-cat="hogtider" data-title-sv="Fasika-firande" data-title-am="የፋሲካ በዓል"><span class="tile-emoji">✝️</span><div class="tile-overlay"><span class="tile-title"></span></div></div>
+      <div class="gallery-item tile-5" data-cat="hogtider" data-title-sv="Timkat-processionen" data-title-am="የጥምቀት ሰልፍ"><span class="tile-emoji">💧</span><div class="tile-overlay"><span class="tile-title"></span></div></div>
+      <div class="gallery-item tile-6" data-cat="hogtider" data-title-sv="Genna – Jul" data-title-am="ገና"><span class="tile-emoji">⭐</span><div class="tile-overlay"><span class="tile-title"></span></div></div>
+      <div class="gallery-item tile-7" data-cat="hogtider" data-title-sv="Meskel-firande" data-title-am="የመስቀል በዓል"><span class="tile-emoji">🔥</span><div class="tile-overlay"><span class="tile-title"></span></div></div>
+      <div class="gallery-item tile-8" data-cat="kor" data-title-sv="Kyrkokören sjunger" data-title-am="የቤተክርስቲያን መዘምራን"><span class="tile-emoji">🎶</span><div class="tile-overlay"><span class="tile-title"></span></div></div>
+      <div class="gallery-item tile-9" data-cat="kor" data-title-sv="Unga sångare" data-title-am="ወጣት ዘማሪያን"><span class="tile-emoji">🎤</span><div class="tile-overlay"><span class="tile-title"></span></div></div>
+      <div class="gallery-item tile-10" data-cat="kor" data-title-sv="Övning inför högtid" data-title-am="ለበዓል ዝግጅት ልምምድ"><span class="tile-emoji">🎼</span><div class="tile-overlay"><span class="tile-title"></span></div></div>
+      <div class="gallery-item tile-11" data-cat="barn" data-title-sv="Söndagsskolan" data-title-am="የሰንበት ትምህርት ቤት"><span class="tile-emoji">📚</span><div class="tile-overlay"><span class="tile-title"></span></div></div>
+      <div class="gallery-item tile-12" data-cat="barn" data-title-sv="Barnens välsignelse" data-title-am="የልጆች በረከት"><span class="tile-emoji">🙏</span><div class="tile-overlay"><span class="tile-title"></span></div></div>
+      <div class="gallery-item tile-13" data-cat="barn" data-title-sv="Familjedag" data-title-am="የቤተሰብ ቀን"><span class="tile-emoji">👨‍👩‍👧‍👦</span><div class="tile-overlay"><span class="tile-title"></span></div></div>
+      <div class="gallery-item tile-14" data-cat="gemenskap" data-title-sv="Kyrkkaffe" data-title-am="ከቅዳሴ በኋላ ቡና"><span class="tile-emoji">☕</span><div class="tile-overlay"><span class="tile-title"></span></div></div>
+      <div class="gallery-item tile-15" data-cat="gemenskap" data-title-sv="Volontärernas städdag" data-title-am="የበጎ ፈቃደኞች ጽዳት ቀን"><span class="tile-emoji">🧹</span><div class="tile-overlay"><span class="tile-title"></span></div></div>
+      <div class="gallery-item tile-16" data-cat="gemenskap" data-title-sv="Församlingens gemenskap" data-title-am="የምዕመናን ኅብረት"><span class="tile-emoji">🤝</span><div class="tile-overlay"><span class="tile-title"></span></div></div>
+    </div>
+  </div>
+</section>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Stäng">×</button>
+  <button class="lightbox-arrow prev" id="lightboxPrev" aria-label="Föregående">‹</button>
+  <div class="lightbox-content" id="lightboxContent"></div>
+  <button class="lightbox-arrow next" id="lightboxNext" aria-label="Nästa">›</button>
+  <div class="lightbox-counter" id="lightboxCounter"></div>
+</div>
+
+<!-- 8. Schedule Section -->
+<section class="schedule-section" id="gudstjanster">
+  <div class="container">
+    <h2 class="section-title" data-i18n="schedule.section_title"></h2>
+
+    <div class="sched-tabs">
+      <button class="sched-tab-btn active" data-sched-tab="ordinarie" data-i18n="schedule.tab_ordinarie"></button>
+      <button class="sched-tab-btn" data-sched-tab="hogtider" data-i18n="schedule.tab_hogtider"></button>
+    </div>
+
+    <div class="sched-panel active" data-sched-panel="ordinarie">
+      <div class="table-wrap">
+        <table class="sched-table">
+          <thead>
+            <tr>
+              <th data-i18n="schedule.th_dag"></th>
+              <th data-i18n="schedule.th_tid"></th>
+              <th data-i18n="schedule.th_gudstjanst"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-i18n="schedule.row_sun_day"></td>
+              <td data-i18n="schedule.row_sun_time"></td>
+              <td data-i18n="schedule.row_sun_service"></td>
+            </tr>
+            <tr>
+              <td data-i18n="schedule.row_sat_day"></td>
+              <td data-i18n="schedule.row_sat_time"></td>
+              <td data-i18n="schedule.row_sat_service"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="location-note" data-i18n="schedule.location_note"></p>
+    </div>
+
+    <div class="sched-panel" data-sched-panel="hogtider">
+      <div class="table-wrap">
+        <table class="sched-table">
+          <thead>
+            <tr>
+              <th data-i18n="schedule.th_datum"></th>
+              <th data-i18n="schedule.th_geez"></th>
+              <th data-i18n="schedule.th_helgdag"></th>
+              <th data-i18n="schedule.th_beskrivning"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-i18n="schedule.row_advent_datum"></td>
+              <td data-i18n="schedule.row_advent_geez"></td>
+              <td data-i18n="schedule.row_advent_helgdag"></td>
+              <td data-i18n="schedule.row_advent_besk"></td>
+            </tr>
+            <tr>
+              <td data-i18n="schedule.row_genna_datum"></td>
+              <td data-i18n="schedule.row_genna_geez"></td>
+              <td data-i18n="schedule.row_genna_helgdag"></td>
+              <td data-i18n="schedule.row_genna_besk"></td>
+            </tr>
+            <tr>
+              <td data-i18n="schedule.row_timkat_datum"></td>
+              <td data-i18n="schedule.row_timkat_geez"></td>
+              <td data-i18n="schedule.row_timkat_helgdag"></td>
+              <td data-i18n="schedule.row_timkat_besk"></td>
+            </tr>
+            <tr>
+              <td data-i18n="schedule.row_fasika_datum"></td>
+              <td data-i18n="schedule.row_fasika_geez"></td>
+              <td data-i18n="schedule.row_fasika_helgdag"></td>
+              <td data-i18n="schedule.row_fasika_besk"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="location-note" data-i18n="schedule.note_fasika"></p>
+    </div>
+  </div>
+</section>
+
+<!-- 9. Contact Section -->
+<section class="contact-section" id="kontakt">
+  <div class="container contact-grid">
+    <div class="contact-info">
+      <h2 class="section-title" data-i18n="contact.section_title"></h2>
+      <h3 data-i18n="contact.address_title"></h3>
+      <p data-i18n="contact.address_text"></p>
+      <div class="map-embed">
+        <iframe
+          src="https://www.google.com/maps?q=Bergsj%C3%B6dalen+44,+415+23+G%C3%B6teborg&output=embed"
+          width="100%" height="320" style="border:0"
+          allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Karta – Bergsjödalen 44, Göteborg"></iframe>
+      </div>
+    </div>
+
+    <div class="contact-form-wrap">
+      <h3 data-i18n="contact.form_title"></h3>
+      <form id="contactForm" novalidate>
+        <label for="contactName" data-i18n="contact.label_name"></label>
+        <input type="text" id="contactName" name="name" required>
+
+        <label for="contactEmail" data-i18n="contact.label_email"></label>
+        <input type="email" id="contactEmail" name="email" required>
+
+        <label for="contactMessage" data-i18n="contact.label_message"></label>
+        <textarea id="contactMessage" name="message" rows="5" required></textarea>
+
+        <button type="submit" class="btn btn-gold" data-i18n="contact.submit_btn"></button>
+        <p class="form-msg" id="formMsg" role="status"></p>
+      </form>
+      <p class="privacy-note" data-i18n="contact.privacy_note"></p>
+    </div>
+  </div>
+</section>
+
+<!-- 10. Footer -->
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <p data-i18n="footer.copyright"></p>
+    <div class="footer-social">
+      <a class="btn-social instagram" href="https://instagram.com/ÄNDRA_TILL_ER_PROFIL" target="_blank" rel="noopener">Instagram</a>
+      <a class="btn-social tiktok" href="https://tiktok.com/@ÄNDRA_TILL_ER_PROFIL" target="_blank" rel="noopener">TikTok</a>
+    </div>
+  </div>
+</footer>
+
+<!-- 11. Scroll to top -->
+<button id="scrollTopBtn" class="scroll-top-btn" aria-label="Till toppen">↑</button>
+
+<!-- Leadership "add person" modal -->
+<div class="modal-overlay" id="leadershipModal">
+  <div class="modal-box">
+    <h3 data-i18n="modal.title"></h3>
+    <label for="modalNameInput" data-i18n="modal.label_name"></label>
+    <input type="text" id="modalNameInput">
+    <label for="modalRoleInput" data-i18n="modal.label_role"></label>
+    <input type="text" id="modalRoleInput">
+    <label for="modalIconSelect" data-i18n="modal.label_icon"></label>
+    <select id="modalIconSelect">
+      <option value="🙏">🙏</option>
+      <option value="✝️">✝️</option>
+      <option value="🎵">🎵</option>
+      <option value="📖">📖</option>
+      <option value="🕯️">🕯️</option>
+      <option value="👤">👤</option>
+    </select>
+    <div class="modal-actions">
+      <button type="button" id="modalCancelBtn" data-i18n="modal.cancel_btn"></button>
+      <button type="button" id="modalSaveBtn" data-i18n="modal.save_btn"></button>
+    </div>
+  </div>
+</div>
+
+<script src="i18n.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
