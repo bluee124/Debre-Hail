@@ -1,7 +1,7 @@
 backend:
   name: github
   repo: bluee124/Debre-Hail
-  branch: main
+  branch: claude/debre-hail-church-website-n7i1mf
   # base_url and auth_endpoint point at the OAuth proxy deployed per
   # admin/README.md (sterlingwes/decap-proxy, run as a Cloudflare Worker).
   base_url: https://decap-proxy3.beruhtesfaye-gedefa.workers.dev
