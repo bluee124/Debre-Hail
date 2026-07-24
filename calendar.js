@@ -182,7 +182,7 @@
           <div class="event-date">${ev.date}</div>
           <h4>${escapeHtml(evText(ev, 'title', L))}</h4>
           <p>${escapeHtml(evText(ev, 'desc', L))}</p>
-          ${ev.video ? `<video class="event-video" controls preload="metadata" src="${ev.video}"></video>` : ''}
+          ${ev.video ? `<video class="event-video" controls preload="metadata" src="${ev.video}"></video>` : (ev.video_tiktok ? tiktokEmbedHtml(ev.video_tiktok) : '')}
           <button type="button" class="btn btn-gold event-rsvp-btn" data-event-id="${ev.id}">${window.t('events.rsvp_btn')}</button>
         </div>`).join('');
     }
@@ -200,6 +200,16 @@
   // Falls back to the Swedish field when a translation hasn't been filled in.
   function evText(ev, field, L) {
     return ev[`${field}_${L}`] || ev[`${field}_sv`] || '';
+  }
+
+  // TikTok only offers a stable iframe embed keyed by the numeric video ID
+  // (found in any full-video URL as /video/<id>) — pulled straight from the
+  // pasted CMS link, no API call needed. Only public TikTok videos embed;
+  // private ones render nothing (TikTok blocks the iframe itself).
+  function tiktokEmbedHtml(url) {
+    const match = /\/video\/(\d+)/.exec(url || '');
+    if (!match) return '';
+    return `<div class="event-tiktok-wrap"><iframe src="https://www.tiktok.com/embed/v2/${match[1]}" allow="encrypted-media" allowfullscreen loading="lazy"></iframe></div>`;
   }
 
   function dayInfo(jdn, ethMonth, ethDay, moveable, apostlesFastEndJdn) {

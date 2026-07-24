@@ -1002,6 +1002,8 @@ body.lang-am .brand-name { font-size: 1.5rem; }
 .event-card h4 { margin: 0.3em 0; font-family: var(--font-head); font-size: 1.15rem; color: var(--crimson); }
 .event-card p { color: #55483f; margin: 0 0 0.8em; }
 .event-video { width: 100%; border-radius: 8px; margin: 0 0 0.8em; display: block; background: #000; }
+.event-tiktok-wrap { display: flex; justify-content: center; margin: 0 0 0.8em; }
+.event-tiktok-wrap iframe { width: 100%; max-width: 325px; aspect-ratio: 9 / 16; border: none; border-radius: 8px; }
 
 .rsvp-form-wrap {
   max-width: 480px;

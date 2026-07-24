@@ -134,3 +134,8 @@ collections:
                 media_folder: "/images/events"
                 public_folder: "/images/events"
                 hint: "Kort videoklipp (mp4 rekommenderas), spelas upp på Evenemang-fliken. Komprimera gärna klippet först — stora filer gör sidan långsam att ladda, och GitHub tillåter max 100 MB per fil."
+              - name: "video_tiktok"
+                label: "TikTok-video (valfritt, länk)"
+                widget: "string"
+                required: false
+                hint: "Klistra in hela länken till en TikTok-video (t.ex. https://www.tiktok.com/@anvandare/video/1234567890123456789). Videon måste vara publik på TikTok — privata konton/videor går inte att bädda in. Om både video-uppladdning och TikTok-länk fylls i visas bara uppladdningen."
