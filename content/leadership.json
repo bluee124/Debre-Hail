@@ -1,6 +1,14 @@
 {
   "items": [
     {
+      "tier": 1,
+      "group": "priest",
+      "name": "Kesis Sisay",
+      "role_sv": "Präst",
+      "role_am": "ቄስ",
+      "id": "Leader-5"
+    },
+    {
       "id": "leader-1",
       "group": "priest",
       "tier": 1,
@@ -8,14 +16,6 @@
       "role_sv": "Kyrkoherde",
       "role_am": "ዋና አስተዳዳሪ",
       "image": "images/leadership/img_0459.jpeg"
-    },
-    {
-      "tier": 1,
-      "group": "priest",
-      "name": "Kesis Sisay",
-      "role_sv": "Präst",
-      "role_am": "ቄስ",
-      "id": "Leader-5"
     },
     {
       "tier": 1,
