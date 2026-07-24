@@ -18,6 +18,14 @@
       "id": "Leader-5"
     },
     {
+      "tier": 1,
+      "id": "Leader-5",
+      "group": "priest",
+      "name": "Kesis Gebremichel",
+      "role_sv": "Präst",
+      "role_am": "ቄስ"
+    },
+    {
       "tier": 2,
       "id": "Leader 2",
       "group": "priest",
