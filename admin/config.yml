@@ -106,8 +106,8 @@ collections:
                 label: "Foto"
                 widget: "image"
                 required: false
-                media_folder: "/images/leadership"
-                public_folder: "/images/leadership"
+                media_folder: "images/leadership"
+                public_folder: "images/leadership"
 
   - name: "events"
     label: "Evenemang"
@@ -131,8 +131,8 @@ collections:
                 label: "Video (valfritt)"
                 widget: "file"
                 required: false
-                media_folder: "/images/events"
-                public_folder: "/images/events"
+                media_folder: "images/events"
+                public_folder: "images/events"
                 hint: "Kort videoklipp (mp4 rekommenderas), spelas upp på Evenemang-fliken. Komprimera gärna klippet först — stora filer gör sidan långsam att ladda, och GitHub tillåter max 100 MB per fil."
               - name: "video_tiktok"
                 label: "TikTok-video (valfritt, länk)"
