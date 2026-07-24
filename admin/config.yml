@@ -5,8 +5,9 @@ backend:
   # base_url and auth_endpoint point at the OAuth proxy deployed per
   # admin/README.md (sterlingwes/decap-proxy, run as a Cloudflare Worker).
   base_url: https://decap-proxy3.beruhtesfaye-gedefa.workers.dev
-  auth_endpoint: auth
+  auth_endpoint: /auth
 
+site_url: https://bluee124.github.io/Debre-Hail
 media_folder: "images/gallery"
 public_folder: "images/gallery"
 
