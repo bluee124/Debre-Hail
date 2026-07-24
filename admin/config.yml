@@ -7,6 +7,7 @@ backend:
   base_url: https://decap-proxy-wine.vercel.app
   auth_endpoint: /auth
 
+site_url: https://bluee124.github.io/Debre-Hail
 media_folder: "images/gallery"
 public_folder: "images/gallery"
 
