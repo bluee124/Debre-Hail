@@ -4,7 +4,7 @@ backend:
   branch: main
   # base_url and auth_endpoint point at your OAuth proxy — see admin/README.md
   # for what to deploy before this backend can authenticate anyone.
-  base_url: https://decap-proxy-wine.vercel.app
+  base_url: https://decap-proxy2.vercel.app
   auth_endpoint: /auth
 
 site_url: https://bluee124.github.io/Debre-Hail
