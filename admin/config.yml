@@ -2,9 +2,9 @@ backend:
   name: github
   repo: bluee124/Debre-Hail
   branch: main
-  # base_url and auth_endpoint point at your OAuth proxy — see admin/README.md
-  # for what to deploy before this backend can authenticate anyone.
-  base_url: https://REPLACE_WITH_YOUR_OAUTH_PROXY_URL
+  # base_url and auth_endpoint point at the OAuth proxy deployed per
+  # admin/README.md (sterlingwes/decap-proxy, run as a Cloudflare Worker).
+  base_url: https://decap-proxy3.beruhtesfaye-gedefa.workers.dev
   auth_endpoint: auth
 
 media_folder: "images/gallery"
