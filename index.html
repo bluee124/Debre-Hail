@@ -46,7 +46,13 @@
       <div class="main-nav" id="mainNav">
         <a href="#hem" class="nav-link" data-nav="hem" data-i18n="nav.hem"></a>
         <a href="nyheter.html" class="nav-link" data-nav="nyheter" data-i18n="nav.nyheter"></a>
-        <a href="#gudstjanster" class="nav-link" data-nav="gudstjanster" data-i18n="nav.gudstjanster"></a>
+        <div class="nav-item nav-dropdown-wrap">
+          <a href="#gudstjanster" class="nav-link" data-nav="gudstjanster" data-i18n="nav.gudstjanster_group"></a>
+          <div class="nav-dropdown">
+            <a href="#gudstjanster" class="nav-dropdown-link" data-i18n="nav.gudstjanster"></a>
+            <a href="evenemang.html" class="nav-dropdown-link" data-nav="evenemang" data-i18n="nav.evenemang"></a>
+          </div>
+        </div>
         <a href="galleri.html" class="nav-link" data-nav="galleri" data-i18n="nav.galleri"></a>
         <a href="bli-medlem.html" class="nav-link" data-nav="medlem" data-i18n="nav.medlem"></a>
         <a href="#om" class="nav-link" data-nav="om" data-i18n="nav.om"></a>
@@ -135,7 +141,7 @@
         <div class="sidebar-card events-shortcut-card">
           <h4 data-i18n="sidebar.events_title"></h4>
           <div id="sidebarEventsList"><!-- rendered from content/events.json by main.js --></div>
-          <a href="#gudstjanster" id="sidebarEventsLink" class="sidebar-link" data-i18n="sidebar.events_see_all"></a>
+          <a href="evenemang.html" id="sidebarEventsLink" class="sidebar-link" data-i18n="sidebar.events_see_all"></a>
         </div>
 
         <div class="sidebar-card">
@@ -173,7 +179,6 @@
     <div class="sched-tabs">
       <button class="sched-tab-btn active" data-sched-tab="hogtider" data-i18n="schedule.tab_hogtider"></button>
       <button class="sched-tab-btn" data-sched-tab="ordinarie" data-i18n="schedule.tab_ordinarie"></button>
-      <button class="sched-tab-btn" data-sched-tab="evenemang" data-i18n="schedule.tab_evenemang"></button>
     </div>
 
     <div class="sched-panel active" data-sched-panel="hogtider">
@@ -233,33 +238,6 @@
         </table>
       </div>
       <p class="location-note" data-i18n="schedule.location_note"></p>
-    </div>
-
-    <div class="sched-panel" data-sched-panel="evenemang">
-      <div id="eventsUpcomingList" class="events-list"><!-- rendered from content/events.json by calendar.js --></div>
-
-      <div class="rsvp-form-wrap">
-        <h3 data-i18n="events.rsvp_title"></h3>
-        <form id="rsvpForm" data-simple-form action="https://formspree.io/f/ÄNDRA_TILL_ER_FORMSPREE_ID" method="POST" novalidate>
-          <input type="hidden" name="_subject" value="Ny anmälan till evenemang">
-          <label for="rsvpEventSelect" data-i18n="events.rsvp_which"></label>
-          <select id="rsvpEventSelect" name="event" required></select>
-
-          <label for="rsvpName" data-i18n="events.rsvp_name"></label>
-          <input type="text" id="rsvpName" name="name" required>
-
-          <label for="rsvpCount" data-i18n="events.rsvp_count"></label>
-          <input type="number" id="rsvpCount" name="antal" min="1" value="1" required>
-
-          <div class="consent-row">
-            <input type="checkbox" id="rsvpConsent" name="consent" required>
-            <label for="rsvpConsent"><span data-i18n="privacy.consent_label"></span> <a href="integritetspolicy.html" data-i18n="privacy.heading"></a></label>
-          </div>
-
-          <button type="submit" class="btn btn-gold" data-i18n="events.rsvp_submit"></button>
-          <p class="form-msg"></p>
-        </form>
-      </div>
     </div>
   </div>
 </section>

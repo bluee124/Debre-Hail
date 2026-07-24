@@ -143,14 +143,14 @@
   let viewYear = todayEthY;
   let viewMonth = todayEthM;
 
-  /* ---------- Events (content/events.json), shared with the Evenemang tab ---------- */
-  let eventsList = [];
+  /* ---------- Events (content/events.json), looked up by day for the
+     day-detail modal — the full events list/RSVP lives on evenemang.html
+     (rendered by main.js), this module only needs a jdn -> event map. ---------- */
   let eventsByJdn = {};
 
   async function loadEvents() {
     try {
       const { items } = await fetch('content/events.json').then((res) => res.json());
-      eventsList = items;
       eventsByJdn = {};
       items.forEach((ev) => {
         const [y, m, d] = ev.date.split('-').map(Number);
@@ -158,37 +158,6 @@
       });
     } catch (err) {
       console.error('Kunde inte ladda content/events.json', err);
-    }
-  }
-
-  function renderEventsTab() {
-    const list = document.getElementById('eventsUpcomingList');
-    const select = document.getElementById('rsvpEventSelect');
-    if (!list) return;
-    const L = lang();
-
-    const upcoming = eventsList
-      .filter((ev) => {
-        const [y, m, d] = ev.date.split('-').map(Number);
-        return gregorianToJdn(y, m, d) >= todayJdn;
-      })
-      .sort((a, b) => a.date.localeCompare(b.date));
-
-    if (!upcoming.length) {
-      list.innerHTML = `<p class="events-empty">${window.t('events.empty')}</p>`;
-    } else {
-      list.innerHTML = upcoming.map((ev) => `
-        <div class="event-card">
-          <div class="event-date">${ev.date}</div>
-          <h4>${escapeHtml(evText(ev, 'title', L))}</h4>
-          <p>${escapeHtml(evText(ev, 'desc', L))}</p>
-          ${ev.video ? `<video class="event-video" controls preload="metadata" src="${ev.video}"></video>` : (ev.video_tiktok ? tiktokEmbedHtml(ev.video_tiktok) : '')}
-          <button type="button" class="btn btn-gold event-rsvp-btn" data-event-id="${ev.id}">${window.t('events.rsvp_btn')}</button>
-        </div>`).join('');
-    }
-
-    if (select) {
-      select.innerHTML = upcoming.map((ev) => `<option value="${ev.id}">${escapeHtml(evText(ev, 'title', L))} — ${ev.date}</option>`).join('');
     }
   }
 
@@ -200,16 +169,6 @@
   // Falls back to the Swedish field when a translation hasn't been filled in.
   function evText(ev, field, L) {
     return ev[`${field}_${L}`] || ev[`${field}_sv`] || '';
-  }
-
-  // TikTok only offers a stable iframe embed keyed by the numeric video ID
-  // (found in any full-video URL as /video/<id>) — pulled straight from the
-  // pasted CMS link, no API call needed. Only public TikTok videos embed;
-  // private ones render nothing (TikTok blocks the iframe itself).
-  function tiktokEmbedHtml(url) {
-    const match = /\/video\/(\d+)/.exec(url || '');
-    if (!match) return '';
-    return `<div class="event-tiktok-wrap"><iframe src="https://www.tiktok.com/embed/v2/${match[1]}" allow="encrypted-media" allowfullscreen loading="lazy"></iframe></div>`;
   }
 
   function dayInfo(jdn, ethMonth, ethDay, moveable, apostlesFastEndJdn) {
@@ -368,18 +327,6 @@
     modal.addEventListener('click', (e) => { if (e.target === modal) modal.classList.remove('open'); });
   }
 
-  function initEventsTab() {
-    const list = document.getElementById('eventsUpcomingList');
-    if (!list) return;
-    list.addEventListener('click', (e) => {
-      const btn = e.target.closest('.event-rsvp-btn');
-      if (!btn) return;
-      const select = document.getElementById('rsvpEventSelect');
-      if (select) select.value = btn.dataset.eventId;
-      document.getElementById('rsvpForm').scrollIntoView({ behavior: 'smooth', block: 'center' });
-    });
-  }
-
   async function init() {
     const prevBtn = document.getElementById('eoCalPrev');
     const nextBtn = document.getElementById('eoCalNext');
@@ -405,16 +352,13 @@
     });
 
     initDayModal();
-    initEventsTab();
 
     await loadEvents();
     render();
-    renderEventsTab();
   }
 
   document.addEventListener('i18n:ready', init);
   document.addEventListener('dh:langchange', () => {
     render();
-    renderEventsTab();
   });
 })();

@@ -13,6 +13,8 @@
       "nyheter": "Nyheter",
       "om": "Om oss",
       "gudstjanster": "Gudstjänster",
+      "gudstjanster_group": "Gudstjänster & Evenemang",
+      "evenemang": "Evenemang",
       "galleri": "Galleri",
       "kontakt": "Kontakt",
       "medlem": "Bli medlem",
@@ -108,8 +110,7 @@
       "row_sat_day": "Lördag",
       "row_sat_time": "18:00",
       "row_sat_service": "Vesper",
-      "location_note": "Alla gudstjänster hålls på Bergsjödalen 44, Göteborg.",
-      "tab_evenemang": "Evenemang"
+      "location_note": "Alla gudstjänster hålls på Bergsjödalen 44, Göteborg."
     },
     "contact": {
       "section_title": "Kontakt",
@@ -164,13 +165,10 @@
       "consent_label": "Jag godkänner att mina uppgifter behandlas enligt vår integritetspolicy."
     },
     "events": {
-      "empty": "Inga kommande evenemang just nu — kika in igen snart!",
-      "rsvp_title": "Anmäl dig",
-      "rsvp_which": "Vilket evenemang?",
-      "rsvp_name": "Namn",
-      "rsvp_count": "Antal deltagare",
-      "rsvp_submit": "Skicka anmälan",
-      "rsvp_btn": "Anmäl dig ›"
+      "section_title": "Evenemang",
+      "section_sub": "Kommande evenemang i vår församling",
+      "page_title": "Evenemang – Debre Hail S:t Gabriel & S:t Georgis",
+      "empty": "Inga kommande evenemang just nu — kika in igen snart!"
     },
     "membership": {
       "page_title": "Bli medlem – Debre Hail S:t Gabriel & S:t Georgis",
@@ -237,6 +235,8 @@
       "nyheter": "ዜናዎች",
       "om": "ስለ እኛ",
       "gudstjanster": "ስርዓተ አምልኮ",
+      "gudstjanster_group": "ስርዓተ አምልኮ እና ዝግጅቶች",
+      "evenemang": "ዝግጅቶች",
       "galleri": "ማዕከለ ስዕላት",
       "kontakt": "አግኙን",
       "medlem": "አባል ይሁኑ",
@@ -332,8 +332,7 @@
       "row_sat_day": "ቅዳሜ",
       "row_sat_time": "18:00",
       "row_sat_service": "ሠርክ ጸሎት",
-      "location_note": "ሁሉም ስርዓተ አምልኮዎች የሚካሄዱት በ Bergsjödalen 44, ጎተቦርግ ነው።",
-      "tab_evenemang": "ዝግጅቶች"
+      "location_note": "ሁሉም ስርዓተ አምልኮዎች የሚካሄዱት በ Bergsjödalen 44, ጎተቦርግ ነው።"
     },
     "contact": {
       "section_title": "አግኙን",
@@ -388,13 +387,9 @@
       "consent_label": "መረጃዬ በግላዊነት ፖሊሲያችን መሠረት እንዲስተናገድ እስማማለሁ።"
     },
     "events": {
-      "empty": "በአሁኑ ጊዜ ምንም ቀጣይ ዝግጅቶች የሉም — ትንሽ ቆይተው ይመልከቱ!",
-      "rsvp_title": "ይመዝገቡ",
-      "rsvp_which": "የትኛው ዝግጅት?",
-      "rsvp_name": "ስም",
-      "rsvp_count": "የተሳታፊዎች ብዛት",
-      "rsvp_submit": "ምዝገባ ላክ",
-      "rsvp_btn": "ይመዝገቡ ›"
+      "section_title": "ዝግጅቶች",
+      "section_sub": "በማኅበረሰባችን ውስጥ የሚመጡ ዝግጅቶች",
+      "empty": "በአሁኑ ጊዜ ምንም ቀጣይ ዝግጅቶች የሉም — ትንሽ ቆይተው ይመልከቱ!"
     },
     "membership": {
       "page_title": "አባል ይሁኑ – ደብረ ኃይል ቅዱስ ገብርኤል እና ቅዱስ ጊዮርጊስ",

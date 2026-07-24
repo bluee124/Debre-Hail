@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title data-i18n="leadership.page_title">Ledarskap</title>
+<title data-i18n="events.page_title">Evenemang</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Source+Sans+3:wght@400;500;600;700&family=Noto+Sans+Ethiopic:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -47,15 +47,15 @@
         <a href="index.html#hem" class="nav-link" data-nav="hem" data-i18n="nav.hem"></a>
         <a href="nyheter.html" class="nav-link" data-nav="nyheter" data-i18n="nav.nyheter"></a>
         <div class="nav-item nav-dropdown-wrap">
-          <a href="index.html#gudstjanster" class="nav-link" data-nav="gudstjanster" data-i18n="nav.gudstjanster_group"></a>
+          <a href="index.html#gudstjanster" class="nav-link active" data-nav="gudstjanster" data-i18n="nav.gudstjanster_group"></a>
           <div class="nav-dropdown">
             <a href="index.html#gudstjanster" class="nav-dropdown-link" data-i18n="nav.gudstjanster"></a>
-            <a href="evenemang.html" class="nav-dropdown-link" data-nav="evenemang" data-i18n="nav.evenemang"></a>
+            <a href="evenemang.html" class="nav-dropdown-link active" data-nav="evenemang" data-i18n="nav.evenemang"></a>
           </div>
         </div>
         <a href="galleri.html" class="nav-link" data-nav="galleri" data-i18n="nav.galleri"></a>
         <a href="bli-medlem.html" class="nav-link" data-nav="medlem" data-i18n="nav.medlem"></a>
-        <a href="index.html#om" class="nav-link active" data-nav="om" data-i18n="nav.om"></a>
+        <a href="index.html#om" class="nav-link" data-nav="om" data-i18n="nav.om"></a>
         <a href="index.html#kontakt" class="nav-link" data-nav="kontakt" data-i18n="nav.kontakt"></a>
         <a href="donera.html" class="nav-link donate-btn" data-nav="donera" data-i18n="nav.donera"></a>
         <button class="lang-toggle" id="langToggle" type="button"></button>
@@ -67,21 +67,16 @@
 <!-- Page header -->
 <section class="page-header">
   <div class="container">
-    <h1 data-i18n="leadership.heading"></h1>
-    <a href="index.html#om" class="back-home-link" data-i18n="leadership.back_to_about"></a>
+    <h1 data-i18n="events.section_title"></h1>
+    <p class="section-sub" data-i18n="events.section_sub"></p>
+    <a href="index.html" class="back-home-link" data-i18n="common.back_home"></a>
   </div>
 </section>
 
-<!-- Leadership groups (crimson band, matching the tree styling built for Om oss) -->
-<section class="leadership-page-section">
+<!-- Full events list -->
+<section class="page-content">
   <div class="container">
-
-    <h3 class="leadership-group-title" data-i18n="leadership.heading_priests"></h3>
-    <div class="leadership-tree" id="priestTree"><!-- rendered from content/leadership.json by leadership.js --></div>
-
-    <h3 class="leadership-group-title" data-i18n="leadership.heading_management"></h3>
-    <div class="leadership-tree" id="managementTree"><!-- rendered from content/leadership.json by leadership.js --></div>
-
+    <div id="eventsFullList" class="events-list"><!-- rendered from content/events.json by main.js --></div>
   </div>
 </section>
 
@@ -100,6 +95,5 @@
 
 <script src="i18n.js"></script>
 <script src="main.js"></script>
-<script src="leadership.js"></script>
 </body>
 </html>

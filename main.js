@@ -18,7 +18,7 @@ async function initAll() {
   initActiveNav();
   initDonationPage();
 
-  await Promise.all([loadGalleryData(), loadNewsData(), loadSidebarEvents()]);
+  await Promise.all([loadGalleryData(), loadNewsData(), loadEventsData()]);
   initGallery();
 }
 
@@ -111,29 +111,68 @@ async function loadNewsData() {
   }
 }
 
-/* ---------- Sidebar events shortcut (content/events.json), front-page teaser
-   for the full Evenemang tab under Gudstjänster ---------- */
+/* ---------- Events (content/events.json): compact teaser in the front-page
+   sidebar, full list with videos on evenemang.html ---------- */
 function renderSidebarEvent(ev) {
   const L = window.currentLang === 'am' ? 'am' : 'sv';
   const title = ev[`title_${L}`] || ev.title_sv;
   const [y, m, d] = ev.date.split('-');
-  return `<p class="sidebar-event"><strong>${d}/${m}</strong> — ${escapeHtml(title)}</p>`;
+  return `<p class="sidebar-event"><strong>${d}/${m}</strong> — ${escapeHtml(title)} <a href="evenemang.html#${ev.id}">${window.t('news.read_more')}</a></p>`;
 }
 
-async function loadSidebarEvents() {
-  const list = document.getElementById('sidebarEventsList');
-  if (!list) return;
+// TikTok only offers a stable iframe embed keyed by the numeric video ID
+// (found in any full-video URL as /video/<id>) — pulled straight from the
+// pasted CMS link, no API call needed. Only public TikTok videos embed;
+// private ones render nothing (TikTok blocks the iframe itself).
+function tiktokEmbedHtml(url) {
+  const match = /\/video\/(\d+)/.exec(url || '');
+  if (!match) return '';
+  return `<div class="event-tiktok-wrap"><iframe src="https://www.tiktok.com/embed/v2/${match[1]}" allow="encrypted-media" allowfullscreen loading="lazy"></iframe></div>`;
+}
+
+function renderEventCard(ev) {
+  const L = window.currentLang === 'am' ? 'am' : 'sv';
+  const title = ev[`title_${L}`] || ev.title_sv;
+  const desc = ev[`desc_${L}`] || ev.desc_sv || '';
+  const media = ev.video
+    ? `<video class="event-video" controls preload="metadata" src="${ev.video}"></video>`
+    : (ev.video_tiktok ? tiktokEmbedHtml(ev.video_tiktok) : '');
+  return `
+    <div class="event-card" id="${ev.id}">
+      <div class="event-date">${ev.date}</div>
+      <h4>${escapeHtml(title)}</h4>
+      <p>${escapeHtml(desc)}</p>
+      ${media}
+    </div>`;
+}
+
+async function loadEventsData() {
+  const sidebarList = document.getElementById('sidebarEventsList');
+  const fullList = document.getElementById('eventsFullList');
+  if (!sidebarList && !fullList) return;
 
   try {
     const { items } = await fetch('content/events.json').then((res) => res.json());
     const todayStr = new Date().toISOString().slice(0, 10);
     const upcoming = items
       .filter((ev) => ev.date >= todayStr)
-      .sort((a, b) => a.date.localeCompare(b.date))
-      .slice(0, 2);
-    list.innerHTML = upcoming.length
-      ? upcoming.map(renderSidebarEvent).join('')
-      : `<p class="sidebar-event-empty">${window.t('sidebar.events_empty')}</p>`;
+      .sort((a, b) => a.date.localeCompare(b.date));
+
+    if (sidebarList) {
+      sidebarList.innerHTML = upcoming.length
+        ? upcoming.slice(0, 2).map(renderSidebarEvent).join('')
+        : `<p class="sidebar-event-empty">${window.t('sidebar.events_empty')}</p>`;
+    }
+    if (fullList) {
+      fullList.innerHTML = upcoming.length
+        ? upcoming.map(renderEventCard).join('')
+        : `<p class="events-empty">${window.t('events.empty')}</p>`;
+      // Same async-render-vs-native-anchor-scroll issue as the news list.
+      if (window.location.hash) {
+        const target = document.querySelector(window.location.hash);
+        if (target) target.scrollIntoView();
+      }
+    }
   } catch (err) {
     console.error('Kunde inte ladda content/events.json', err);
   }
@@ -146,7 +185,7 @@ document.addEventListener('dh:langchange', async () => {
   await loadGalleryData();
   initGallery();
   await loadNewsData();
-  await loadSidebarEvents();
+  await loadEventsData();
 });
 
 function initLangToggle() {
@@ -244,15 +283,6 @@ function initSchedTabs() {
       if (panel) panel.classList.add('active');
     });
   });
-
-  // Sidebar shortcut jumps straight to the Evenemang tab instead of landing
-  // on whichever tab (Högtider) happens to be open by default.
-  const eventsShortcut = document.getElementById('sidebarEventsLink');
-  if (eventsShortcut) {
-    eventsShortcut.addEventListener('click', () => {
-      document.querySelector('.sched-tab-btn[data-sched-tab="evenemang"]')?.click();
-    });
-  }
 }
 
 /* ---------- Kontakt tabs (Allmänt / Bönebegäran / Sakrament) ---------- */
