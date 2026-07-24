@@ -10,6 +10,23 @@
       "image": "images/leadership/img_0459.jpeg"
     },
     {
+      "tier": 1,
+      "group": "priest",
+      "name": "Kesis Sisay",
+      "role_sv": "Präst",
+      "role_am": "ቄስ",
+      "id": "Leader-5"
+    },
+    {
+      "tier": 2,
+      "id": "Leader 2",
+      "group": "priest",
+      "name": "Eyosias Habtemichel",
+      "role_sv": "Like Diakon",
+      "role_am": "ሊቀ ዲያቆን",
+      "image": "images/leadership/img_0458.jpeg"
+    },
+    {
       "id": "leader-2",
       "group": "management",
       "tier": 1,
@@ -26,23 +43,6 @@
       "role_sv": "Köransvarig",
       "role_am": "የመዘምራን ኃላፊ",
       "image": null
-    },
-    {
-      "tier": 2,
-      "id": "Leader 2",
-      "group": "priest",
-      "name": "Eyosias Habtemichel",
-      "role_sv": "Like Diakon",
-      "role_am": "ሊቀ ዲያቆን",
-      "image": "images/leadership/img_0458.jpeg"
-    },
-    {
-      "tier": 1,
-      "group": "priest",
-      "name": "Kesis Sisay",
-      "role_sv": "Präst",
-      "role_am": "ቄስ",
-      "id": "Leader-5"
     }
   ]
 }
