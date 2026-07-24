@@ -51,6 +51,14 @@
       "role_sv": "Köransvarig",
       "role_am": "የመዘምራን ኃላፊ",
       "image": null
+    },
+    {
+      "tier": 2,
+      "id": "6",
+      "group": "priest",
+      "name": "Gedion Worku",
+      "role_sv": "Diakon",
+      "role_am": "ዲያቆን"
     }
   ]
 }
