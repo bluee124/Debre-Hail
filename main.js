@@ -17,6 +17,7 @@ async function initAll() {
   initScrollTop();
   initActiveNav();
   initDonationPage();
+  initPrayerFeeNote();
 
   await Promise.all([loadGalleryData(), loadNewsData(), loadEventsData()]);
   initGallery();
@@ -30,15 +31,22 @@ function escapeHtml(str) {
 
 /* ---------- Gallery data (content/gallery.json) ---------- */
 function renderGalleryTile(item) {
-  const hasImage = Boolean(item.image);
-  const style = hasImage
-    ? ` style="background-image:url('${item.image}');background-size:cover;background-position:center;"`
-    : '';
-  const cls = hasImage ? '' : ` ${item.gradient || ''}`;
-  const emoji = hasImage ? '' : `<span class="tile-emoji">${item.emoji || ''}</span>`;
+  const hasVideo = Boolean(item.video);
+  const hasImage = !hasVideo && Boolean(item.image);
   const title = window.currentLang === 'am' ? (item.title_am || item.title_sv) : item.title_sv;
+  const cls = (hasVideo || hasImage) ? '' : ` ${item.gradient || ''}`;
+  const label = title ? ` aria-label="${escapeHtml(title)}"` : '';
 
-  return `<div class="gallery-item${cls}" data-cat="${item.category}" data-title-sv="${escapeHtml(item.title_sv)}" data-title-am="${escapeHtml(item.title_am || item.title_sv)}"${style}>${emoji}<div class="tile-overlay"><span class="tile-title">${escapeHtml(title)}</span></div></div>`;
+  let media;
+  if (hasVideo) {
+    media = `<video class="tile-media" src="${item.video}" muted preload="metadata" playsinline></video><span class="tile-play-icon">▶</span>`;
+  } else if (hasImage) {
+    media = `<img class="tile-media" src="${item.image}" alt="${escapeHtml(title || '')}" loading="lazy">`;
+  } else {
+    media = `<span class="tile-emoji">${item.emoji || ''}</span>`;
+  }
+
+  return `<div class="gallery-item${cls}" data-cat="${item.category}" data-title-sv="${escapeHtml(item.title_sv || '')}" data-title-am="${escapeHtml(item.title_am || item.title_sv || '')}" data-video="${item.video || ''}" data-image="${item.image || ''}"${label}>${media}</div>`;
 }
 
 async function loadGalleryData() {
@@ -328,13 +336,26 @@ function initGallery() {
   function render(idx) {
     currentIndex = (idx + items.length) % items.length;
     const item = items[currentIndex];
-    const emoji = item.querySelector('.tile-emoji').textContent;
+    const videoSrc = item.dataset.video;
+    const imageSrc = item.dataset.image;
     const title = window.currentLang === 'am' ? item.dataset.titleAm : item.dataset.titleSv;
-    const tileClass = Array.from(item.classList).find((c) => c.startsWith('tile-'));
 
     lightboxContent.className = 'lightbox-content';
-    if (tileClass) lightboxContent.classList.add(tileClass);
-    lightboxContent.innerHTML = `<span>${emoji}</span><span class="lb-title">${title}</span>`;
+
+    let media;
+    if (videoSrc) {
+      media = `<video src="${videoSrc}" controls preload="metadata"></video>`;
+    } else if (imageSrc) {
+      media = `<img src="${imageSrc}" alt="${escapeHtml(title || '')}">`;
+    } else {
+      const tileClass = Array.from(item.classList).find((c) => c.startsWith('tile-'));
+      if (tileClass) lightboxContent.classList.add(tileClass);
+      const emoji = item.querySelector('.tile-emoji')?.textContent || '';
+      media = `<span class="lb-emoji">${emoji}</span>`;
+    }
+    const caption = title ? `<span class="lb-title">${escapeHtml(title)}</span>` : '';
+
+    lightboxContent.innerHTML = `${media}${caption}`;
     lightboxCounter.textContent = `${currentIndex + 1} / ${items.length}`;
   }
 
@@ -478,14 +499,32 @@ function initActiveNav() {
 }
 
 /* ---------- Donation page (donera.html): Swish deep-links + QR ----------
-   Single constant below is the only thing that needs editing once the
-   church's real Swish number is known — every link/QR derives from it. */
-const SWISH_NUMBER = 'ÄNDRA_TILL_ERT_SWISHNUMMER';
+   Single constant below is the only thing that needs editing if the
+   church's Swish number ever changes — every link/QR/display label derives
+   from it, so it can't drift out of sync the way it did before (the
+   displayed number and this constant used to be edited separately). */
+const SWISH_NUMBER = '1234453502';
 
-function swishLink(amount) {
-  const params = new URLSearchParams({ sw: SWISH_NUMBER, cur: 'SEK', msg: 'Gåva' });
+function formatSwishNumber(num) {
+  return num.replace(/(\d{3})(\d{3})(\d{2})(\d{2})/, '$1 $2 $3 $4');
+}
+
+function swishLink(amount, message) {
+  const params = new URLSearchParams({ sw: SWISH_NUMBER, cur: 'SEK', msg: message || 'Gåva' });
   if (amount) params.set('amt', amount);
   return `https://app.swish.nu/1/p/sw/?${params.toString()}`;
+}
+
+/* ---------- Prayer request fee note (index.html, Bönebegäran tab) ----------
+   Fixed 300 kr fee, reusing the same SWISH_NUMBER as the donation page so
+   there's still only one place to update the number. */
+function initPrayerFeeNote() {
+  const numberLabel = document.getElementById('prayerSwishNumber');
+  const payBtn = document.getElementById('prayerSwishPayBtn');
+  if (!numberLabel || !payBtn) return;
+
+  numberLabel.textContent = formatSwishNumber(SWISH_NUMBER);
+  payBtn.href = swishLink(300, 'Bönebegäran');
 }
 
 function initDonationPage() {
@@ -493,8 +532,10 @@ function initDonationPage() {
   const payBtn = document.getElementById('swishPayBtn');
   const customAmount = document.getElementById('donateCustomAmount');
   const amountButtons = document.querySelectorAll('.donate-amount-btn');
+  const numberLabel = document.getElementById('swishNumberLabel');
   if (!qr || !payBtn) return;
 
+  if (numberLabel) numberLabel.textContent = formatSwishNumber(SWISH_NUMBER);
   qr.src = `https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=${encodeURIComponent(swishLink())}`;
 
   function updatePayLink() {

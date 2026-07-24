@@ -46,7 +46,7 @@ collections:
           - name: "items"
             label: "Bilder"
             widget: "list"
-            summary: "{{title_sv}}"
+            summary: "{{category}} ({{id}})"
             fields:
               - { name: "id", label: "ID (unikt, t.ex. tile-17)", widget: "string" }
               - name: "category"
@@ -58,11 +58,18 @@ collections:
                   - { label: "Kör", value: "kor" }
                   - { label: "Barn & Familj", value: "barn" }
                   - { label: "Gemenskap", value: "gemenskap" }
-              - { name: "title_sv", label: "Titel (svenska)", widget: "string" }
-              - { name: "title_am", label: "Titel (amhariska, valfritt)", widget: "string", required: false }
+              - { name: "title_sv", label: "Titel (valfritt, visas inte längre — bara för alt-text)", widget: "string", required: false }
+              - { name: "title_am", label: "Titel amhariska (valfritt)", widget: "string", required: false }
               - { name: "image", label: "Bild (ladda upp här)", widget: "image", required: false }
-              - { name: "emoji", label: "Emoji (används bara om ingen bild laddats upp)", widget: "string", required: false }
-              - { name: "gradient", label: "Färgstil (används bara om ingen bild, t.ex. tile-1)", widget: "string", required: false }
+              - name: "video"
+                label: "Video (valfritt, kort klipp)"
+                widget: "file"
+                required: false
+                media_folder: "images/gallery"
+                public_folder: "images/gallery"
+                hint: "Ladda upp en kort videofil (mp4 rekommenderas). Komprimera gärna klippet först — stora filer gör sidan långsam att ladda."
+              - { name: "emoji", label: "Emoji (används bara om varken bild eller video laddats upp)", widget: "string", required: false }
+              - { name: "gradient", label: "Färgstil (används bara om varken bild eller video, t.ex. tile-1)", widget: "string", required: false }
 
   - name: "leadership"
     label: "Ledarskap"

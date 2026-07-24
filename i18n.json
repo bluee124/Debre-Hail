@@ -194,7 +194,9 @@
     },
     "prayer": {
       "form_title": "Skicka en bönebegäran",
-      "label_name": "Namn (frivilligt)",
+      "fee_note": "Bönebegäran med förbön under gudstjänst kostar 300 kr, som betalas via Swish. Maila gärna en skärmdump av betalningen till info@debrehail.se som kvitto.",
+      "fee_pay_btn": "Betala 300 kr via Swish",
+      "label_name": "Dopnamn / Kristet namn",
       "label_email": "E-post (frivilligt)",
       "label_prayer": "Din bön",
       "submit_btn": "Skicka bönebegäran"
@@ -415,7 +417,9 @@
     },
     "prayer": {
       "form_title": "የጸሎት ጥያቄ ይላኩ",
-      "label_name": "ስም (አማራጭ)",
+      "fee_note": "በስርዓተ አምልኮ ወቅት የሚደረግ የጸሎት ጥያቄ 300 kr ያስከፍላል፣ በስዊሽ ይከፈላል። እባክዎ የክፍያውን ቅጽበታዊ ገጽ እይታ ለ info@debrehail.se በኢሜይል እንደ ደረሰኝ ይላኩ።",
+      "fee_pay_btn": "በስዊሽ 300 kr ይክፈሉ",
+      "label_name": "የክርስትና ስም",
       "label_email": "ኢሜይል (አማራጭ)",
       "label_prayer": "የጸሎት ጥያቄዎ",
       "submit_btn": "የጸሎት ጥያቄ ላክ"
