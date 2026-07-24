@@ -5,7 +5,7 @@ backend:
   # base_url and auth_endpoint point at your OAuth proxy — see admin/README.md
   # for what to deploy before this backend can authenticate anyone.
   base_url: https://decap-proxy-wine.vercel.app
-  auth_endpoint: auth
+  auth_endpoint: /auth
 
 media_folder: "images/gallery"
 public_folder: "images/gallery"
