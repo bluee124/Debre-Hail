@@ -95,9 +95,9 @@
       "category": "barn",
       "title_sv": "Söndagsskolan",
       "title_am": "የሰንበት ትምህርት ቤት",
-      "image": null,
-      "emoji": "📚",
-      "gradient": "tile-11"
+      "image": "images/gallery/preview.webp",
+      "emoji": "",
+      "gradient": ""
     },
     {
       "id": "tile-12",
