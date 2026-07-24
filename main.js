@@ -237,22 +237,56 @@ function initSlider() {
   restartTimer();
 }
 
-/* ---------- Mobile nav ---------- */
+/* ---------- Mobile nav: right-side slide-in drawer ---------- */
 function initMobileNav() {
   const hamburger = document.getElementById('hamburgerBtn');
   const nav = document.getElementById('mainNav');
+  const backdrop = document.getElementById('navBackdrop');
+  const closeBtn = document.getElementById('navCloseBtn');
   if (!hamburger || !nav) return;
 
+  const isMobile = () => window.matchMedia('(max-width: 900px)').matches;
+
+  function openNav() {
+    nav.classList.add('open');
+    if (backdrop) backdrop.classList.add('open');
+    hamburger.setAttribute('aria-expanded', 'true');
+    document.body.classList.add('nav-open-lock');
+  }
+
+  function closeNav() {
+    nav.classList.remove('open');
+    if (backdrop) backdrop.classList.remove('open');
+    hamburger.setAttribute('aria-expanded', 'false');
+    document.body.classList.remove('nav-open-lock');
+  }
+
   hamburger.addEventListener('click', () => {
-    const open = nav.classList.toggle('open');
-    hamburger.setAttribute('aria-expanded', String(open));
+    nav.classList.contains('open') ? closeNav() : openNav();
+  });
+  if (backdrop) backdrop.addEventListener('click', closeNav);
+  if (closeBtn) closeBtn.addEventListener('click', closeNav);
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeNav();
   });
 
-  nav.querySelectorAll('.nav-link').forEach((link) => {
-    link.addEventListener('click', () => {
-      nav.classList.remove('open');
-      hamburger.setAttribute('aria-expanded', 'false');
+  // Dropdown parents (Gudstjänster & Evenemang / Mer) toggle an accordion
+  // on mobile instead of navigating/no-op'ing immediately — the actual
+  // destinations are the sub-links underneath.
+  nav.querySelectorAll('.nav-dropdown-parent').forEach((trigger) => {
+    trigger.addEventListener('click', (e) => {
+      if (!isMobile()) return;
+      e.preventDefault();
+      const item = trigger.closest('.nav-item');
+      const expanded = item.classList.toggle('expanded');
+      trigger.setAttribute('aria-expanded', String(expanded));
     });
+  });
+
+  // Any real destination link closes the drawer (dropdown parents are
+  // excluded — they toggle their accordion instead, handled above).
+  nav.querySelectorAll('.nav-link:not(.nav-dropdown-parent), .nav-dropdown-link').forEach((link) => {
+    link.addEventListener('click', closeNav);
   });
 }
 
@@ -479,7 +513,7 @@ function initScrollTop() {
 
 /* ---------- Active nav highlight ---------- */
 function initActiveNav() {
-  const sections = ['hem', 'nyheter', 'om', 'gudstjanster', 'galleri', 'kontakt']
+  const sections = ['hem', 'om', 'gudstjanster', 'kontakt']
     .map((id) => document.getElementById(id))
     .filter(Boolean);
   const navLinks = document.querySelectorAll('.nav-link');

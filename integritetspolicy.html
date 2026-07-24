@@ -38,33 +38,41 @@
       <img src="images/logo2.png" alt="S:t Gabriel" class="logo-side">
     </div>
   </div>
-  <nav class="main-nav-bar">
+</header>
+<nav class="main-nav-bar">
     <div class="header-inner container">
       <button class="hamburger" id="hamburgerBtn" aria-label="Meny" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
       <div class="main-nav" id="mainNav">
+        <button class="nav-close-btn" id="navCloseBtn" type="button" aria-label="Stäng meny">&times;</button>
         <div class="nav-inner">
         <a href="index.html#hem" class="nav-link" data-nav="hem" data-i18n="nav.hem"></a>
-        <a href="nyheter.html" class="nav-link" data-nav="nyheter" data-i18n="nav.nyheter"></a>
         <div class="nav-item nav-dropdown-wrap">
-          <a href="index.html#gudstjanster" class="nav-link" data-nav="gudstjanster" data-i18n="nav.gudstjanster_group"></a>
+          <a href="index.html#gudstjanster" class="nav-link nav-dropdown-parent" data-nav="gudstjanster" data-i18n="nav.gudstjanster_group"></a>
           <div class="nav-dropdown">
             <a href="index.html#gudstjanster" class="nav-dropdown-link" data-i18n="nav.gudstjanster"></a>
             <a href="evenemang.html" class="nav-dropdown-link" data-nav="evenemang" data-i18n="nav.evenemang"></a>
           </div>
         </div>
-        <a href="galleri.html" class="nav-link" data-nav="galleri" data-i18n="nav.galleri"></a>
-        <a href="bli-medlem.html" class="nav-link" data-nav="medlem" data-i18n="nav.medlem"></a>
         <a href="index.html#om" class="nav-link" data-nav="om" data-i18n="nav.om"></a>
         <a href="index.html#kontakt" class="nav-link" data-nav="kontakt" data-i18n="nav.kontakt"></a>
+        <div class="nav-item nav-dropdown-wrap">
+          <button type="button" class="nav-link nav-dropdown-parent" aria-expanded="false" data-i18n="nav.mer"></button>
+          <div class="nav-dropdown">
+            <a href="nyheter.html" class="nav-dropdown-link" data-nav="nyheter" data-i18n="nav.nyheter"></a>
+            <a href="galleri.html" class="nav-dropdown-link" data-nav="galleri" data-i18n="nav.galleri"></a>
+            <a href="bli-medlem.html" class="nav-dropdown-link" data-nav="medlem" data-i18n="nav.medlem"></a>
+            <a href="ledarskap.html" class="nav-dropdown-link" data-i18n="leadership.heading"></a>
+          </div>
+        </div>
         <a href="donera.html" class="nav-link donate-btn" data-nav="donera" data-i18n="nav.donera"></a>
         <button class="lang-toggle" id="langToggle" type="button"></button>
         </div>
       </div>
     </div>
-  </nav>
-</header>
+</nav>
+<div class="nav-backdrop" id="navBackdrop"></div>
 
 <!-- Page header -->
 <section class="page-header">
