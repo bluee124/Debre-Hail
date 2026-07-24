@@ -28,13 +28,13 @@ collections:
             fields:
               - { name: "id", label: "ID (unikt, t.ex. article-5)", widget: "string" }
               - { name: "date_sv", label: "Datum (svenska)", widget: "string" }
-              - { name: "date_am", label: "Datum (amhariska)", widget: "string" }
+              - { name: "date_am", label: "Datum (amhariska, valfritt)", widget: "string", required: false }
               - { name: "title_sv", label: "Titel (svenska)", widget: "string" }
-              - { name: "title_am", label: "Titel (amhariska)", widget: "string" }
+              - { name: "title_am", label: "Titel (amhariska, valfritt)", widget: "string", required: false }
               - { name: "excerpt_sv", label: "Sammanfattning (svenska)", widget: "text" }
-              - { name: "excerpt_am", label: "Sammanfattning (amhariska)", widget: "text" }
+              - { name: "excerpt_am", label: "Sammanfattning (amhariska, valfritt)", widget: "text", required: false }
               - { name: "body_sv", label: "Fullständig text (svenska)", widget: "text" }
-              - { name: "body_am", label: "Fullständig text (amhariska)", widget: "text" }
+              - { name: "body_am", label: "Fullständig text (amhariska, valfritt)", widget: "text", required: false }
 
   - name: "gallery"
     label: "Galleri"
@@ -59,7 +59,7 @@ collections:
                   - { label: "Barn & Familj", value: "barn" }
                   - { label: "Gemenskap", value: "gemenskap" }
               - { name: "title_sv", label: "Titel (svenska)", widget: "string" }
-              - { name: "title_am", label: "Titel (amhariska)", widget: "string" }
+              - { name: "title_am", label: "Titel (amhariska, valfritt)", widget: "string", required: false }
               - { name: "image", label: "Bild (ladda upp här)", widget: "image", required: false }
               - { name: "emoji", label: "Emoji (används bara om ingen bild laddats upp)", widget: "string", required: false }
               - { name: "gradient", label: "Färgstil (används bara om ingen bild, t.ex. tile-1)", widget: "string", required: false }
@@ -101,7 +101,7 @@ collections:
                 hint: "1 = högst upp. Samma nivå som en annan person = de visas BREDVID varandra. Ett högre nummer (t.ex. nivåns +1) = personen visas UNDER, som en egen rad i trädet."
               - { name: "name", label: "Namn", widget: "string" }
               - { name: "role_sv", label: "Roll (svenska)", widget: "string" }
-              - { name: "role_am", label: "Roll (amhariska)", widget: "string" }
+              - { name: "role_am", label: "Roll (amhariska, valfritt)", widget: "string", required: false }
               - name: "image"
                 label: "Foto"
                 widget: "image"
@@ -124,6 +124,6 @@ collections:
               - { name: "id", label: "ID (unikt, t.ex. event-3)", widget: "string" }
               - { name: "date", label: "Datum", widget: "date", date_format: "YYYY-MM-DD", time_format: false }
               - { name: "title_sv", label: "Titel (svenska)", widget: "string" }
-              - { name: "title_am", label: "Titel (amhariska)", widget: "string" }
+              - { name: "title_am", label: "Titel (amhariska, valfritt)", widget: "string", required: false }
               - { name: "desc_sv", label: "Beskrivning (svenska)", widget: "text" }
-              - { name: "desc_am", label: "Beskrivning (amhariska)", widget: "text" }
+              - { name: "desc_am", label: "Beskrivning (amhariska, valfritt)", widget: "text", required: false }

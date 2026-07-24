@@ -180,20 +180,25 @@
       list.innerHTML = upcoming.map((ev) => `
         <div class="event-card">
           <div class="event-date">${ev.date}</div>
-          <h4>${escapeHtml(ev[`title_${L}`])}</h4>
-          <p>${escapeHtml(ev[`desc_${L}`] || '')}</p>
+          <h4>${escapeHtml(evText(ev, 'title', L))}</h4>
+          <p>${escapeHtml(evText(ev, 'desc', L))}</p>
           <button type="button" class="btn btn-gold event-rsvp-btn" data-event-id="${ev.id}">${window.t('events.rsvp_btn')}</button>
         </div>`).join('');
     }
 
     if (select) {
-      select.innerHTML = upcoming.map((ev) => `<option value="${ev.id}">${escapeHtml(ev[`title_${L}`])} — ${ev.date}</option>`).join('');
+      select.innerHTML = upcoming.map((ev) => `<option value="${ev.id}">${escapeHtml(evText(ev, 'title', L))} — ${ev.date}</option>`).join('');
     }
   }
 
   /* ---------- Rendering ---------- */
   function lang() {
     return window.currentLang === 'am' ? 'am' : 'sv';
+  }
+
+  // Falls back to the Swedish field when a translation hasn't been filled in.
+  function evText(ev, field, L) {
+    return ev[`${field}_${L}`] || ev[`${field}_sv`] || '';
   }
 
   function dayInfo(jdn, ethMonth, ethDay, moveable, apostlesFastEndJdn) {
@@ -326,7 +331,8 @@
 
     const eventEl = document.getElementById('eoDayModalEvent');
     if (event) {
-      eventEl.textContent = `${event[`title_${L}`]}${event[`desc_${L}`] ? ' — ' + event[`desc_${L}`] : ''}`;
+      const evDesc = evText(event, 'desc', L);
+      eventEl.textContent = `${evText(event, 'title', L)}${evDesc ? ' — ' + evDesc : ''}`;
       eventEl.style.display = '';
     } else {
       eventEl.textContent = '';

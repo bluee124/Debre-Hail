@@ -25,7 +25,7 @@
     return `
       <div class="person-card${isTopTier ? ' gold-border' : ''}">
         <img class="person-photo" src="${src}" alt="${escapeHtml(person.name)}">
-        <span class="person-role">${escapeHtml(person[`role_${L}`] || '')}</span>
+        <span class="person-role">${escapeHtml(person[`role_${L}`] || person.role_sv || '')}</span>
         <span class="person-name">${escapeHtml(person.name)}</span>
       </div>`;
   }

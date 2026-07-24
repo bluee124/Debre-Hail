@@ -36,9 +36,9 @@ function renderGalleryTile(item) {
     : '';
   const cls = hasImage ? '' : ` ${item.gradient || ''}`;
   const emoji = hasImage ? '' : `<span class="tile-emoji">${item.emoji || ''}</span>`;
-  const title = window.currentLang === 'am' ? item.title_am : item.title_sv;
+  const title = window.currentLang === 'am' ? (item.title_am || item.title_sv) : item.title_sv;
 
-  return `<div class="gallery-item${cls}" data-cat="${item.category}" data-title-sv="${escapeHtml(item.title_sv)}" data-title-am="${escapeHtml(item.title_am)}"${style}>${emoji}<div class="tile-overlay"><span class="tile-title">${escapeHtml(title)}</span></div></div>`;
+  return `<div class="gallery-item${cls}" data-cat="${item.category}" data-title-sv="${escapeHtml(item.title_sv)}" data-title-am="${escapeHtml(item.title_am || item.title_sv)}"${style}>${emoji}<div class="tile-overlay"><span class="tile-title">${escapeHtml(title)}</span></div></div>`;
 }
 
 async function loadGalleryData() {
@@ -57,9 +57,9 @@ async function loadGalleryData() {
 
 /* ---------- News data (content/news.json) ---------- */
 function renderNewsPreviewCard(item) {
-  const date = window.currentLang === 'am' ? item.date_am : item.date_sv;
-  const title = window.currentLang === 'am' ? item.title_am : item.title_sv;
-  const excerpt = window.currentLang === 'am' ? item.excerpt_am : item.excerpt_sv;
+  const date = window.currentLang === 'am' ? (item.date_am || item.date_sv) : item.date_sv;
+  const title = window.currentLang === 'am' ? (item.title_am || item.title_sv) : item.title_sv;
+  const excerpt = window.currentLang === 'am' ? (item.excerpt_am || item.excerpt_sv) : item.excerpt_sv;
   return `
     <article class="news-preview-card">
       <div class="news-icon">📰</div>
@@ -73,10 +73,10 @@ function renderNewsPreviewCard(item) {
 }
 
 function renderNewsFullCard(item) {
-  const date = window.currentLang === 'am' ? item.date_am : item.date_sv;
-  const title = window.currentLang === 'am' ? item.title_am : item.title_sv;
-  const excerpt = window.currentLang === 'am' ? item.excerpt_am : item.excerpt_sv;
-  const body = window.currentLang === 'am' ? item.body_am : item.body_sv;
+  const date = window.currentLang === 'am' ? (item.date_am || item.date_sv) : item.date_sv;
+  const title = window.currentLang === 'am' ? (item.title_am || item.title_sv) : item.title_sv;
+  const excerpt = window.currentLang === 'am' ? (item.excerpt_am || item.excerpt_sv) : item.excerpt_sv;
+  const body = window.currentLang === 'am' ? (item.body_am || item.body_sv) : item.body_sv;
   return `
     <article class="news-preview-card" id="${item.id}">
       <div class="news-icon">📰</div>
