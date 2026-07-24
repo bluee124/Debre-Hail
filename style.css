@@ -511,6 +511,12 @@ body.lang-am .brand-name { font-size: 1.5rem; }
 .sidebar-card h4 { margin-bottom: 0.6em; font-size: 1.1rem; }
 .sidebar-card p { margin: 0.3em 0; }
 
+.sidebar-event { font-size: 0.92rem; }
+.sidebar-event strong { color: var(--crimson-dk); }
+.sidebar-event-empty { color: #6b5f55; font-style: italic; font-size: 0.9rem; }
+.sidebar-link { display: inline-block; margin-top: 0.4em; color: var(--crimson); font-weight: 700; }
+.sidebar-link:hover { text-decoration: underline; }
+
 .faq-item { border-top: 1px solid var(--border); padding: 10px 0; }
 .faq-item:first-of-type { border-top: none; }
 .faq-q {
@@ -995,6 +1001,7 @@ body.lang-am .brand-name { font-size: 1.5rem; }
 .event-date { color: var(--gold); font-weight: 700; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.04em; }
 .event-card h4 { margin: 0.3em 0; font-family: var(--font-head); font-size: 1.15rem; color: var(--crimson); }
 .event-card p { color: #55483f; margin: 0 0 0.8em; }
+.event-video { width: 100%; border-radius: 8px; margin: 0 0 0.8em; display: block; background: #000; }
 
 .rsvp-form-wrap {
   max-width: 480px;

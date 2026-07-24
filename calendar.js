@@ -182,6 +182,7 @@
           <div class="event-date">${ev.date}</div>
           <h4>${escapeHtml(evText(ev, 'title', L))}</h4>
           <p>${escapeHtml(evText(ev, 'desc', L))}</p>
+          ${ev.video ? `<video class="event-video" controls preload="metadata" src="${ev.video}"></video>` : ''}
           <button type="button" class="btn btn-gold event-rsvp-btn" data-event-id="${ev.id}">${window.t('events.rsvp_btn')}</button>
         </div>`).join('');
     }

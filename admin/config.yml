@@ -127,3 +127,10 @@ collections:
               - { name: "title_am", label: "Titel (amhariska, valfritt)", widget: "string", required: false }
               - { name: "desc_sv", label: "Beskrivning (svenska)", widget: "text" }
               - { name: "desc_am", label: "Beskrivning (amhariska, valfritt)", widget: "text", required: false }
+              - name: "video"
+                label: "Video (valfritt)"
+                widget: "file"
+                required: false
+                media_folder: "/images/events"
+                public_folder: "/images/events"
+                hint: "Kort videoklipp (mp4 rekommenderas), spelas upp på Evenemang-fliken. Komprimera gärna klippet först — stora filer gör sidan långsam att ladda, och GitHub tillåter max 100 MB per fil."

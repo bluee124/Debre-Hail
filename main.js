@@ -18,7 +18,7 @@ async function initAll() {
   initActiveNav();
   initDonationPage();
 
-  await Promise.all([loadGalleryData(), loadNewsData()]);
+  await Promise.all([loadGalleryData(), loadNewsData(), loadSidebarEvents()]);
   initGallery();
 }
 
@@ -111,12 +111,42 @@ async function loadNewsData() {
   }
 }
 
-/* Re-render language-baked content (gallery/news) on toggle, since their
-   text is written directly into the generated HTML rather than via data-i18n. */
+/* ---------- Sidebar events shortcut (content/events.json), front-page teaser
+   for the full Evenemang tab under Gudstjänster ---------- */
+function renderSidebarEvent(ev) {
+  const L = window.currentLang === 'am' ? 'am' : 'sv';
+  const title = ev[`title_${L}`] || ev.title_sv;
+  const [y, m, d] = ev.date.split('-');
+  return `<p class="sidebar-event"><strong>${d}/${m}</strong> — ${escapeHtml(title)}</p>`;
+}
+
+async function loadSidebarEvents() {
+  const list = document.getElementById('sidebarEventsList');
+  if (!list) return;
+
+  try {
+    const { items } = await fetch('content/events.json').then((res) => res.json());
+    const todayStr = new Date().toISOString().slice(0, 10);
+    const upcoming = items
+      .filter((ev) => ev.date >= todayStr)
+      .sort((a, b) => a.date.localeCompare(b.date))
+      .slice(0, 2);
+    list.innerHTML = upcoming.length
+      ? upcoming.map(renderSidebarEvent).join('')
+      : `<p class="sidebar-event-empty">${window.t('sidebar.events_empty')}</p>`;
+  } catch (err) {
+    console.error('Kunde inte ladda content/events.json', err);
+  }
+}
+
+/* Re-render language-baked content (gallery/news/events) on toggle, since
+   their text is written directly into the generated HTML rather than via
+   data-i18n. */
 document.addEventListener('dh:langchange', async () => {
   await loadGalleryData();
   initGallery();
   await loadNewsData();
+  await loadSidebarEvents();
 });
 
 function initLangToggle() {
@@ -214,6 +244,15 @@ function initSchedTabs() {
       if (panel) panel.classList.add('active');
     });
   });
+
+  // Sidebar shortcut jumps straight to the Evenemang tab instead of landing
+  // on whichever tab (Högtider) happens to be open by default.
+  const eventsShortcut = document.getElementById('sidebarEventsLink');
+  if (eventsShortcut) {
+    eventsShortcut.addEventListener('click', () => {
+      document.querySelector('.sched-tab-btn[data-sched-tab="evenemang"]')?.click();
+    });
+  }
 }
 
 /* ---------- Kontakt tabs (Allmänt / Bönebegäran / Sakrament) ---------- */
