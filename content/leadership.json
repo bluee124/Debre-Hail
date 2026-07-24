@@ -35,6 +35,14 @@
       "image": "images/leadership/img_0458.jpeg"
     },
     {
+      "tier": 2,
+      "id": "6",
+      "group": "priest",
+      "name": "Gedion Worku",
+      "role_sv": "Diakon",
+      "role_am": "ዲያቆን"
+    },
+    {
       "id": "leader-2",
       "group": "management",
       "tier": 1,
@@ -51,14 +59,6 @@
       "role_sv": "Köransvarig",
       "role_am": "የመዘምራን ኃላፊ",
       "image": null
-    },
-    {
-      "tier": 2,
-      "id": "6",
-      "group": "priest",
-      "name": "Gedion Worku",
-      "role_sv": "Diakon",
-      "role_am": "ዲያቆን"
     }
   ]
 }
