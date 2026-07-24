@@ -1,48 +1,48 @@
 {
   "items": [
     {
-      "id": "article-1",
-      "date_sv": "12 juni 2026",
-      "date_am": "ሰኔ 12 2026",
-      "title_sv": "Församlingens städdag",
-      "title_am": "የምዕመናን የጽዳት ቀን",
-      "excerpt_sv": "Ett stort tack till alla som deltog i vår gemensamma städdag i och runt kyrkan.",
-      "excerpt_am": "በቤተክርስቲያኒቱ ውስጥና ዙሪያ በተካሄደው የጋራ ጽዳት ቀን ለተሳተፉ ሁሉ ታላቅ ምስጋና እናቀርባለን።",
       "body_sv": "Tillsammans gjorde vi vårt gudshus fint inför sommarens högtider. Vi ses igen vid nästa arbetsdag!",
-      "body_am": "በጋራ በመሆን ለበጋው በዓላት ቤተ እግዚአብሔርን አሳምረናል። በሚቀጥለው የሥራ ቀን እንገናኝ!"
+      "excerpt_sv": "Ett stort tack till alla som deltog i vår gemensamma städdag i och runt kyrkan.",
+      "body_am": "በጋራ በመሆን ለበጋው በዓላት ቤተ እግዚአብሔርን አሳምረናል። በሚቀጥለው የሥራ ቀን እንገናኝ!",
+      "title_sv": "Församlingens städdag",
+      "excerpt_am": "በቤተክርስቲያኒቱ ውስጥና ዙሪያ በተካሄደው የጋራ ጽዳት ቀን ለተሳተፉ ሁሉ ታላቅ ምስጋና እናቀርባለን።",
+      "title_am": "የምዕመናን የጽዳት ቀን",
+      "date_sv": "12 juni 2020",
+      "id": "article-1",
+      "date_am": "ሰኔ 12 2026"
     },
     {
-      "id": "article-2",
-      "date_sv": "3 maj 2026",
-      "date_am": "ግንቦት 3 2026",
-      "title_sv": "Söndagsskolan startar i höst",
-      "title_am": "የሰንበት ትምህርት ቤት በመኸር ወራት ይጀምራል",
-      "excerpt_sv": "Vi planerar att starta en söndagsskola för barn och unga i församlingen.",
-      "excerpt_am": "ለምዕመናኑ ልጆችና ወጣቶች የሰንበት ትምህርት ቤት ለመጀመር በዝግጅት ላይ ነን።",
       "body_sv": "Målet är att ge våra barn en trygg plats att lära känna tron, språket och traditionerna. Mer information kommer inom kort – kontakta oss om du vill hjälpa till.",
-      "body_am": "ዓላማችን ልጆቻችን እምነታቸውን፣ ቋንቋቸውንና ባህላቸውን በሰላም የሚማሩበት ቦታ መስጠት ነው። ተጨማሪ መረጃ በቅርቡ ይገለጻል – ለመርዳት ከፈለጉ እባክዎ ያግኙን።"
+      "excerpt_sv": "Vi planerar att starta en söndagsskola för barn och unga i församlingen.",
+      "body_am": "ዓላማችን ልጆቻችን እምነታቸውን፣ ቋንቋቸውንና ባህላቸውን በሰላም የሚማሩበት ቦታ መስጠት ነው። ተጨማሪ መረጃ በቅርቡ ይገለጻል – ለመርዳት ከፈለጉ እባክዎ ያግኙን።",
+      "title_sv": "Söndagsskolan startar i höst",
+      "excerpt_am": "ለምዕመናኑ ልጆችና ወጣቶች የሰንበት ትምህርት ቤት ለመጀመር በዝግጅት ላይ ነን።",
+      "title_am": "የሰንበት ትምህርት ቤት በመኸር ወራት ይጀምራል",
+      "date_sv": "3 maj 2026",
+      "id": "article-2",
+      "date_am": "ግንቦት 3 2026"
     },
     {
-      "id": "article-3",
-      "date_sv": "14 april 2026",
-      "date_am": "ሚያዝያ 14 2026",
-      "title_sv": "Fasika – Påskhögtiden firades med glädje",
-      "title_am": "ፋሲካ በደስታ ተከበረ",
-      "excerpt_sv": "Vår församling samlades för att fira Fasika, den ortodoxa påsken.",
-      "excerpt_am": "ምዕመናኑ የጌታችንን ትንሣኤ በዓል ፋሲካን በጋራ አክብረዋል።",
       "body_sv": "Vi samlades med nattlig gudstjänst, sång och gemenskap. Tack till alla som bidrog med sin tid, sina gåvor och sin närvaro för att göra högtiden minnesvärd.",
-      "body_am": "በሌሊት ጸሎት፣ በዝማሬና በኅብረት በጋራ አክብረዋል። በዓሉ መታሰቢያ እንዲሆን ጊዜያቸውን፣ ስጦታቸውንና መገኘታቸውን ለሰጡን ሁሉ ምስጋና እናቀርባለን።"
+      "excerpt_sv": "Vår församling samlades för att fira Fasika, den ortodoxa påsken.",
+      "body_am": "በሌሊት ጸሎት፣ በዝማሬና በኅብረት በጋራ አክብረዋል። በዓሉ መታሰቢያ እንዲሆን ጊዜያቸውን፣ ስጦታቸውንና መገኘታቸውን ለሰጡን ሁሉ ምስጋና እናቀርባለን።",
+      "title_sv": "Fasika – Påskhögtiden firades med glädje",
+      "excerpt_am": "ምዕመናኑ የጌታችንን ትንሣኤ በዓል ፋሲካን በጋራ አክብረዋል።",
+      "title_am": "ፋሲካ በደስታ ተከበረ",
+      "date_sv": "14 april 2026",
+      "id": "article-3",
+      "date_am": "ሚያዝያ 14 2026"
     },
     {
-      "id": "article-4",
-      "date_sv": "20 mars 2026",
-      "date_am": "መጋቢት 20 2026",
-      "title_sv": "Ny kör välkomnas till gudstjänsterna",
-      "title_am": "አዲስ መዘምራን ቡድን ለስርዓተ አምልኮ ተጨመረ",
-      "excerpt_sv": "Vi är glada att presentera vår förnyade kör.",
-      "excerpt_am": "የታደሰውን የመዘምራን ቡድናችንን በደስታ እናስተዋውቃለን።",
       "body_sv": "Kören leder nu sången vid söndagens Högmässa. Är du intresserad av att sjunga med oss? Hör av dig till vår köransvarig.",
-      "body_am": "አሁን በእሑድ ቅዳሴ ወቅት ዝማሬውን እየመሩ ናቸው። ከእኛ ጋር መዘመር ይፈልጋሉ? እባክዎ የመዘምራን ኃላፊያችንን ያግኙ።"
+      "excerpt_sv": "Vi är glada att presentera vår förnyade kör.",
+      "body_am": "አሁን በእሑድ ቅዳሴ ወቅት ዝማሬውን እየመሩ ናቸው። ከእኛ ጋር መዘመር ይፈልጋሉ? እባክዎ የመዘምራን ኃላፊያችንን ያግኙ።",
+      "title_sv": "Ny kör välkomnas till gudstjänsterna",
+      "excerpt_am": "የታደሰውን የመዘምራን ቡድናችንን በደስታ እናስተዋውቃለን።",
+      "title_am": "አዲስ መዘምራን ቡድን ለስርዓተ አምልኮ ተጨመረ",
+      "date_sv": "20 mars 2026",
+      "id": "article-4",
+      "date_am": "መጋቢት 20 2026"
     }
   ]
 }
